@@ -68,7 +68,7 @@ export default function HeroBanner() {
             {/* Glass frame for carousel */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#1C2978]/10 to-[#FFD200]/10 rounded-3xl blur-md"></div>
             
-            <div className="relative w-full aspect-[21/9] sm:aspect-[2.2/1] md:aspect-[2.4/1] lg:h-[420px]">
+            <div className="relative w-full aspect-video max-h-[60vh] md:max-h-none">
               {bannerImages.map((banner, index) => {
                 const diff = (index - selectedIndex + bannerImages.length) % bannerImages.length;
                 const zIndex = diff === 0 ? 30 : diff === 1 ? 20 : 10;
@@ -104,7 +104,7 @@ export default function HeroBanner() {
                       <img
                         src={banner.desktop}
                         alt={`Banner promoção ${index + 1}`}
-                        className="w-full h-full object-contain md:object-cover"
+                        className="w-full h-full object-cover"
                       />
                     </picture>
 
