@@ -81,7 +81,7 @@ export default function HeroBanner() {
                 return (
                   <div 
                     key={index} 
-                    className={`card-stack-item group rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(28, 41, 120,0.15)] border border-[#1C2978]/25 md:border-white/40 bg-[#070C25] md:bg-white cursor-pointer ${cardClass}`}
+                    className={`card-stack-item group rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(28, 41, 120,0.15)] border border-white/40 bg-white cursor-pointer ${cardClass}`}
                     style={{ zIndex }}
                     onMouseMove={handleMouseMove}
                     onClick={() => {
@@ -95,19 +95,8 @@ export default function HeroBanner() {
                       }
                     }}
                   >
-                    {/* Vinheta/Sombra interna suave apenas no mobile para conectar as bordas */}
-                    <div className="absolute inset-0 z-20 pointer-events-none md:hidden shadow-[inset_0_0_35px_rgba(7,12,37,0.9)]" />
-
-                    {/* Efeito Acrílico/Blur no fundo apenas para mobile com auras conectivas */}
-                    <div className="absolute inset-0 md:hidden z-0 overflow-hidden bg-[#070C25]">
-                      <img src={banner.mobile} alt="" className="w-full h-full object-cover blur-[30px] scale-125 opacity-40" />
-                      <div className="absolute inset-0 bg-[#070C25]/80 backdrop-blur-md"></div>
-                      
-                      {/* Auras luminosas para conexão de cores */}
-                      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-48 h-48 rounded-full bg-[#00D2FF]/20 blur-[50px] mix-blend-screen"></div>
-                      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-48 h-48 rounded-full bg-[#7000FF]/20 blur-[50px] mix-blend-screen"></div>
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-36 rounded-full bg-[#1C2978]/70 blur-[55px] mix-blend-screen"></div>
-                    </div>
+                    {/* Sombra interna leve */}
+                    <div className="absolute inset-0 z-20 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.05)]" />
 
                     <picture className="w-full h-full relative z-10 block">
                       <source media="(max-width: 767px)" srcSet={banner.mobile} />
@@ -115,7 +104,7 @@ export default function HeroBanner() {
                       <img
                         src={banner.desktop}
                         alt={`Banner promoção ${index + 1}`}
-                        className="w-full h-full object-contain md:object-cover"
+                        className="w-full h-full object-cover"
                       />
                     </picture>
 
