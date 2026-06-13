@@ -1,0 +1,19 @@
+{
+  "luz": ["lampada", "iluminacao", "luminaria"],
+  "lampada": ["luz", "bulbo", "led"],
+  "luz quente": ["amarela", "3000k", "aconchegante"],
+  "luz fria": ["branca", "6500k", "claridade"],
+  "luz neutra": ["4000k", "natural"],
+  "painel": ["plafon", "luminaria de teto"],
+  "plafon": ["painel", "luminaria de teto"],
+  "spot": ["luminaria embutida"],
+  "refletor": ["holofote", "iluminacao externa"],
+  "fio": ["cabo", "condutor"],
+  "fios": ["cabos", "condutores"],
+  "cabo": ["fio", "condutor"],
+  "disjuntor": ["chave", "protecao"],
+  "tomada": ["ponto de energia"],
+  "interruptor": ["tecla", "acionador"],
+  "infravermelho": ["sensor", "controle remoto", "camera", "aquecimento"],
+  "whatsapp": ["zap", "wpp", "contato", "atendente"]
+}

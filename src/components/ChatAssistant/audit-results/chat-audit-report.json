@@ -1,0 +1,3316 @@
+{
+  "singleResults": [
+    {
+      "id": 1,
+      "group": "Saudações",
+      "input": "oi",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "oi",
+        "clean": "oi",
+        "normalizedSteps": [
+          "Original: oi",
+          "Normalized: oi",
+          "Reduced letters: oi",
+          "Applied repeated corrections: oi",
+          "Applied slang corrections: oi",
+          "Applied electrical typos: oi",
+          "Applied greeting typos: oi",
+          "Applied joined words corrections: oi",
+          "Normalized units: oi"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "group": "Saudações",
+      "input": "oii",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "oii",
+        "clean": "oi",
+        "normalizedSteps": [
+          "Original: oii",
+          "Normalized: oii",
+          "Reduced letters: oii",
+          "Applied repeated corrections: oi",
+          "Applied slang corrections: oi",
+          "Applied electrical typos: oi",
+          "Applied greeting typos: oi",
+          "Applied joined words corrections: oi",
+          "Normalized units: oi"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "group": "Saudações",
+      "input": "oiii",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "oiii",
+        "clean": "oi",
+        "normalizedSteps": [
+          "Original: oiii",
+          "Normalized: oiii",
+          "Reduced letters: oii",
+          "Applied repeated corrections: oi",
+          "Applied slang corrections: oi",
+          "Applied electrical typos: oi",
+          "Applied greeting typos: oi",
+          "Applied joined words corrections: oi",
+          "Normalized units: oi"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "group": "Saudações",
+      "input": "oire",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "oire",
+        "clean": "oi",
+        "normalizedSteps": [
+          "Original: oire",
+          "Normalized: oire",
+          "Reduced letters: oire",
+          "Applied repeated corrections: oire",
+          "Applied slang corrections: oire",
+          "Applied electrical typos: oire",
+          "Applied greeting typos: oi",
+          "Applied joined words corrections: oi",
+          "Normalized units: oi"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "group": "Saudações",
+      "input": "oie",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "oie",
+        "clean": "oi",
+        "normalizedSteps": [
+          "Original: oie",
+          "Normalized: oie",
+          "Reduced letters: oie",
+          "Applied repeated corrections: oie",
+          "Applied slang corrections: oie",
+          "Applied electrical typos: oie",
+          "Applied greeting typos: oi",
+          "Applied joined words corrections: oi",
+          "Normalized units: oi"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "group": "Saudações",
+      "input": "olaaa",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "olaaa",
+        "clean": "ola",
+        "normalizedSteps": [
+          "Original: olaaa",
+          "Normalized: olaaa",
+          "Reduced letters: olaa",
+          "Applied repeated corrections: ola",
+          "Applied slang corrections: ola",
+          "Applied electrical typos: ola",
+          "Applied greeting typos: ola",
+          "Applied joined words corrections: ola",
+          "Normalized units: ola"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "group": "Saudações",
+      "input": "opa",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "opa",
+        "clean": "opa",
+        "normalizedSteps": [
+          "Original: opa",
+          "Normalized: opa",
+          "Reduced letters: opa",
+          "Applied repeated corrections: opa",
+          "Applied slang corrections: opa",
+          "Applied electrical typos: opa",
+          "Applied greeting typos: opa",
+          "Applied joined words corrections: opa",
+          "Normalized units: opa"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "group": "Saudações",
+      "input": "eai",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "eai",
+        "clean": "eai",
+        "normalizedSteps": [
+          "Original: eai",
+          "Normalized: eai",
+          "Reduced letters: eai",
+          "Applied repeated corrections: eai",
+          "Applied slang corrections: eai",
+          "Applied electrical typos: eai",
+          "Applied greeting typos: eai",
+          "Applied joined words corrections: eai",
+          "Normalized units: eai"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "group": "Saudações",
+      "input": "hello",
+      "responseText": "Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?",
+      "intent": "greeting",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "hello",
+        "clean": "hello",
+        "normalizedSteps": [
+          "Original: hello",
+          "Normalized: hello",
+          "Reduced letters: hello",
+          "Applied repeated corrections: hello",
+          "Applied slang corrections: hello",
+          "Applied electrical typos: hello",
+          "Applied greeting typos: hello",
+          "Applied joined words corrections: hello",
+          "Normalized units: hello"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "group": "Cortesia",
+      "input": "como esta?",
+      "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+      "intent": "courtesy",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "como esta?",
+        "clean": "como esta",
+        "normalizedSteps": [
+          "Original: como esta?",
+          "Normalized: como esta",
+          "Reduced letters: como esta",
+          "Applied repeated corrections: como esta",
+          "Applied slang corrections: como esta",
+          "Applied electrical typos: como esta",
+          "Applied greeting typos: como esta",
+          "Applied joined words corrections: como esta",
+          "Normalized units: como esta"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "group": "Cortesia",
+      "input": "como vai?",
+      "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+      "intent": "courtesy",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "como vai?",
+        "clean": "como vai",
+        "normalizedSteps": [
+          "Original: como vai?",
+          "Normalized: como vai",
+          "Reduced letters: como vai",
+          "Applied repeated corrections: como vai",
+          "Applied slang corrections: como vai",
+          "Applied electrical typos: como vai",
+          "Applied greeting typos: como vai",
+          "Applied joined words corrections: como vai",
+          "Normalized units: como vai"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "group": "Cortesia",
+      "input": "tudo bem?",
+      "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+      "intent": "courtesy",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tudo bem?",
+        "clean": "tudo bem",
+        "normalizedSteps": [
+          "Original: tudo bem?",
+          "Normalized: tudo bem",
+          "Reduced letters: tudo bem",
+          "Applied repeated corrections: tudo bem",
+          "Applied slang corrections: tudo bem",
+          "Applied electrical typos: tudo bem",
+          "Applied greeting typos: tudo bem",
+          "Applied joined words corrections: tudo bem",
+          "Normalized units: tudo bem"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "group": "Cortesia",
+      "input": "blz?",
+      "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+      "intent": "courtesy",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "blz?",
+        "clean": "beleza",
+        "normalizedSteps": [
+          "Original: blz?",
+          "Normalized: blz",
+          "Reduced letters: blz",
+          "Applied repeated corrections: blz",
+          "Applied slang corrections: beleza",
+          "Applied electrical typos: beleza",
+          "Applied greeting typos: beleza",
+          "Applied joined words corrections: beleza",
+          "Normalized units: beleza"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "group": "Cortesia",
+      "input": "eai tudo bem",
+      "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+      "intent": "courtesy",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "eai tudo bem",
+        "clean": "eai tudo bem",
+        "normalizedSteps": [
+          "Original: eai tudo bem",
+          "Normalized: eai tudo bem",
+          "Reduced letters: eai tudo bem",
+          "Applied repeated corrections: eai tudo bem",
+          "Applied slang corrections: eai tudo bem",
+          "Applied electrical typos: eai tudo bem",
+          "Applied greeting typos: eai tudo bem",
+          "Applied joined words corrections: eai tudo bem",
+          "Normalized units: eai tudo bem"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "group": "Abreviações",
+      "input": "vc tem fio",
+      "responseText": "Temos opções de fios e cabos elétricos. Separei alguns modelos relacionados:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Fio Sólido 2,5mm² 100m",
+          "category": "fios-cabos",
+          "price": 139.9
+        },
+        {
+          "name": "Cabo Flexível 2,5mm² 100m Azul",
+          "category": "fios-cabos",
+          "price": 149.9
+        },
+        {
+          "name": "Cabo Flexível 4,0mm² 100m Preto",
+          "category": "fios-cabos",
+          "price": 239.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "vc tem fio",
+        "clean": "voce tem fio",
+        "normalizedSteps": [
+          "Original: vc tem fio",
+          "Normalized: vc tem fio",
+          "Reduced letters: vc tem fio",
+          "Applied repeated corrections: vc tem fio",
+          "Applied slang corrections: voce tem fio",
+          "Applied electrical typos: voce tem fio",
+          "Applied greeting typos: voce tem fio",
+          "Applied joined words corrections: voce tem fio",
+          "Normalized units: voce tem fio"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "group": "Abreviações",
+      "input": "vcs tem lampada",
+      "responseText": "Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Ver mais lâmpadas",
+          "type": "category"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "vcs tem lampada",
+        "clean": "voces tem lampada",
+        "normalizedSteps": [
+          "Original: vcs tem lampada",
+          "Normalized: vcs tem lampada",
+          "Reduced letters: vcs tem lampada",
+          "Applied repeated corrections: vcs tem lampada",
+          "Applied slang corrections: voces tem lampada",
+          "Applied electrical typos: voces tem lampada",
+          "Applied greeting typos: voces tem lampada",
+          "Applied joined words corrections: voces tem lampada",
+          "Normalized units: voces tem lampada"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "group": "Abreviações",
+      "input": "ce tem tomada",
+      "responseText": "Temos opções de tomadas, incluindo modelos 10A, 20A e USB quando disponíveis. Veja algumas opções:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Tomada 2P+T 20A Branca",
+          "category": "tomadas",
+          "price": 8.5
+        },
+        {
+          "name": "Tomada 2P+T 10A Branca",
+          "category": "tomadas",
+          "price": 7.9
+        },
+        {
+          "name": "Tomada USB Dupla 2.1A Branca",
+          "category": "tomadas",
+          "price": 45
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "ce tem tomada",
+        "clean": "voce tem tomada",
+        "normalizedSteps": [
+          "Original: ce tem tomada",
+          "Normalized: ce tem tomada",
+          "Reduced letters: ce tem tomada",
+          "Applied repeated corrections: ce tem tomada",
+          "Applied slang corrections: voce tem tomada",
+          "Applied electrical typos: voce tem tomada",
+          "Applied greeting typos: voce tem tomada",
+          "Applied joined words corrections: voce tem tomada",
+          "Normalized units: voce tem tomada"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "group": "Abreviações",
+      "input": "qto custa lampada",
+      "responseText": "Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Ver mais lâmpadas",
+          "type": "category"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "qto custa lampada",
+        "clean": "quanto custa lampada",
+        "normalizedSteps": [
+          "Original: qto custa lampada",
+          "Normalized: qto custa lampada",
+          "Reduced letters: qto custa lampada",
+          "Applied repeated corrections: qto custa lampada",
+          "Applied slang corrections: quanto custa lampada",
+          "Applied electrical typos: quanto custa lampada",
+          "Applied greeting typos: quanto custa lampada",
+          "Applied joined words corrections: quanto custa lampada",
+          "Normalized units: quanto custa lampada"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "group": "Abreviações",
+      "input": "oq e luz fria",
+      "responseText": "Luz fria, geralmente entre 6000K e 6500K, tem tom mais branco e passa sensação de maior claridade. É comum em cozinhas, banheiros, áreas de serviço e escritórios.",
+      "intent": "technical_explanation",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "oq e luz fria",
+        "clean": "o que e luz fria",
+        "normalizedSteps": [
+          "Original: oq e luz fria",
+          "Normalized: oq e luz fria",
+          "Reduced letters: oq e luz fria",
+          "Applied repeated corrections: oq e luz fria",
+          "Applied slang corrections: o que e luz fria",
+          "Applied electrical typos: o que e luz fria",
+          "Applied greeting typos: o que e luz fria",
+          "Applied joined words corrections: o que e luz fria",
+          "Normalized units: o que e luz fria"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "group": "Abreviações",
+      "input": "tem zap",
+      "responseText": "Desculpa, acho que não entendi bem sua dúvida. Para te ajudar melhor, posso te encaminhar para um atendente da Haja Luz.",
+      "intent": "human_support",
+      "confidence": 1,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem zap",
+        "clean": "tem whatsapp",
+        "normalizedSteps": [
+          "Original: tem zap",
+          "Normalized: tem zap",
+          "Reduced letters: tem zap",
+          "Applied repeated corrections: tem zap",
+          "Applied slang corrections: tem whatsapp",
+          "Applied electrical typos: tem whatsapp",
+          "Applied greeting typos: tem whatsapp",
+          "Applied joined words corrections: tem whatsapp",
+          "Normalized units: tem whatsapp"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "group": "Abreviações",
+      "input": "manda wpp",
+      "responseText": "Desculpa, acho que não entendi bem sua dúvida. Para te ajudar melhor, posso te encaminhar para um atendente da Haja Luz.",
+      "intent": "human_support",
+      "confidence": 1,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "manda wpp",
+        "clean": "manda whatsapp",
+        "normalizedSteps": [
+          "Original: manda wpp",
+          "Normalized: manda wpp",
+          "Reduced letters: manda wpp",
+          "Applied repeated corrections: manda wpp",
+          "Applied slang corrections: manda whatsapp",
+          "Applied electrical typos: manda whatsapp",
+          "Applied greeting typos: manda whatsapp",
+          "Applied joined words corrections: manda whatsapp",
+          "Normalized units: manda whatsapp"
+        ]
+      }
+    },
+    {
+      "id": 70,
+      "group": "Produtos",
+      "input": "me fala sobre as lampadas disponiveis",
+      "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "me fala sobre as lampadas disponiveis",
+        "clean": "me fala sobre as lampadas disponiveis",
+        "normalizedSteps": [
+          "Original: me fala sobre as lampadas disponiveis",
+          "Normalized: me fala sobre as lampadas disponiveis",
+          "Reduced letters: me fala sobre as lampadas disponiveis",
+          "Applied repeated corrections: me fala sobre as lampadas disponiveis",
+          "Applied slang corrections: me fala sobre as lampadas disponiveis",
+          "Applied electrical typos: me fala sobre as lampadas disponiveis",
+          "Applied greeting typos: me fala sobre as lampadas disponiveis",
+          "Applied joined words corrections: me fala sobre as lampadas disponiveis",
+          "Normalized units: me fala sobre as lampadas disponiveis"
+        ]
+      }
+    },
+    {
+      "id": 71,
+      "group": "Produtos",
+      "input": "tem lampada led?",
+      "responseText": "Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Ver mais lâmpadas",
+          "type": "category"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem lampada led?",
+        "clean": "tem lampada led",
+        "normalizedSteps": [
+          "Original: tem lampada led?",
+          "Normalized: tem lampada led",
+          "Reduced letters: tem lampada led",
+          "Applied repeated corrections: tem lampada led",
+          "Applied slang corrections: tem lampada led",
+          "Applied electrical typos: tem lampada led",
+          "Applied greeting typos: tem lampada led",
+          "Applied joined words corrections: tem lampada led",
+          "Normalized units: tem lampada led"
+        ]
+      }
+    },
+    {
+      "id": 72,
+      "group": "Produtos",
+      "input": "tem mais lampadas melhores?",
+      "responseText": "Me desculpe, não entendi sobre qual busca você quer ver mais resultados. Pode me dizer novamente o que você procura?",
+      "intent": "show_more_results",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem mais lampadas melhores?",
+        "clean": "tem mais lampadas melhores",
+        "normalizedSteps": [
+          "Original: tem mais lampadas melhores?",
+          "Normalized: tem mais lampadas melhores",
+          "Reduced letters: tem mais lampadas melhores",
+          "Applied repeated corrections: tem mais lampadas melhores",
+          "Applied slang corrections: tem mais lampadas melhores",
+          "Applied electrical typos: tem mais lampadas melhores",
+          "Applied greeting typos: tem mais lampadas melhores",
+          "Applied joined words corrections: tem mais lampadas melhores",
+          "Normalized units: tem mais lampadas melhores"
+        ]
+      }
+    },
+    {
+      "id": 73,
+      "group": "Produtos",
+      "input": "tem fio?",
+      "responseText": "Temos opções de fios e cabos elétricos. Separei alguns modelos relacionados:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Fio Sólido 2,5mm² 100m",
+          "category": "fios-cabos",
+          "price": 139.9
+        },
+        {
+          "name": "Cabo Flexível 2,5mm² 100m Azul",
+          "category": "fios-cabos",
+          "price": 149.9
+        },
+        {
+          "name": "Cabo Flexível 4,0mm² 100m Preto",
+          "category": "fios-cabos",
+          "price": 239.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem fio?",
+        "clean": "tem fio",
+        "normalizedSteps": [
+          "Original: tem fio?",
+          "Normalized: tem fio",
+          "Reduced letters: tem fio",
+          "Applied repeated corrections: tem fio",
+          "Applied slang corrections: tem fio",
+          "Applied electrical typos: tem fio",
+          "Applied greeting typos: tem fio",
+          "Applied joined words corrections: tem fio",
+          "Normalized units: tem fio"
+        ]
+      }
+    },
+    {
+      "id": 74,
+      "group": "Produtos",
+      "input": "tem tomada 20a?",
+      "responseText": "Temos opções de tomadas, incluindo modelos 10A, 20A e USB quando disponíveis. Veja algumas opções:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Tomada 2P+T 20A Branca",
+          "category": "tomadas",
+          "price": 8.5
+        },
+        {
+          "name": "Tomada 2P+T 10A Branca",
+          "category": "tomadas",
+          "price": 7.9
+        },
+        {
+          "name": "Tomada USB Dupla 2.1A Branca",
+          "category": "tomadas",
+          "price": 45
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem tomada 20a?",
+        "clean": "tem tomada 20 ampere",
+        "normalizedSteps": [
+          "Original: tem tomada 20a?",
+          "Normalized: tem tomada 20a",
+          "Reduced letters: tem tomada 20a",
+          "Applied repeated corrections: tem tomada 20a",
+          "Applied slang corrections: tem tomada 20a",
+          "Applied electrical typos: tem tomada 20a",
+          "Applied greeting typos: tem tomada 20a",
+          "Applied joined words corrections: tem tomada 20a",
+          "Normalized units: tem tomada 20 ampere"
+        ]
+      }
+    },
+    {
+      "id": 75,
+      "group": "Produtos",
+      "input": "tem disjuntor?",
+      "responseText": "Temos opções de disjuntores. Para escolher corretamente, é importante considerar corrente, tensão e uso. Separei alguns modelos:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Disjuntor DIN Monopolar 16A",
+          "category": "disjuntores",
+          "price": 11.9
+        },
+        {
+          "name": "Disjuntor DIN Monopolar 25A",
+          "category": "disjuntores",
+          "price": 11.9
+        },
+        {
+          "name": "Disjuntor DIN Monopolar 32A",
+          "category": "disjuntores",
+          "price": 12.5
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem disjuntor?",
+        "clean": "tem disjuntor",
+        "normalizedSteps": [
+          "Original: tem disjuntor?",
+          "Normalized: tem disjuntor",
+          "Reduced letters: tem disjuntor",
+          "Applied repeated corrections: tem disjuntor",
+          "Applied slang corrections: tem disjuntor",
+          "Applied electrical typos: tem disjuntor",
+          "Applied greeting typos: tem disjuntor",
+          "Applied joined words corrections: tem disjuntor",
+          "Normalized units: tem disjuntor"
+        ]
+      }
+    },
+    {
+      "id": 76,
+      "group": "Produtos",
+      "input": "tem refletor?",
+      "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Refletor LED 50W IP66 Branco Frio",
+          "category": "iluminacao",
+          "price": 45
+        },
+        {
+          "name": "Refletor LED 100W IP66 Branco Frio",
+          "category": "iluminacao",
+          "price": 79.9
+        },
+        {
+          "name": "Refletor LED 200W IP66 c/ Sensor",
+          "category": "iluminacao",
+          "price": 149.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem refletor?",
+        "clean": "tem refletor",
+        "normalizedSteps": [
+          "Original: tem refletor?",
+          "Normalized: tem refletor",
+          "Reduced letters: tem refletor",
+          "Applied repeated corrections: tem refletor",
+          "Applied slang corrections: tem refletor",
+          "Applied electrical typos: tem refletor",
+          "Applied greeting typos: tem refletor",
+          "Applied joined words corrections: tem refletor",
+          "Normalized units: tem refletor"
+        ]
+      }
+    },
+    {
+      "id": 77,
+      "group": "Produtos",
+      "input": "tem ventilador?",
+      "responseText": "Ainda falando do mesmo assunto? Se puder me dar mais detalhes do que precisa, posso achar os produtos ideais!",
+      "intent": "context_continuation",
+      "confidence": 0.7,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem ventilador?",
+        "clean": "tem ventilador",
+        "normalizedSteps": [
+          "Original: tem ventilador?",
+          "Normalized: tem ventilador",
+          "Reduced letters: tem ventilador",
+          "Applied repeated corrections: tem ventilador",
+          "Applied slang corrections: tem ventilador",
+          "Applied electrical typos: tem ventilador",
+          "Applied greeting typos: tem ventilador",
+          "Applied joined words corrections: tem ventilador",
+          "Normalized units: tem ventilador"
+        ]
+      }
+    },
+    {
+      "id": 78,
+      "group": "Produtos",
+      "input": "tem ferramenta?",
+      "responseText": "Ainda falando do mesmo assunto? Se puder me dar mais detalhes do que precisa, posso achar os produtos ideais!",
+      "intent": "context_continuation",
+      "confidence": 0.7,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem ferramenta?",
+        "clean": "tem ferramenta",
+        "normalizedSteps": [
+          "Original: tem ferramenta?",
+          "Normalized: tem ferramenta",
+          "Reduced letters: tem ferramenta",
+          "Applied repeated corrections: tem ferramenta",
+          "Applied slang corrections: tem ferramenta",
+          "Applied electrical typos: tem ferramenta",
+          "Applied greeting typos: tem ferramenta",
+          "Applied joined words corrections: tem ferramenta",
+          "Normalized units: tem ferramenta"
+        ]
+      }
+    },
+    {
+      "id": 100,
+      "group": "Erros de digitação",
+      "input": "tem lanpada",
+      "responseText": "Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Ver mais lâmpadas",
+          "type": "category"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem lanpada",
+        "clean": "tem lampada",
+        "normalizedSteps": [
+          "Original: tem lanpada",
+          "Normalized: tem lanpada",
+          "Reduced letters: tem lanpada",
+          "Applied repeated corrections: tem lanpada",
+          "Applied slang corrections: tem lanpada",
+          "Applied electrical typos: tem lampada",
+          "Applied greeting typos: tem lampada",
+          "Applied joined words corrections: tem lampada",
+          "Normalized units: tem lampada"
+        ]
+      }
+    },
+    {
+      "id": 101,
+      "group": "Erros de digitação",
+      "input": "tem lampda",
+      "responseText": "Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Ver mais lâmpadas",
+          "type": "category"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem lampda",
+        "clean": "tem lampada",
+        "normalizedSteps": [
+          "Original: tem lampda",
+          "Normalized: tem lampda",
+          "Reduced letters: tem lampda",
+          "Applied repeated corrections: tem lampda",
+          "Applied slang corrections: tem lampda",
+          "Applied electrical typos: tem lampada",
+          "Applied greeting typos: tem lampada",
+          "Applied joined words corrections: tem lampada",
+          "Normalized units: tem lampada"
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "group": "Erros de digitação",
+      "input": "tem dijuntor",
+      "responseText": "Temos opções de disjuntores. Para escolher corretamente, é importante considerar corrente, tensão e uso. Separei alguns modelos:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Disjuntor DIN Monopolar 16A",
+          "category": "disjuntores",
+          "price": 11.9
+        },
+        {
+          "name": "Disjuntor DIN Monopolar 25A",
+          "category": "disjuntores",
+          "price": 11.9
+        },
+        {
+          "name": "Disjuntor DIN Monopolar 32A",
+          "category": "disjuntores",
+          "price": 12.5
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem dijuntor",
+        "clean": "tem disjuntor",
+        "normalizedSteps": [
+          "Original: tem dijuntor",
+          "Normalized: tem dijuntor",
+          "Reduced letters: tem dijuntor",
+          "Applied repeated corrections: tem dijuntor",
+          "Applied slang corrections: tem dijuntor",
+          "Applied electrical typos: tem disjuntor",
+          "Applied greeting typos: tem disjuntor",
+          "Applied joined words corrections: tem disjuntor",
+          "Normalized units: tem disjuntor"
+        ]
+      }
+    },
+    {
+      "id": 103,
+      "group": "Erros de digitação",
+      "input": "tem disjutor",
+      "responseText": "Temos opções de disjuntores. Para escolher corretamente, é importante considerar corrente, tensão e uso. Separei alguns modelos:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Disjuntor DIN Monopolar 16A",
+          "category": "disjuntores",
+          "price": 11.9
+        },
+        {
+          "name": "Disjuntor DIN Monopolar 25A",
+          "category": "disjuntores",
+          "price": 11.9
+        },
+        {
+          "name": "Disjuntor DIN Monopolar 32A",
+          "category": "disjuntores",
+          "price": 12.5
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem disjutor",
+        "clean": "tem disjuntor",
+        "normalizedSteps": [
+          "Original: tem disjutor",
+          "Normalized: tem disjutor",
+          "Reduced letters: tem disjutor",
+          "Applied repeated corrections: tem disjutor",
+          "Applied slang corrections: tem disjutor",
+          "Applied electrical typos: tem disjuntor",
+          "Applied greeting typos: tem disjuntor",
+          "Applied joined words corrections: tem disjuntor",
+          "Normalized units: tem disjuntor"
+        ]
+      }
+    },
+    {
+      "id": 104,
+      "group": "Erros de digitação",
+      "input": "tem tomda",
+      "responseText": "Temos opções de tomadas, incluindo modelos 10A, 20A e USB quando disponíveis. Veja algumas opções:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Tomada 2P+T 20A Branca",
+          "category": "tomadas",
+          "price": 8.5
+        },
+        {
+          "name": "Tomada 2P+T 10A Branca",
+          "category": "tomadas",
+          "price": 7.9
+        },
+        {
+          "name": "Tomada USB Dupla 2.1A Branca",
+          "category": "tomadas",
+          "price": 45
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem tomda",
+        "clean": "tem tomada",
+        "normalizedSteps": [
+          "Original: tem tomda",
+          "Normalized: tem tomda",
+          "Reduced letters: tem tomda",
+          "Applied repeated corrections: tem tomda",
+          "Applied slang corrections: tem tomda",
+          "Applied electrical typos: tem tomada",
+          "Applied greeting typos: tem tomada",
+          "Applied joined words corrections: tem tomada",
+          "Normalized units: tem tomada"
+        ]
+      }
+    },
+    {
+      "id": 105,
+      "group": "Erros de digitação",
+      "input": "tem refretor",
+      "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Refletor LED 50W IP66 Branco Frio",
+          "category": "iluminacao",
+          "price": 45
+        },
+        {
+          "name": "Refletor LED 100W IP66 Branco Frio",
+          "category": "iluminacao",
+          "price": 79.9
+        },
+        {
+          "name": "Refletor LED 200W IP66 c/ Sensor",
+          "category": "iluminacao",
+          "price": 149.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem refretor",
+        "clean": "tem refletor",
+        "normalizedSteps": [
+          "Original: tem refretor",
+          "Normalized: tem refretor",
+          "Reduced letters: tem refretor",
+          "Applied repeated corrections: tem refretor",
+          "Applied slang corrections: tem refretor",
+          "Applied electrical typos: tem refletor",
+          "Applied greeting typos: tem refletor",
+          "Applied joined words corrections: tem refletor",
+          "Normalized units: tem refletor"
+        ]
+      }
+    },
+    {
+      "id": 106,
+      "group": "Erros de digitação",
+      "input": "tem plafom",
+      "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Plafon LED de Embutir Quadrado 18W",
+          "category": "iluminacao",
+          "price": 24.9
+        },
+        {
+          "name": "Plafon LED de Sobrepor Redondo 24W",
+          "category": "iluminacao",
+          "price": 34.9
+        },
+        {
+          "name": "Painel LED Slim 60x60 45W",
+          "category": "iluminacao",
+          "price": 89.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais opções",
+          "type": "show_more"
+        },
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem plafom",
+        "clean": "tem plafon",
+        "normalizedSteps": [
+          "Original: tem plafom",
+          "Normalized: tem plafom",
+          "Reduced letters: tem plafom",
+          "Applied repeated corrections: tem plafom",
+          "Applied slang corrections: tem plafom",
+          "Applied electrical typos: tem plafon",
+          "Applied greeting typos: tem plafon",
+          "Applied joined words corrections: tem plafon",
+          "Normalized units: tem plafon"
+        ]
+      }
+    },
+    {
+      "id": 130,
+      "group": "Infravermelho",
+      "input": "tem luz infravermelha?",
+      "responseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.",
+      "intent": "product_or_technical_infrared",
+      "confidence": 0.95,
+      "products": [
+        {
+          "name": "Refletor LED 200W IP66 c/ Sensor",
+          "category": "iluminacao",
+          "price": 149.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        },
+        {
+          "label": "Ver Instalação e Acessórios",
+          "type": "category"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem luz infravermelha?",
+        "clean": "tem luz infravermelho",
+        "normalizedSteps": [
+          "Original: tem luz infravermelha?",
+          "Normalized: tem luz infravermelha",
+          "Reduced letters: tem luz infravermelha",
+          "Applied repeated corrections: tem luz infravermelha",
+          "Applied slang corrections: tem luz infravermelha",
+          "Applied electrical typos: tem luz infravermelho",
+          "Applied greeting typos: tem luz infravermelho",
+          "Applied joined words corrections: tem luz infravermelho",
+          "Normalized units: tem luz infravermelho"
+        ]
+      }
+    },
+    {
+      "id": 131,
+      "group": "Infravermelho",
+      "input": "vc tem luz infravermelha?",
+      "responseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.",
+      "intent": "product_or_technical_infrared",
+      "confidence": 0.95,
+      "products": [
+        {
+          "name": "Refletor LED 200W IP66 c/ Sensor",
+          "category": "iluminacao",
+          "price": 149.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        },
+        {
+          "label": "Ver Instalação e Acessórios",
+          "type": "category"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "vc tem luz infravermelha?",
+        "clean": "voce tem luz infravermelho",
+        "normalizedSteps": [
+          "Original: vc tem luz infravermelha?",
+          "Normalized: vc tem luz infravermelha",
+          "Reduced letters: vc tem luz infravermelha",
+          "Applied repeated corrections: vc tem luz infravermelha",
+          "Applied slang corrections: voce tem luz infravermelha",
+          "Applied electrical typos: voce tem luz infravermelho",
+          "Applied greeting typos: voce tem luz infravermelho",
+          "Applied joined words corrections: voce tem luz infravermelho",
+          "Normalized units: voce tem luz infravermelho"
+        ]
+      }
+    },
+    {
+      "id": 132,
+      "group": "Infravermelho",
+      "input": "tem lampada ou luzinfravermelha?",
+      "responseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.",
+      "intent": "product_or_technical_infrared",
+      "confidence": 0.95,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        },
+        {
+          "label": "Ver Instalação e Acessórios",
+          "type": "category"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem lampada ou luzinfravermelha?",
+        "clean": "tem lampada ou luz infravermelha",
+        "normalizedSteps": [
+          "Original: tem lampada ou luzinfravermelha?",
+          "Normalized: tem lampada ou luzinfravermelha",
+          "Reduced letters: tem lampada ou luzinfravermelha",
+          "Applied repeated corrections: tem lampada ou luzinfravermelha",
+          "Applied slang corrections: tem lampada ou luzinfravermelha",
+          "Applied electrical typos: tem lampada ou luzinfravermelha",
+          "Applied greeting typos: tem lampada ou luzinfravermelha",
+          "Applied joined words corrections: tem lampada ou luz infravermelha",
+          "Normalized units: tem lampada ou luz infravermelha"
+        ]
+      }
+    },
+    {
+      "id": 133,
+      "group": "Infravermelho",
+      "input": "o que e luz infravermelha?",
+      "responseText": "Entendi que você quer uma explicação sobre esse produto. Para te dar detalhes exatos, posso verificar no nosso sistema ou você pode confirmar com nossa equipe no WhatsApp!",
+      "intent": "technical_explanation",
+      "confidence": 0.8,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "o que e luz infravermelha?",
+        "clean": "o que e luz infravermelho",
+        "normalizedSteps": [
+          "Original: o que e luz infravermelha?",
+          "Normalized: o que e luz infravermelha",
+          "Reduced letters: o que e luz infravermelha",
+          "Applied repeated corrections: o que e luz infravermelha",
+          "Applied slang corrections: o que e luz infravermelha",
+          "Applied electrical typos: o que e luz infravermelho",
+          "Applied greeting typos: o que e luz infravermelho",
+          "Applied joined words corrections: o que e luz infravermelho",
+          "Normalized units: o que e luz infravermelho"
+        ]
+      }
+    },
+    {
+      "id": 134,
+      "group": "Infravermelho",
+      "input": "tem sensor infravermelho?",
+      "responseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.",
+      "intent": "product_or_technical_infrared",
+      "confidence": 0.95,
+      "products": [
+        {
+          "name": "Refletor LED 200W IP66 c/ Sensor",
+          "category": "iluminacao",
+          "price": 149.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        },
+        {
+          "label": "Ver Instalação e Acessórios",
+          "type": "category"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem sensor infravermelho?",
+        "clean": "tem sensor infravermelho",
+        "normalizedSteps": [
+          "Original: tem sensor infravermelho?",
+          "Normalized: tem sensor infravermelho",
+          "Reduced letters: tem sensor infravermelho",
+          "Applied repeated corrections: tem sensor infravermelho",
+          "Applied slang corrections: tem sensor infravermelho",
+          "Applied electrical typos: tem sensor infravermelho",
+          "Applied greeting typos: tem sensor infravermelho",
+          "Applied joined words corrections: tem sensor infravermelho",
+          "Normalized units: tem sensor infravermelho"
+        ]
+      }
+    },
+    {
+      "id": 135,
+      "group": "Infravermelho",
+      "input": "tem sensor de presença?",
+      "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+      "intent": "product_search",
+      "confidence": 0.85,
+      "products": [
+        {
+          "name": "Refletor LED 200W IP66 c/ Sensor",
+          "category": "iluminacao",
+          "price": 149.9
+        },
+        {
+          "name": "Esquadro de aço temperado 12 polegadas 30 cm",
+          "category": "ferramentas",
+          "price": ""
+        }
+      ],
+      "actions": [
+        {
+          "label": "Fazer orçamento",
+          "type": "quote"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tem sensor de presença?",
+        "clean": "tem sensor de presenca",
+        "normalizedSteps": [
+          "Original: tem sensor de presença?",
+          "Normalized: tem sensor de presenca",
+          "Reduced letters: tem sensor de presenca",
+          "Applied repeated corrections: tem sensor de presenca",
+          "Applied slang corrections: tem sensor de presenca",
+          "Applied electrical typos: tem sensor de presenca",
+          "Applied greeting typos: tem sensor de presenca",
+          "Applied joined words corrections: tem sensor de presenca",
+          "Normalized units: tem sensor de presenca"
+        ]
+      }
+    },
+    {
+      "id": 160,
+      "group": "Técnica",
+      "input": "o que e luz quente?",
+      "responseText": "Luz quente, geralmente entre 2700K e 3000K, tem tom mais amarelado e aconchegante. É muito usada em quartos, salas e áreas de descanso.",
+      "intent": "technical_explanation",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "o que e luz quente?",
+        "clean": "o que e luz quente",
+        "normalizedSteps": [
+          "Original: o que e luz quente?",
+          "Normalized: o que e luz quente",
+          "Reduced letters: o que e luz quente",
+          "Applied repeated corrections: o que e luz quente",
+          "Applied slang corrections: o que e luz quente",
+          "Applied electrical typos: o que e luz quente",
+          "Applied greeting typos: o que e luz quente",
+          "Applied joined words corrections: o que e luz quente",
+          "Normalized units: o que e luz quente"
+        ]
+      }
+    },
+    {
+      "id": 161,
+      "group": "Técnica",
+      "input": "o que e luz fria?",
+      "responseText": "Luz fria, geralmente entre 6000K e 6500K, tem tom mais branco e passa sensação de maior claridade. É comum em cozinhas, banheiros, áreas de serviço e escritórios.",
+      "intent": "technical_explanation",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "o que e luz fria?",
+        "clean": "o que e luz fria",
+        "normalizedSteps": [
+          "Original: o que e luz fria?",
+          "Normalized: o que e luz fria",
+          "Reduced letters: o que e luz fria",
+          "Applied repeated corrections: o que e luz fria",
+          "Applied slang corrections: o que e luz fria",
+          "Applied electrical typos: o que e luz fria",
+          "Applied greeting typos: o que e luz fria",
+          "Applied joined words corrections: o que e luz fria",
+          "Normalized units: o que e luz fria"
+        ]
+      }
+    },
+    {
+      "id": 162,
+      "group": "Técnica",
+      "input": "qual diferenca entre luz quente e fria?",
+      "responseText": "Luz quente, geralmente entre 2700K e 3000K, tem tom mais amarelado e aconchegante. É muito usada em quartos, salas e áreas de descanso.",
+      "intent": "technical_explanation",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "qual diferenca entre luz quente e fria?",
+        "clean": "qual diferenca entre luz quente e fria",
+        "normalizedSteps": [
+          "Original: qual diferenca entre luz quente e fria?",
+          "Normalized: qual diferenca entre luz quente e fria",
+          "Reduced letters: qual diferenca entre luz quente e fria",
+          "Applied repeated corrections: qual diferenca entre luz quente e fria",
+          "Applied slang corrections: qual diferenca entre luz quente e fria",
+          "Applied electrical typos: qual diferenca entre luz quente e fria",
+          "Applied greeting typos: qual diferenca entre luz quente e fria",
+          "Applied joined words corrections: qual diferenca entre luz quente e fria",
+          "Normalized units: qual diferenca entre luz quente e fria"
+        ]
+      }
+    },
+    {
+      "id": 163,
+      "group": "Técnica",
+      "input": "o que e lumen?",
+      "responseText": "Entendi que você quer uma explicação sobre esse produto. Para te dar detalhes exatos, posso verificar no nosso sistema ou você pode confirmar com nossa equipe no WhatsApp!",
+      "intent": "technical_explanation",
+      "confidence": 0.8,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "o que e lumen?",
+        "clean": "o que e lumen",
+        "normalizedSteps": [
+          "Original: o que e lumen?",
+          "Normalized: o que e lumen",
+          "Reduced letters: o que e lumen",
+          "Applied repeated corrections: o que e lumen",
+          "Applied slang corrections: o que e lumen",
+          "Applied electrical typos: o que e lumen",
+          "Applied greeting typos: o que e lumen",
+          "Applied joined words corrections: o que e lumen",
+          "Normalized units: o que e lumen"
+        ]
+      }
+    },
+    {
+      "id": 164,
+      "group": "Técnica",
+      "input": "o que significa kelvin?",
+      "responseText": "Entendi que você quer uma explicação sobre esse produto. Para te dar detalhes exatos, posso verificar no nosso sistema ou você pode confirmar com nossa equipe no WhatsApp!",
+      "intent": "technical_explanation",
+      "confidence": 0.8,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "o que significa kelvin?",
+        "clean": "o que significa kelvin",
+        "normalizedSteps": [
+          "Original: o que significa kelvin?",
+          "Normalized: o que significa kelvin",
+          "Reduced letters: o que significa kelvin",
+          "Applied repeated corrections: o que significa kelvin",
+          "Applied slang corrections: o que significa kelvin",
+          "Applied electrical typos: o que significa kelvin",
+          "Applied greeting typos: o que significa kelvin",
+          "Applied joined words corrections: o que significa kelvin",
+          "Normalized units: o que significa kelvin"
+        ]
+      }
+    },
+    {
+      "id": 165,
+      "group": "Técnica",
+      "input": "essa lampada entrega quantos lumens?",
+      "responseText": "Lúmen indica a quantidade de luz que uma lâmpada entrega. Quanto maior o número de lúmens, mais claridade ela tende a gerar. Watts indicam consumo de energia, não exatamente claridade.",
+      "intent": "technical_explanation",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "essa lampada entrega quantos lumens?",
+        "clean": "essa lampada entrega quantos lumen",
+        "normalizedSteps": [
+          "Original: essa lampada entrega quantos lumens?",
+          "Normalized: essa lampada entrega quantos lumens",
+          "Reduced letters: essa lampada entrega quantos lumens",
+          "Applied repeated corrections: essa lampada entrega quantos lumens",
+          "Applied slang corrections: essa lampada entrega quantos lumens",
+          "Applied electrical typos: essa lampada entrega quantos lumen",
+          "Applied greeting typos: essa lampada entrega quantos lumen",
+          "Applied joined words corrections: essa lampada entrega quantos lumen",
+          "Normalized units: essa lampada entrega quantos lumen"
+        ]
+      }
+    },
+    {
+      "id": 190,
+      "group": "Segurança elétrica",
+      "input": "qual fio usar para chuveiro?",
+      "responseText": "Para recomendar o material correto (como fio ou disjuntor) para equipamentos potentes, preciso de alguns detalhes:\n1. Qual a potência do equipamento (em Watts)?\n2. Qual a voltagem (110V ou 220V)?\n3. Qual a distância aproximada até o quadro de energia?",
+      "intent": "safety_guided",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "qual fio usar para chuveiro?",
+        "clean": "qual fio usar para chuveiro",
+        "normalizedSteps": [
+          "Original: qual fio usar para chuveiro?",
+          "Normalized: qual fio usar para chuveiro",
+          "Reduced letters: qual fio usar para chuveiro",
+          "Applied repeated corrections: qual fio usar para chuveiro",
+          "Applied slang corrections: qual fio usar para chuveiro",
+          "Applied electrical typos: qual fio usar para chuveiro",
+          "Applied greeting typos: qual fio usar para chuveiro",
+          "Applied joined words corrections: qual fio usar para chuveiro",
+          "Normalized units: qual fio usar para chuveiro"
+        ]
+      }
+    },
+    {
+      "id": 191,
+      "group": "Segurança elétrica",
+      "input": "qual disjuntor para chuveiro?",
+      "responseText": "Para recomendar o material correto (como fio ou disjuntor) para equipamentos potentes, preciso de alguns detalhes:\n1. Qual a potência do equipamento (em Watts)?\n2. Qual a voltagem (110V ou 220V)?\n3. Qual a distância aproximada até o quadro de energia?",
+      "intent": "safety_guided",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "qual disjuntor para chuveiro?",
+        "clean": "qual disjuntor para chuveiro",
+        "normalizedSteps": [
+          "Original: qual disjuntor para chuveiro?",
+          "Normalized: qual disjuntor para chuveiro",
+          "Reduced letters: qual disjuntor para chuveiro",
+          "Applied repeated corrections: qual disjuntor para chuveiro",
+          "Applied slang corrections: qual disjuntor para chuveiro",
+          "Applied electrical typos: qual disjuntor para chuveiro",
+          "Applied greeting typos: qual disjuntor para chuveiro",
+          "Applied joined words corrections: qual disjuntor para chuveiro",
+          "Normalized units: qual disjuntor para chuveiro"
+        ]
+      }
+    },
+    {
+      "id": 192,
+      "group": "Segurança elétrica",
+      "input": "tomada esquentando",
+      "responseText": "⚠️ **CUIDADO!** Cheiro de queimado, fio derretendo ou disjuntor caindo são sinais de risco de incêndio ou curto-circuito grave. Desligue a energia do local imediatamente e chame um eletricista qualificado. Se precisar de peças de reposição urgentes, fale com um de nossos atendentes.",
+      "intent": "safety_urgent",
+      "confidence": 1,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "tomada esquentando",
+        "clean": "tomada esquentando",
+        "normalizedSteps": [
+          "Original: tomada esquentando",
+          "Normalized: tomada esquentando",
+          "Reduced letters: tomada esquentando",
+          "Applied repeated corrections: tomada esquentando",
+          "Applied slang corrections: tomada esquentando",
+          "Applied electrical typos: tomada esquentando",
+          "Applied greeting typos: tomada esquentando",
+          "Applied joined words corrections: tomada esquentando",
+          "Normalized units: tomada esquentando"
+        ]
+      }
+    },
+    {
+      "id": 193,
+      "group": "Segurança elétrica",
+      "input": "fio derretendo",
+      "responseText": "⚠️ **CUIDADO!** Cheiro de queimado, fio derretendo ou disjuntor caindo são sinais de risco de incêndio ou curto-circuito grave. Desligue a energia do local imediatamente e chame um eletricista qualificado. Se precisar de peças de reposição urgentes, fale com um de nossos atendentes.",
+      "intent": "safety_urgent",
+      "confidence": 1,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "fio derretendo",
+        "clean": "fio derretendo",
+        "normalizedSteps": [
+          "Original: fio derretendo",
+          "Normalized: fio derretendo",
+          "Reduced letters: fio derretendo",
+          "Applied repeated corrections: fio derretendo",
+          "Applied slang corrections: fio derretendo",
+          "Applied electrical typos: fio derretendo",
+          "Applied greeting typos: fio derretendo",
+          "Applied joined words corrections: fio derretendo",
+          "Normalized units: fio derretendo"
+        ]
+      }
+    },
+    {
+      "id": 194,
+      "group": "Segurança elétrica",
+      "input": "cheiro de queimado na tomada",
+      "responseText": "⚠️ **CUIDADO!** Cheiro de queimado, fio derretendo ou disjuntor caindo são sinais de risco de incêndio ou curto-circuito grave. Desligue a energia do local imediatamente e chame um eletricista qualificado. Se precisar de peças de reposição urgentes, fale com um de nossos atendentes.",
+      "intent": "safety_urgent",
+      "confidence": 1,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "cheiro de queimado na tomada",
+        "clean": "cheiro de queimado na tomada",
+        "normalizedSteps": [
+          "Original: cheiro de queimado na tomada",
+          "Normalized: cheiro de queimado na tomada",
+          "Reduced letters: cheiro de queimado na tomada",
+          "Applied repeated corrections: cheiro de queimado na tomada",
+          "Applied slang corrections: cheiro de queimado na tomada",
+          "Applied electrical typos: cheiro de queimado na tomada",
+          "Applied greeting typos: cheiro de queimado na tomada",
+          "Applied joined words corrections: cheiro de queimado na tomada",
+          "Normalized units: cheiro de queimado na tomada"
+        ]
+      }
+    },
+    {
+      "id": 195,
+      "group": "Segurança elétrica",
+      "input": "levei choque na tomada",
+      "responseText": "⚠️ **CUIDADO!** Cheiro de queimado, fio derretendo ou disjuntor caindo são sinais de risco de incêndio ou curto-circuito grave. Desligue a energia do local imediatamente e chame um eletricista qualificado. Se precisar de peças de reposição urgentes, fale com um de nossos atendentes.",
+      "intent": "safety_urgent",
+      "confidence": 1,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": true,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "levei choque na tomada",
+        "clean": "levei choque na tomada",
+        "normalizedSteps": [
+          "Original: levei choque na tomada",
+          "Normalized: levei choque na tomada",
+          "Reduced letters: levei choque na tomada",
+          "Applied repeated corrections: levei choque na tomada",
+          "Applied slang corrections: levei choque na tomada",
+          "Applied electrical typos: levei choque na tomada",
+          "Applied greeting typos: levei choque na tomada",
+          "Applied joined words corrections: levei choque na tomada",
+          "Normalized units: levei choque na tomada"
+        ]
+      }
+    },
+    {
+      "id": 220,
+      "group": "Loja",
+      "input": "onde fica a loja?",
+      "responseText": "A Haja Luz fica em Mata Roma – MA, na Av. José Ribamar Castro.",
+      "intent": "store_location",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [
+        {
+          "label": "Como chegar",
+          "type": "whatsapp"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "onde fica a loja?",
+        "clean": "onde fica a loja",
+        "normalizedSteps": [
+          "Original: onde fica a loja?",
+          "Normalized: onde fica a loja",
+          "Reduced letters: onde fica a loja",
+          "Applied repeated corrections: onde fica a loja",
+          "Applied slang corrections: onde fica a loja",
+          "Applied electrical typos: onde fica a loja",
+          "Applied greeting typos: onde fica a loja",
+          "Applied joined words corrections: onde fica a loja",
+          "Normalized units: onde fica a loja"
+        ]
+      }
+    },
+    {
+      "id": 221,
+      "group": "Loja",
+      "input": "qual endereco da Haja Luz?",
+      "responseText": "A Haja Luz fica em Mata Roma – MA, na Av. José Ribamar Castro.",
+      "intent": "store_location",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [
+        {
+          "label": "Como chegar",
+          "type": "whatsapp"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "qual endereco da Haja Luz?",
+        "clean": "qual endereco da haja luz",
+        "normalizedSteps": [
+          "Original: qual endereco da Haja Luz?",
+          "Normalized: qual endereco da haja luz",
+          "Reduced letters: qual endereco da haja luz",
+          "Applied repeated corrections: qual endereco da haja luz",
+          "Applied slang corrections: qual endereco da haja luz",
+          "Applied electrical typos: qual endereco da haja luz",
+          "Applied greeting typos: qual endereco da haja luz",
+          "Applied joined words corrections: qual endereco da haja luz",
+          "Normalized units: qual endereco da haja luz"
+        ]
+      }
+    },
+    {
+      "id": 222,
+      "group": "Loja",
+      "input": "que horas abre?",
+      "responseText": "De segunda a sexta, o atendimento é das 07h às 18h. Aos sábados, o atendimento é pela manhã. Como há variação de informação no site entre 12h e 13h, recomendo confirmar com a equipe pelo WhatsApp.",
+      "intent": "store_hours",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "que horas abre?",
+        "clean": "que horas abre",
+        "normalizedSteps": [
+          "Original: que horas abre?",
+          "Normalized: que horas abre",
+          "Reduced letters: que horas abre",
+          "Applied repeated corrections: que horas abre",
+          "Applied slang corrections: que horas abre",
+          "Applied electrical typos: que horas abre",
+          "Applied greeting typos: que horas abre",
+          "Applied joined words corrections: que horas abre",
+          "Normalized units: que horas abre"
+        ]
+      }
+    },
+    {
+      "id": 223,
+      "group": "Loja",
+      "input": "que horas sao?",
+      "responseText": "Agora são 11:06",
+      "intent": "real_time",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "que horas sao?",
+        "clean": "que horas sao",
+        "normalizedSteps": [
+          "Original: que horas sao?",
+          "Normalized: que horas sao",
+          "Reduced letters: que horas sao",
+          "Applied repeated corrections: que horas sao",
+          "Applied slang corrections: que horas sao",
+          "Applied electrical typos: que horas sao",
+          "Applied greeting typos: que horas sao",
+          "Applied joined words corrections: que horas sao",
+          "Normalized units: que horas sao"
+        ]
+      }
+    },
+    {
+      "id": 224,
+      "group": "Loja",
+      "input": "aceita pix?",
+      "responseText": "Oferecemos diversas opções de pagamento:\n\n💵 **PIX e Dinheiro**\n💳 **Cartões de Crédito e Débito**\n🏢 **Faturamento Corporativo**",
+      "intent": "payment",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "aceita pix?",
+        "clean": "aceita pix",
+        "normalizedSteps": [
+          "Original: aceita pix?",
+          "Normalized: aceita pix",
+          "Reduced letters: aceita pix",
+          "Applied repeated corrections: aceita pix",
+          "Applied slang corrections: aceita pix",
+          "Applied electrical typos: aceita pix",
+          "Applied greeting typos: aceita pix",
+          "Applied joined words corrections: aceita pix",
+          "Normalized units: aceita pix"
+        ]
+      }
+    },
+    {
+      "id": 225,
+      "group": "Loja",
+      "input": "faz entrega?",
+      "responseText": "Sim, nós entregamos! Fazemos entregas em **Mata Roma** e em todas as regiões vizinhas.\n📦 Também pode optar por retirar os produtos em nossa loja física.",
+      "intent": "delivery",
+      "confidence": 0.9,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "faz entrega?",
+        "clean": "faz entrega",
+        "normalizedSteps": [
+          "Original: faz entrega?",
+          "Normalized: faz entrega",
+          "Reduced letters: faz entrega",
+          "Applied repeated corrections: faz entrega",
+          "Applied slang corrections: faz entrega",
+          "Applied electrical typos: faz entrega",
+          "Applied greeting typos: faz entrega",
+          "Applied joined words corrections: faz entrega",
+          "Normalized units: faz entrega"
+        ]
+      }
+    },
+    {
+      "id": 226,
+      "group": "Loja",
+      "input": "como funciona o carrinho?",
+      "responseText": "Você pode adicionar os produtos ao carrinho e usar a opção de solicitar orçamento. Como os preços podem estar sob consulta, a equipe da Haja Luz confirma valores, disponibilidade e condições pelo atendimento.",
+      "intent": "cart_info",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "como funciona o carrinho?",
+        "clean": "como funciona o carrinho",
+        "normalizedSteps": [
+          "Original: como funciona o carrinho?",
+          "Normalized: como funciona o carrinho",
+          "Reduced letters: como funciona o carrinho",
+          "Applied repeated corrections: como funciona o carrinho",
+          "Applied slang corrections: como funciona o carrinho",
+          "Applied electrical typos: como funciona o carrinho",
+          "Applied greeting typos: como funciona o carrinho",
+          "Applied joined words corrections: como funciona o carrinho",
+          "Normalized units: como funciona o carrinho"
+        ]
+      }
+    },
+    {
+      "id": 227,
+      "group": "Loja",
+      "input": "os produtos sao originais?",
+      "responseText": "Os produtos da Haja Luz são 100% originais, com nota fiscal e garantia conforme o fabricante. Para qualquer item específico, a equipe pode confirmar os detalhes no atendimento.",
+      "intent": "warranty_info",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "os produtos sao originais?",
+        "clean": "os produtos sao originais",
+        "normalizedSteps": [
+          "Original: os produtos sao originais?",
+          "Normalized: os produtos sao originais",
+          "Reduced letters: os produtos sao originais",
+          "Applied repeated corrections: os produtos sao originais",
+          "Applied slang corrections: os produtos sao originais",
+          "Applied electrical typos: os produtos sao originais",
+          "Applied greeting typos: os produtos sao originais",
+          "Applied joined words corrections: os produtos sao originais",
+          "Normalized units: os produtos sao originais"
+        ]
+      }
+    },
+    {
+      "id": 250,
+      "group": "Nivano",
+      "input": "quem fez o site?",
+      "responseText": "O site, a IA e a experiência digital da Haja Luz foram desenvolvidos pela Nivano 🚀\n\nA Nivano cria sites, sistemas, automações e assistentes de inteligência artificial para empresas que querem ter uma presença digital mais profissional, moderna e eficiente.",
+      "intent": "developer_credit",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "quem fez o site?",
+        "clean": "quem fez o site",
+        "normalizedSteps": [
+          "Original: quem fez o site?",
+          "Normalized: quem fez o site",
+          "Reduced letters: quem fez o site",
+          "Applied repeated corrections: quem fez o site",
+          "Applied slang corrections: quem fez o site",
+          "Applied electrical typos: quem fez o site",
+          "Applied greeting typos: quem fez o site",
+          "Applied joined words corrections: quem fez o site",
+          "Normalized units: quem fez o site"
+        ]
+      }
+    },
+    {
+      "id": 251,
+      "group": "Nivano",
+      "input": "quem criou essa ia?",
+      "responseText": "O site, a IA e a experiência digital da Haja Luz foram desenvolvidos pela Nivano 🚀\n\nA Nivano cria sites, sistemas, automações e assistentes de inteligência artificial para empresas que querem ter uma presença digital mais profissional, moderna e eficiente.",
+      "intent": "developer_credit",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "quem criou essa ia?",
+        "clean": "quem criou essa ia",
+        "normalizedSteps": [
+          "Original: quem criou essa ia?",
+          "Normalized: quem criou essa ia",
+          "Reduced letters: quem criou essa ia",
+          "Applied repeated corrections: quem criou essa ia",
+          "Applied slang corrections: quem criou essa ia",
+          "Applied electrical typos: quem criou essa ia",
+          "Applied greeting typos: quem criou essa ia",
+          "Applied joined words corrections: quem criou essa ia",
+          "Normalized units: quem criou essa ia"
+        ]
+      }
+    },
+    {
+      "id": 252,
+      "group": "Nivano",
+      "input": "quem desenvolveu esse chatbot?",
+      "responseText": "O site, a IA e a experiência digital da Haja Luz foram desenvolvidos pela Nivano 🚀\n\nA Nivano cria sites, sistemas, automações e assistentes de inteligência artificial para empresas que querem ter uma presença digital mais profissional, moderna e eficiente.",
+      "intent": "developer_credit",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "quem desenvolveu esse chatbot?",
+        "clean": "quem desenvolveu esse chatbot",
+        "normalizedSteps": [
+          "Original: quem desenvolveu esse chatbot?",
+          "Normalized: quem desenvolveu esse chatbot",
+          "Reduced letters: quem desenvolveu esse chatbot",
+          "Applied repeated corrections: quem desenvolveu esse chatbot",
+          "Applied slang corrections: quem desenvolveu esse chatbot",
+          "Applied electrical typos: quem desenvolveu esse chatbot",
+          "Applied greeting typos: quem desenvolveu esse chatbot",
+          "Applied joined words corrections: quem desenvolveu esse chatbot",
+          "Normalized units: quem desenvolveu esse chatbot"
+        ]
+      }
+    },
+    {
+      "id": 280,
+      "group": "Correção do usuário",
+      "input": "isso nao e lampada",
+      "responseText": "Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário.",
+      "intent": "correction_wrong_result",
+      "confidence": 0.95,
+      "products": [
+        {
+          "name": "Lâmpada LED Bulbo 9W Branca Fria",
+          "category": "iluminacao",
+          "price": 5.99
+        },
+        {
+          "name": "Lâmpada LED Bulbo 12W Branca Fria",
+          "category": "iluminacao",
+          "price": 7.49
+        },
+        {
+          "name": "Lâmpada LED Bulbo 15W Branca Quente",
+          "category": "iluminacao",
+          "price": 9.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais lampada",
+          "type": "product_search"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "isso nao e lampada",
+        "clean": "isso nao e lampada",
+        "normalizedSteps": [
+          "Original: isso nao e lampada",
+          "Normalized: isso nao e lampada",
+          "Reduced letters: isso nao e lampada",
+          "Applied repeated corrections: isso nao e lampada",
+          "Applied slang corrections: isso nao e lampada",
+          "Applied electrical typos: isso nao e lampada",
+          "Applied greeting typos: isso nao e lampada",
+          "Applied joined words corrections: isso nao e lampada",
+          "Normalized units: isso nao e lampada"
+        ]
+      }
+    },
+    {
+      "id": 281,
+      "group": "Correção do usuário",
+      "input": "isso nao e fio",
+      "responseText": "Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário.",
+      "intent": "correction_wrong_result",
+      "confidence": 0.95,
+      "products": [
+        {
+          "name": "Fio Sólido 2,5mm² 100m",
+          "category": "fios-cabos",
+          "price": 139.9
+        },
+        {
+          "name": "Cabo Flexível 2,5mm² 100m Azul",
+          "category": "fios-cabos",
+          "price": 149.9
+        },
+        {
+          "name": "Cabo Flexível 4,0mm² 100m Preto",
+          "category": "fios-cabos",
+          "price": 239.9
+        }
+      ],
+      "actions": [
+        {
+          "label": "Ver mais fio",
+          "type": "product_search"
+        },
+        {
+          "label": "Falar com atendente",
+          "type": "whatsapp"
+        }
+      ],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "isso nao e fio",
+        "clean": "isso nao e fio",
+        "normalizedSteps": [
+          "Original: isso nao e fio",
+          "Normalized: isso nao e fio",
+          "Reduced letters: isso nao e fio",
+          "Applied repeated corrections: isso nao e fio",
+          "Applied slang corrections: isso nao e fio",
+          "Applied electrical typos: isso nao e fio",
+          "Applied greeting typos: isso nao e fio",
+          "Applied joined words corrections: isso nao e fio",
+          "Normalized units: isso nao e fio"
+        ]
+      }
+    },
+    {
+      "id": 282,
+      "group": "Correção do usuário",
+      "input": "nao e isso",
+      "responseText": "Ainda falando do mesmo assunto? Se puder me dar mais detalhes do que precisa, posso achar os produtos ideais!",
+      "intent": "context_continuation",
+      "confidence": 0.7,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "nao e isso",
+        "clean": "nao e isso",
+        "normalizedSteps": [
+          "Original: nao e isso",
+          "Normalized: nao e isso",
+          "Reduced letters: nao e isso",
+          "Applied repeated corrections: nao e isso",
+          "Applied slang corrections: nao e isso",
+          "Applied electrical typos: nao e isso",
+          "Applied greeting typos: nao e isso",
+          "Applied joined words corrections: nao e isso",
+          "Normalized units: nao e isso"
+        ]
+      }
+    },
+    {
+      "id": 300,
+      "group": "Off-topic",
+      "input": "me ensina a investir em bitcoin hoje",
+      "responseText": "Eu sou a IA da Haja Luz e consigo ajudar principalmente com materiais elétricos, iluminação, ferramentas, orçamento ou informações da loja.",
+      "intent": "off_topic",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "me ensina a investir em bitcoin hoje",
+        "clean": "me ensina a investir em bitcoin hoje",
+        "normalizedSteps": [
+          "Original: me ensina a investir em bitcoin hoje",
+          "Normalized: me ensina a investir em bitcoin hoje",
+          "Reduced letters: me ensina a investir em bitcoin hoje",
+          "Applied repeated corrections: me ensina a investir em bitcoin hoje",
+          "Applied slang corrections: me ensina a investir em bitcoin hoje",
+          "Applied electrical typos: me ensina a investir em bitcoin hoje",
+          "Applied greeting typos: me ensina a investir em bitcoin hoje",
+          "Applied joined words corrections: me ensina a investir em bitcoin hoje",
+          "Normalized units: me ensina a investir em bitcoin hoje"
+        ]
+      }
+    },
+    {
+      "id": 301,
+      "group": "Off-topic",
+      "input": "qual o melhor celular para comprar",
+      "responseText": "Eu sou a IA da Haja Luz e consigo ajudar principalmente com materiais elétricos, iluminação, ferramentas, orçamento ou informações da loja.",
+      "intent": "off_topic",
+      "confidence": 0.95,
+      "products": [],
+      "actions": [],
+      "whatsappBtn": false,
+      "suggestedQuestions": [],
+      "debug": {
+        "original": "qual o melhor celular para comprar",
+        "clean": "qual o melhor celular para comprar",
+        "normalizedSteps": [
+          "Original: qual o melhor celular para comprar",
+          "Normalized: qual o melhor celular para comprar",
+          "Reduced letters: qual o melhor celular para comprar",
+          "Applied repeated corrections: qual o melhor celular para comprar",
+          "Applied slang corrections: qual o melhor celular para comprar",
+          "Applied electrical typos: qual o melhor celular para comprar",
+          "Applied greeting typos: qual o melhor celular para comprar",
+          "Applied joined words corrections: qual o melhor celular para comprar",
+          "Normalized units: qual o melhor celular para comprar"
+        ]
+      }
+    }
+  ],
+  "conversationResults": [
+    {
+      "id": 1,
+      "group": "Contexto lâmpadas",
+      "messages": [
+        "me fala sobre as lampadas disponiveis",
+        "tem mais lampadas melhores?",
+        "isso nao e lampada"
+      ],
+      "turns": [
+        {
+          "id": 11,
+          "group": "Contexto lâmpadas",
+          "input": "me fala sobre as lampadas disponiveis",
+          "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+          "intent": "product_search",
+          "confidence": 0.85,
+          "products": [
+            {
+              "name": "Lâmpada LED Bulbo 9W Branca Fria",
+              "category": "iluminacao",
+              "price": 5.99
+            },
+            {
+              "name": "Lâmpada LED Bulbo 12W Branca Fria",
+              "category": "iluminacao",
+              "price": 7.49
+            },
+            {
+              "name": "Lâmpada LED Bulbo 15W Branca Quente",
+              "category": "iluminacao",
+              "price": 9.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Ver mais opções",
+              "type": "show_more"
+            },
+            {
+              "label": "Fazer orçamento",
+              "type": "quote"
+            },
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            }
+          ],
+          "whatsappBtn": true,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "me fala sobre as lampadas disponiveis",
+            "clean": "me fala sobre as lampadas disponiveis",
+            "normalizedSteps": [
+              "Original: me fala sobre as lampadas disponiveis",
+              "Normalized: me fala sobre as lampadas disponiveis",
+              "Reduced letters: me fala sobre as lampadas disponiveis",
+              "Applied repeated corrections: me fala sobre as lampadas disponiveis",
+              "Applied slang corrections: me fala sobre as lampadas disponiveis",
+              "Applied electrical typos: me fala sobre as lampadas disponiveis",
+              "Applied greeting typos: me fala sobre as lampadas disponiveis",
+              "Applied joined words corrections: me fala sobre as lampadas disponiveis",
+              "Normalized units: me fala sobre as lampadas disponiveis"
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "group": "Contexto lâmpadas",
+          "input": "tem mais lampadas melhores?",
+          "responseText": "Claro! Vou continuar mostrando opções dessa categoria. Aqui vão mais algumas:",
+          "intent": "show_more_results",
+          "confidence": 0.95,
+          "products": [
+            {
+              "name": "Lâmpada LED Tubular T8 18W",
+              "category": "iluminacao",
+              "price": 18.5
+            },
+            {
+              "name": "Plafon LED de Sobrepor Redondo 24W",
+              "category": "iluminacao",
+              "price": 34.9
+            },
+            {
+              "name": "Painel LED Slim 60x60 45W",
+              "category": "iluminacao",
+              "price": 89.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Ver mais opções",
+              "type": "show_more"
+            },
+            {
+              "label": "Fazer orçamento",
+              "type": "quote"
+            },
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            }
+          ],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "tem mais lampadas melhores?",
+            "clean": "tem mais lampadas melhores",
+            "normalizedSteps": [
+              "Original: tem mais lampadas melhores?",
+              "Normalized: tem mais lampadas melhores",
+              "Reduced letters: tem mais lampadas melhores",
+              "Applied repeated corrections: tem mais lampadas melhores",
+              "Applied slang corrections: tem mais lampadas melhores",
+              "Applied electrical typos: tem mais lampadas melhores",
+              "Applied greeting typos: tem mais lampadas melhores",
+              "Applied joined words corrections: tem mais lampadas melhores",
+              "Normalized units: tem mais lampadas melhores"
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "group": "Contexto lâmpadas",
+          "input": "isso nao e lampada",
+          "responseText": "Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário.",
+          "intent": "correction_wrong_result",
+          "confidence": 0.95,
+          "products": [
+            {
+              "name": "Lâmpada LED Bulbo 9W Branca Fria",
+              "category": "iluminacao",
+              "price": 5.99
+            },
+            {
+              "name": "Lâmpada LED Bulbo 12W Branca Fria",
+              "category": "iluminacao",
+              "price": 7.49
+            },
+            {
+              "name": "Lâmpada LED Bulbo 15W Branca Quente",
+              "category": "iluminacao",
+              "price": 9.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Ver mais lampada",
+              "type": "product_search"
+            },
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            }
+          ],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "isso nao e lampada",
+            "clean": "isso nao e lampada",
+            "normalizedSteps": [
+              "Original: isso nao e lampada",
+              "Normalized: isso nao e lampada",
+              "Reduced letters: isso nao e lampada",
+              "Applied repeated corrections: isso nao e lampada",
+              "Applied slang corrections: isso nao e lampada",
+              "Applied electrical typos: isso nao e lampada",
+              "Applied greeting typos: isso nao e lampada",
+              "Applied joined words corrections: isso nao e lampada",
+              "Normalized units: isso nao e lampada"
+            ]
+          }
+        }
+      ],
+      "finalIntent": "correction_wrong_result",
+      "finalResponseText": "Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário."
+    },
+    {
+      "id": 2,
+      "group": "Contexto saudação/cortesia",
+      "messages": [
+        "me fala sobre as lampadas disponiveis",
+        "como esta?",
+        "tudo bem?",
+        "tem mais lampadas?"
+      ],
+      "turns": [
+        {
+          "id": 21,
+          "group": "Contexto saudação/cortesia",
+          "input": "me fala sobre as lampadas disponiveis",
+          "responseText": "Aqui estão algumas opções relacionadas ao que você buscou:",
+          "intent": "product_search",
+          "confidence": 0.85,
+          "products": [
+            {
+              "name": "Lâmpada LED Bulbo 9W Branca Fria",
+              "category": "iluminacao",
+              "price": 5.99
+            },
+            {
+              "name": "Lâmpada LED Bulbo 12W Branca Fria",
+              "category": "iluminacao",
+              "price": 7.49
+            },
+            {
+              "name": "Lâmpada LED Bulbo 15W Branca Quente",
+              "category": "iluminacao",
+              "price": 9.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Ver mais opções",
+              "type": "show_more"
+            },
+            {
+              "label": "Fazer orçamento",
+              "type": "quote"
+            },
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            }
+          ],
+          "whatsappBtn": true,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "me fala sobre as lampadas disponiveis",
+            "clean": "me fala sobre as lampadas disponiveis",
+            "normalizedSteps": [
+              "Original: me fala sobre as lampadas disponiveis",
+              "Normalized: me fala sobre as lampadas disponiveis",
+              "Reduced letters: me fala sobre as lampadas disponiveis",
+              "Applied repeated corrections: me fala sobre as lampadas disponiveis",
+              "Applied slang corrections: me fala sobre as lampadas disponiveis",
+              "Applied electrical typos: me fala sobre as lampadas disponiveis",
+              "Applied greeting typos: me fala sobre as lampadas disponiveis",
+              "Applied joined words corrections: me fala sobre as lampadas disponiveis",
+              "Normalized units: me fala sobre as lampadas disponiveis"
+            ]
+          }
+        },
+        {
+          "id": 22,
+          "group": "Contexto saudação/cortesia",
+          "input": "como esta?",
+          "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+          "intent": "courtesy",
+          "confidence": 0.95,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "como esta?",
+            "clean": "como esta",
+            "normalizedSteps": [
+              "Original: como esta?",
+              "Normalized: como esta",
+              "Reduced letters: como esta",
+              "Applied repeated corrections: como esta",
+              "Applied slang corrections: como esta",
+              "Applied electrical typos: como esta",
+              "Applied greeting typos: como esta",
+              "Applied joined words corrections: como esta",
+              "Normalized units: como esta"
+            ]
+          }
+        },
+        {
+          "id": 23,
+          "group": "Contexto saudação/cortesia",
+          "input": "tudo bem?",
+          "responseText": "Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
+          "intent": "courtesy",
+          "confidence": 0.95,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "tudo bem?",
+            "clean": "tudo bem",
+            "normalizedSteps": [
+              "Original: tudo bem?",
+              "Normalized: tudo bem",
+              "Reduced letters: tudo bem",
+              "Applied repeated corrections: tudo bem",
+              "Applied slang corrections: tudo bem",
+              "Applied electrical typos: tudo bem",
+              "Applied greeting typos: tudo bem",
+              "Applied joined words corrections: tudo bem",
+              "Normalized units: tudo bem"
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "group": "Contexto saudação/cortesia",
+          "input": "tem mais lampadas?",
+          "responseText": "Claro! Vou continuar mostrando opções dessa categoria. Aqui vão mais algumas:",
+          "intent": "show_more_results",
+          "confidence": 0.95,
+          "products": [
+            {
+              "name": "Lâmpada LED Tubular T8 18W",
+              "category": "iluminacao",
+              "price": 18.5
+            },
+            {
+              "name": "Plafon LED de Sobrepor Redondo 24W",
+              "category": "iluminacao",
+              "price": 34.9
+            },
+            {
+              "name": "Painel LED Slim 60x60 45W",
+              "category": "iluminacao",
+              "price": 89.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Ver mais opções",
+              "type": "show_more"
+            },
+            {
+              "label": "Fazer orçamento",
+              "type": "quote"
+            },
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            }
+          ],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "tem mais lampadas?",
+            "clean": "tem mais lampadas",
+            "normalizedSteps": [
+              "Original: tem mais lampadas?",
+              "Normalized: tem mais lampadas",
+              "Reduced letters: tem mais lampadas",
+              "Applied repeated corrections: tem mais lampadas",
+              "Applied slang corrections: tem mais lampadas",
+              "Applied electrical typos: tem mais lampadas",
+              "Applied greeting typos: tem mais lampadas",
+              "Applied joined words corrections: tem mais lampadas",
+              "Normalized units: tem mais lampadas"
+            ]
+          }
+        }
+      ],
+      "finalIntent": "show_more_results",
+      "finalResponseText": "Claro! Vou continuar mostrando opções dessa categoria. Aqui vão mais algumas:"
+    },
+    {
+      "id": 3,
+      "group": "Contexto segurança elétrica",
+      "messages": [
+        "preciso de fio para chuveiro",
+        "5500w",
+        "220v"
+      ],
+      "turns": [
+        {
+          "id": 31,
+          "group": "Contexto segurança elétrica",
+          "input": "preciso de fio para chuveiro",
+          "responseText": "Para recomendar o material correto (como fio ou disjuntor) para equipamentos potentes, preciso de alguns detalhes:\n1. Qual a potência do equipamento (em Watts)?\n2. Qual a voltagem (110V ou 220V)?\n3. Qual a distância aproximada até o quadro de energia?",
+          "intent": "safety_guided",
+          "confidence": 0.95,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "preciso de fio para chuveiro",
+            "clean": "preciso de fio para chuveiro",
+            "normalizedSteps": [
+              "Original: preciso de fio para chuveiro",
+              "Normalized: preciso de fio para chuveiro",
+              "Reduced letters: preciso de fio para chuveiro",
+              "Applied repeated corrections: preciso de fio para chuveiro",
+              "Applied slang corrections: preciso de fio para chuveiro",
+              "Applied electrical typos: preciso de fio para chuveiro",
+              "Applied greeting typos: preciso de fio para chuveiro",
+              "Applied joined words corrections: preciso de fio para chuveiro",
+              "Normalized units: preciso de fio para chuveiro"
+            ]
+          }
+        },
+        {
+          "id": 32,
+          "group": "Contexto segurança elétrica",
+          "input": "5500w",
+          "responseText": "Esse tipo de instalação envolve segurança elétrica. Para orientar melhor, preciso saber a potência do equipamento, a tensão da rede e a distância até o quadro. Mesmo assim, recomendo confirmar com um eletricista, principalmente em chuveiros, ar-condicionado, tomadas de alta potência e disjuntores.",
+          "intent": "electrical_safety",
+          "confidence": 0.95,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "5500w",
+            "clean": "5500 watts",
+            "normalizedSteps": [
+              "Original: 5500w",
+              "Normalized: 5500w",
+              "Reduced letters: 5500w",
+              "Applied repeated corrections: 5500w",
+              "Applied slang corrections: 5500w",
+              "Applied electrical typos: 5500w",
+              "Applied greeting typos: 5500w",
+              "Applied joined words corrections: 5500w",
+              "Normalized units: 5500 watts"
+            ]
+          }
+        },
+        {
+          "id": 33,
+          "group": "Contexto segurança elétrica",
+          "input": "220v",
+          "responseText": "Para recomendar o material correto (como fio ou disjuntor) para equipamentos potentes, preciso de alguns detalhes:\n1. Qual a potência do equipamento (em Watts)?\n2. Qual a voltagem (110V ou 220V)?\n3. Qual a distância aproximada até o quadro de energia?",
+          "intent": "safety_guided",
+          "confidence": 0.95,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "220v",
+            "clean": "220 volt",
+            "normalizedSteps": [
+              "Original: 220v",
+              "Normalized: 220v",
+              "Reduced letters: 220v",
+              "Applied repeated corrections: 220v",
+              "Applied slang corrections: 220v",
+              "Applied electrical typos: 220v",
+              "Applied greeting typos: 220v",
+              "Applied joined words corrections: 220v",
+              "Normalized units: 220 volt"
+            ]
+          }
+        }
+      ],
+      "finalIntent": "safety_guided",
+      "finalResponseText": "Para recomendar o material correto (como fio ou disjuntor) para equipamentos potentes, preciso de alguns detalhes:\n1. Qual a potência do equipamento (em Watts)?\n2. Qual a voltagem (110V ou 220V)?\n3. Qual a distância aproximada até o quadro de energia?"
+    },
+    {
+      "id": 4,
+      "group": "Contexto recomendação",
+      "messages": [
+        "quero uma lampada para quarto",
+        "qual melhor?"
+      ],
+      "turns": [
+        {
+          "id": 41,
+          "group": "Contexto recomendação",
+          "input": "quero uma lampada para quarto",
+          "responseText": "Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:",
+          "intent": "product_search",
+          "confidence": 0.85,
+          "products": [
+            {
+              "name": "Lâmpada LED Bulbo 9W Branca Fria",
+              "category": "iluminacao",
+              "price": 5.99
+            },
+            {
+              "name": "Lâmpada LED Bulbo 12W Branca Fria",
+              "category": "iluminacao",
+              "price": 7.49
+            },
+            {
+              "name": "Lâmpada LED Bulbo 15W Branca Quente",
+              "category": "iluminacao",
+              "price": 9.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Ver mais opções",
+              "type": "show_more"
+            },
+            {
+              "label": "Ver mais lâmpadas",
+              "type": "category"
+            },
+            {
+              "label": "Fazer orçamento",
+              "type": "quote"
+            },
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            }
+          ],
+          "whatsappBtn": true,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "quero uma lampada para quarto",
+            "clean": "quero uma lampada para quarto",
+            "normalizedSteps": [
+              "Original: quero uma lampada para quarto",
+              "Normalized: quero uma lampada para quarto",
+              "Reduced letters: quero uma lampada para quarto",
+              "Applied repeated corrections: quero uma lampada para quarto",
+              "Applied slang corrections: quero uma lampada para quarto",
+              "Applied electrical typos: quero uma lampada para quarto",
+              "Applied greeting typos: quero uma lampada para quarto",
+              "Applied joined words corrections: quero uma lampada para quarto",
+              "Normalized units: quero uma lampada para quarto"
+            ]
+          }
+        },
+        {
+          "id": 42,
+          "group": "Contexto recomendação",
+          "input": "qual melhor?",
+          "responseText": "Qual ambiente você quer iluminar?",
+          "intent": "product_recommendation",
+          "confidence": 0.8,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "qual melhor?",
+            "clean": "qual melhor",
+            "normalizedSteps": [
+              "Original: qual melhor?",
+              "Normalized: qual melhor",
+              "Reduced letters: qual melhor",
+              "Applied repeated corrections: qual melhor",
+              "Applied slang corrections: qual melhor",
+              "Applied electrical typos: qual melhor",
+              "Applied greeting typos: qual melhor",
+              "Applied joined words corrections: qual melhor",
+              "Normalized units: qual melhor"
+            ]
+          }
+        }
+      ],
+      "finalIntent": "product_recommendation",
+      "finalResponseText": "Qual ambiente você quer iluminar?"
+    },
+    {
+      "id": 5,
+      "group": "Múltiplas entidades",
+      "messages": [
+        "tem lampada ou luzinfravermelha?",
+        "tem sensor infravermelho?"
+      ],
+      "turns": [
+        {
+          "id": 51,
+          "group": "Múltiplas entidades",
+          "input": "tem lampada ou luzinfravermelha?",
+          "responseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.",
+          "intent": "product_or_technical_infrared",
+          "confidence": 0.95,
+          "products": [
+            {
+              "name": "Lâmpada LED Bulbo 9W Branca Fria",
+              "category": "iluminacao",
+              "price": 5.99
+            },
+            {
+              "name": "Lâmpada LED Bulbo 12W Branca Fria",
+              "category": "iluminacao",
+              "price": 7.49
+            },
+            {
+              "name": "Lâmpada LED Bulbo 15W Branca Quente",
+              "category": "iluminacao",
+              "price": 9.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            },
+            {
+              "label": "Ver Instalação e Acessórios",
+              "type": "category"
+            }
+          ],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "tem lampada ou luzinfravermelha?",
+            "clean": "tem lampada ou luz infravermelha",
+            "normalizedSteps": [
+              "Original: tem lampada ou luzinfravermelha?",
+              "Normalized: tem lampada ou luzinfravermelha",
+              "Reduced letters: tem lampada ou luzinfravermelha",
+              "Applied repeated corrections: tem lampada ou luzinfravermelha",
+              "Applied slang corrections: tem lampada ou luzinfravermelha",
+              "Applied electrical typos: tem lampada ou luzinfravermelha",
+              "Applied greeting typos: tem lampada ou luzinfravermelha",
+              "Applied joined words corrections: tem lampada ou luz infravermelha",
+              "Normalized units: tem lampada ou luz infravermelha"
+            ]
+          }
+        },
+        {
+          "id": 52,
+          "group": "Múltiplas entidades",
+          "input": "tem sensor infravermelho?",
+          "responseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.",
+          "intent": "product_or_technical_infrared",
+          "confidence": 0.95,
+          "products": [
+            {
+              "name": "Refletor LED 200W IP66 c/ Sensor",
+              "category": "iluminacao",
+              "price": 149.9
+            }
+          ],
+          "actions": [
+            {
+              "label": "Falar com atendente",
+              "type": "whatsapp"
+            },
+            {
+              "label": "Ver Instalação e Acessórios",
+              "type": "category"
+            }
+          ],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "tem sensor infravermelho?",
+            "clean": "tem sensor infravermelho",
+            "normalizedSteps": [
+              "Original: tem sensor infravermelho?",
+              "Normalized: tem sensor infravermelho",
+              "Reduced letters: tem sensor infravermelho",
+              "Applied repeated corrections: tem sensor infravermelho",
+              "Applied slang corrections: tem sensor infravermelho",
+              "Applied electrical typos: tem sensor infravermelho",
+              "Applied greeting typos: tem sensor infravermelho",
+              "Applied joined words corrections: tem sensor infravermelho",
+              "Normalized units: tem sensor infravermelho"
+            ]
+          }
+        }
+      ],
+      "finalIntent": "product_or_technical_infrared",
+      "finalResponseText": "Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade."
+    },
+    {
+      "id": 6,
+      "group": "Orçamento",
+      "messages": [
+        "quero fazer um orçamento",
+        "2 lampadas e 10 metros de fio"
+      ],
+      "turns": [
+        {
+          "id": 61,
+          "group": "Orçamento",
+          "input": "quero fazer um orçamento",
+          "responseText": "Claro! Posso te ajudar a montar um orçamento. Me envie a lista de materiais com quantidades, por exemplo: 2 lâmpadas, 10 metros de fio, 3 tomadas.",
+          "intent": "quote_start",
+          "confidence": 0.95,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "quero fazer um orçamento",
+            "clean": "quero fazer um orcamento",
+            "normalizedSteps": [
+              "Original: quero fazer um orçamento",
+              "Normalized: quero fazer um orcamento",
+              "Reduced letters: quero fazer um orcamento",
+              "Applied repeated corrections: quero fazer um orcamento",
+              "Applied slang corrections: quero fazer um orcamento",
+              "Applied electrical typos: quero fazer um orcamento",
+              "Applied greeting typos: quero fazer um orcamento",
+              "Applied joined words corrections: quero fazer um orcamento",
+              "Normalized units: quero fazer um orcamento"
+            ]
+          }
+        },
+        {
+          "id": 62,
+          "group": "Orçamento",
+          "input": "2 lampadas e 10 metros de fio",
+          "responseText": "Adicionado ao orçamento. Mais alguma coisa?",
+          "intent": "quote_item",
+          "confidence": 1,
+          "products": [],
+          "actions": [],
+          "whatsappBtn": false,
+          "suggestedQuestions": [],
+          "debug": {
+            "original": "2 lampadas e 10 metros de fio",
+            "clean": "2 lampadas e 10 metros de fio",
+            "normalizedSteps": [
+              "Original: 2 lampadas e 10 metros de fio",
+              "Normalized: 2 lampadas e 10 metros de fio",
+              "Reduced letters: 2 lampadas e 10 metros de fio",
+              "Applied repeated corrections: 2 lampadas e 10 metros de fio",
+              "Applied slang corrections: 2 lampadas e 10 metros de fio",
+              "Applied electrical typos: 2 lampadas e 10 metros de fio",
+              "Applied greeting typos: 2 lampadas e 10 metros de fio",
+              "Applied joined words corrections: 2 lampadas e 10 metros de fio",
+              "Normalized units: 2 lampadas e 10 metros de fio"
+            ]
+          }
+        }
+      ],
+      "finalIntent": "quote_item",
+      "finalResponseText": "Adicionado ao orçamento. Mais alguma coisa?"
+    }
+  ]
+}
