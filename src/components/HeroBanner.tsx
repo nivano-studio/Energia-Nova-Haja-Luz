@@ -10,12 +10,15 @@ const bannerImages = [
   { desktop: "/images/categorias/ferragens-fixacao.webp", mobile: "/images/categorias/ferragens-fixacao.webp", link: "#ferragens-fixacao" },
   { desktop: "/images/categorias/instalacao-acessorios.webp", mobile: "/images/categorias/instalacao-acessorios.webp", link: "#instalacao-acessorios" },
   { desktop: "/images/categorias/iluminacao.webp", mobile: "/images/categorias/iluminacao.webp", link: "#iluminacao" },
-  { desktop: "/images/categorias/hidraulicos.webp", mobile: "/images/categorias/hidraulicos.webp", link: "#hidraulicos" }
+  { desktop: "/images/categorias/hidraulicos.webp", mobile: "/images/categorias/hidraulicos.webp", link: "#hidraulicos" },
+  { desktop: "/images/categorias/ventilador.webp", mobile: "/images/categorias/ventilador.webp", link: "#ventiladores" }
 ];
 
 export default function HeroBanner() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     if (isHovered) return;
@@ -45,6 +48,30 @@ export default function HeroBanner() {
     e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
   };
 
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientY);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isUpSwipe = distance > minSwipeDistance;
+    const isDownSwipe = distance < -minSwipeDistance;
+    
+    if (isDownSwipe) {
+      scrollNext(); // Swipe down -> próxima imagem
+    } else if (isUpSwipe) {
+      scrollPrev(); // Swipe up -> imagem anterior
+    }
+  };
+
   return (
     <div className="w-full bg-gradient-to-br from-white via-[#F5F7FB] to-[#E8EEF8] pt-12 pb-8 md:pt-10 md:pb-12 relative overflow-hidden">
       {/* Decorative background blurs */}
@@ -61,14 +88,17 @@ export default function HeroBanner() {
           className="w-full max-w-5xl relative group select-none animate-card-stack"
         >
           <div 
-            className="relative w-full"
+            className="relative w-full touch-pan-x"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {/* Glass frame for carousel */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#1C2978]/10 to-[#FFD200]/10 rounded-3xl blur-md"></div>
             
-            <div className="relative w-full aspect-video max-h-[60vh] md:max-h-none">
+            <div className="relative w-full aspect-[3/1] max-h-[60vh] md:max-h-none">
               {bannerImages.map((banner, index) => {
                 const diff = (index - selectedIndex + bannerImages.length) % bannerImages.length;
                 const zIndex = diff === 0 ? 30 : diff === 1 ? 20 : 10;
@@ -120,16 +150,16 @@ export default function HeroBanner() {
               })}
             </div>
 
-            {/* Setas de navegação (aparecem ao passar o mouse) */}
+            {/* Setas de navegação (apenas no desktop ao passar o mouse) */}
             <button
               onClick={scrollPrev}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/35 backdrop-blur-md border border-white/50 flex items-center justify-center text-[#1C2978] hover:bg-[#1C2978] hover:text-white hover:border-[#1C2978] hover:scale-105 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_8px_32px_rgba(28, 41, 120,0.06)] group/arrow cursor-pointer"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/35 backdrop-blur-md border border-white/50 hidden md:flex items-center justify-center text-[#1C2978] hover:bg-[#1C2978] hover:text-white hover:border-[#1C2978] hover:scale-105 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_8px_32px_rgba(28, 41, 120,0.06)] group/arrow cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 group-hover/arrow:-translate-x-0.5 transition-transform" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/35 backdrop-blur-md border border-white/50 flex items-center justify-center text-[#1C2978] hover:bg-[#1C2978] hover:text-white hover:border-[#1C2978] hover:scale-105 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_8px_32px_rgba(28, 41, 120,0.06)] group/arrow cursor-pointer"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/35 backdrop-blur-md border border-white/50 hidden md:flex items-center justify-center text-[#1C2978] hover:bg-[#1C2978] hover:text-white hover:border-[#1C2978] hover:scale-105 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_8px_32px_rgba(28, 41, 120,0.06)] group/arrow cursor-pointer"
             >
               <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover/arrow:translate-x-0.5 transition-transform" />
             </button>
