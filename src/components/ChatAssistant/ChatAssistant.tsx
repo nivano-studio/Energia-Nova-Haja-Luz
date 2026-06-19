@@ -242,7 +242,7 @@ export default function ChatAssistant() {
                     </motion.div>
                   )}
 
-                  {/* Render General Actions (e.g. show_more, category) */}
+                  {/* Render General Actions (e.g. show_more, category, link) */}
                   {message.actions && message.actions.length > 0 && (
                     <motion.div
                       initial={{ opacity: 0, y: 5 }}
@@ -265,6 +265,20 @@ export default function ChatAssistant() {
                           >
                             {action.label}
                           </button>
+                        ))
+                      }
+                      {message.actions
+                        .filter(action => action.type === 'link')
+                        .map((action, idx) => (
+                          <a
+                            key={`link-${idx}`}
+                            href={action.payload?.url as string}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-2.5 px-4 rounded-xl text-sm font-bold transition-all border border-transparent text-center active:scale-95 text-white shadow-md hover:-translate-y-0.5 hover:shadow-lg bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-90"
+                          >
+                            {action.label}
+                          </a>
                         ))
                       }
                     </motion.div>

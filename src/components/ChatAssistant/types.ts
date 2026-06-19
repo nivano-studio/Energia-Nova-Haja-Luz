@@ -63,7 +63,7 @@ export type ProductMatch = {
 };
 
 export type ChatAction = {
-  type: "category" | "show_more" | "whatsapp" | "quote" | "product_search";
+  type: "category" | "show_more" | "whatsapp" | "quote" | "product_search" | "link";
   label: string;
   payload?: Record<string, unknown>;
 };

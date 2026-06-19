@@ -412,7 +412,7 @@ export function routeIntent(
     return ragResponse;
   }
 
-  if (intent === "developer_credit") return { text: responses.developerCredit, intent, confidence };
+  if (intent === "developer_credit") return { text: responses.developerCredit, intent, confidence, actions: [{ type: "link" as const, label: "📸 Seguir Nivano Studio no Instagram", payload: { url: "https://www.instagram.com/nivanostudio/" } }] };
   if (intent === "off_topic") return { text: responses.offTopic, intent, confidence };
   if (intent === "human_support") return { text: responses.humanSupportDirect, whatsappBtn: true, intent, confidence };
   if (intent === "missing_product_complaint") return { text: "Poxa, não encontrou o que procurava? Fale com nosso atendimento no WhatsApp para verificarmos no estoque físico para você!", whatsappBtn: true, intent, confidence };
