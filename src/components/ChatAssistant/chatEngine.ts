@@ -21,7 +21,7 @@ function isProductOrCategory(word: string): boolean {
   if (productAndTechnicalKeywords.includes(normalized)) return true;
   
   if (synonyms[normalized]) return true;
-  for (const [key, synList] of Object.entries(synonyms)) {
+  for (const synList of Object.values(synonyms)) {
     if (synList.includes(normalized)) return true;
   }
   
@@ -43,12 +43,14 @@ function calculateConfidence(bestScore: number, clean: string, isContextual: boo
 
   if (isContextual) confidence += 0.1;
 
-  // Penalties for ambiguous terms
-  for (const [term] of Object.entries(Intents.ambiguousTerms)) {
-    const regex = new RegExp(`\\b${term}\\b`, 'i');
-    if (regex.test(clean)) {
-      if (term === "suporte" && clean.includes("para lampada")) continue;
-      confidence -= 0.2;
+  // Penalties for ambiguous terms - only if clean query is short (3 words or fewer)
+  if (clean.split(/\s+/).length <= 3) {
+    for (const [term] of Object.entries(Intents.ambiguousTerms)) {
+      const regex = new RegExp(`\\b${term}\\b`, 'i');
+      if (regex.test(clean)) {
+        if (term === "suporte" && clean.includes("para lampada")) continue;
+        confidence -= 0.2;
+      }
     }
   }
 
@@ -56,6 +58,10 @@ function calculateConfidence(bestScore: number, clean: string, isContextual: boo
 }
 
 function handleAmbiguousTerms(clean: string): ChatResponse | null {
+  const commerceVerbs = ["tem", "vende", "quero", "preciso", "comprar", "busca", "procuro"];
+  if (commerceVerbs.some(v => new RegExp(`\\b${v}\\b`, 'i').test(clean))) {
+    return null;
+  }
   for (const [term] of Object.entries(Intents.ambiguousTerms)) {
     const regex = new RegExp(`\\b${term}\\b`, 'i');
     if (regex.test(clean) && clean.split(' ').length <= 3) {
@@ -114,7 +120,12 @@ function handleMiniRag(clean: string, original?: string): ChatResponse | null {
     const questionTokens = faq.question.replace('?','').split(' ').filter(w => w.length > 3);
     const matchCount = questionTokens.filter(t => clean.includes(t) || (normOriginal && normOriginal.includes(t))).length;
     if (matchCount >= Math.min(questionTokens.length, 2) && (clean.length > 5 || (normOriginal && normOriginal.length > 5))) {
-       return { text: faq.answer, intent: "faq_answer", confidence: 0.9 };
+       let mappedIntent = "faq_answer";
+       if (key === "cart") mappedIntent = "cart_or_quote_info";
+       else if (key === "delivery") mappedIntent = "delivery";
+       else if (key === "payment") mappedIntent = "payment";
+       else if (key === "warranty") mappedIntent = "warranty_original_products";
+       return { text: faq.answer, intent: mappedIntent, confidence: 0.9 };
     }
   }
   return null;
@@ -395,6 +406,9 @@ export function routeIntent(
   const ragResponse = handleMiniRag(clean, _original);
   const explanationPatterns = ["o que e", "oq e", "o que é", "oq é", "como funciona", "para que serve", "qual a diferenca", "diferenca entre", "pq", "por que", "por que usar", "significa"];
   if (ragResponse && (explanationPatterns.some(p => clean.includes(p)) || intent === "product_spec_question")) {
+    if (intent === "product_spec_question") {
+      ragResponse.intent = "product_spec_question";
+    }
     return ragResponse;
   }
 
@@ -402,7 +416,7 @@ export function routeIntent(
   if (intent === "off_topic") return { text: responses.offTopic, intent, confidence };
   if (intent === "human_support") return { text: responses.humanSupportDirect, whatsappBtn: true, intent, confidence };
   if (intent === "missing_product_complaint") return { text: "Poxa, não encontrou o que procurava? Fale com nosso atendimento no WhatsApp para verificarmos no estoque físico para você!", whatsappBtn: true, intent, confidence };
-  if (intent === "correction_wrong_result") return { text: responses.wrongResultCorrection, intent: "human_support", confidence, whatsappBtn: true };
+  if (intent === "correction_wrong_result") return { text: responses.wrongResultCorrection, intent, confidence, whatsappBtn: true };
   if (intent === "technical_infrared") return { text: responses.techInfraredExplanation, intent, confidence };
   if (intent === "product_or_technical_infrared") return { text: responses.techInfraredBuying, intent, confidence, whatsappBtn: true };
   if (intent === "technical_explanation") {
@@ -418,9 +432,17 @@ export function routeIntent(
   }
   if (intent === "payment") return { text: "Aceitamos PIX, Dinheiro e Cartões.", intent, confidence };
   if (intent === "delivery") return { text: "Fazemos entregas em " + storeInfo.city + " e regiões vizinhas.", intent, confidence };
-  if (intent === "store_warranty") return { text: responses.storeOriginals, intent, confidence };
-  if (intent === "store_cart") return { text: responses.storeCart, intent, confidence };
+  if (intent === "warranty_original_products") return { text: responses.storeOriginals, intent, confidence };
+  if (intent === "cart_or_quote_info") return { text: responses.storeCart, intent, confidence };
   if (intent === "current_date") return { text: `Hoje é ${new Date().toLocaleDateString('pt-BR')}.`, intent, confidence };
+  if (intent === "real_time") {
+    const now = new Date();
+    const currentTimeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    return { text: `${responses.realTimePrefix}${currentTimeStr}.`, intent, confidence };
+  }
+  if (intent === "multi_entity_product_or_technical") {
+    return { text: responses.multipleEntityInfraredOr, intent, confidence };
+  }
 
   if (intent === "quote_start") {
     activateHardContext("quote", null, { items: [] });
@@ -499,6 +521,10 @@ export function routeIntent(
   }
 
   if (intent === "product_search" && hasProd) {
+    const isVentiladorAcessorios = (clean.includes("ventilador") || clean.includes("exaustor")) && (clean.includes("instalar") || clean.includes("acessorio") || clean.includes("acessórios") || clean.includes("coisa para"));
+    if (isVentiladorAcessorios) {
+      return { text: responses.ventiladorAcessorios, intent, confidence };
+    }
     const isProtectedTechnical = /\bdr\b/.test(clean) || /\bdps\b/.test(clean) || clean.includes("fotocelula");
     if (!isProtectedTechnical) {
       const { products, total } = searchProducts(clean, entities);

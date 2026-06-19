@@ -32,6 +32,12 @@ function isLaughter(text: string): boolean {
   return false;
 }
 
+function hasWholePhrase(text: string, phrase: string): boolean {
+  const escaped = phrase.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+  return regex.test(text);
+}
+
 export function calculateAdvancedIntentScores(
   text: string,
   entities?: ExtractedEntities,
@@ -53,6 +59,8 @@ export function calculateAdvancedIntentScores(
   const hasTechAttr = (entities?.voltage !== undefined || entities?.powerWatts !== undefined || entities?.currentAmps !== undefined) && words.length <= 3;
   const hasContext = contextStrength !== 'none';
   const isContextMediumOrStrong = contextStrength === 'medium' || contextStrength === 'strong';
+  const localOffTopicKeywords = ["celular", "iphone", "smartphone", "televisao", "notebook", "tablet", "geladeira", "fogao", "microondas", "computador"];
+  const isOffTopicKeyword = strongOffTopicTerms.some(t => text.includes(t)) || localOffTopicKeywords.some(t => text.includes(t));
   
   const supportTriggers = ["atendente", "vendedor", "humano", "falar com atendente", "falar com vendedor", "whatsapp", "zap", "wpp", "telefone", "contato", "manda o zap", "tem zap", "passa contato"];
   const isHumanSupport = supportTriggers.some(p => text.includes(p)) || (text.includes("suporte") && !text.includes("lampada") && !text.includes("parede") && !text.includes("refletor"));
@@ -86,7 +94,7 @@ export function calculateAdvancedIntentScores(
     psScore += 100; psReasons.push("Solicitação de mais opções em contexto (+100)");
   }
 
-  if (strongOffTopicTerms.some(t => text.includes(t))) { psScore -= 200; psReasons.push("Termo off-topic forte (-200)"); }
+  if (isOffTopicKeyword) { psScore -= 200; psReasons.push("Termo off-topic forte (-200)"); }
   if (psScore > 0) scores.push({ intent: "product_search", score: psScore, reasons: psReasons });
 
   // 1.1 attribute_refinement
@@ -99,11 +107,18 @@ export function calculateAdvancedIntentScores(
   // 1.2 product_not_found
   const availabilityTriggers = ["tem", "vende", "procuro", "quero", "queria", "arruma", "consegue"];
   const hasAvailabilityVerb = availabilityTriggers.some(v => text.split(/\s+/).includes(v) || text.startsWith(v));
-  const isOffTopic = strongOffTopicTerms.some(t => text.includes(t));
+  const isOffTopic = isOffTopicKeyword;
   const isMoreOptions = moreOptionsTriggers.some(t => text.includes(t));
+  const isFaqKeyword = [
+    "garantia", "entrega", "carrinho", "pagamento", "endereco", "endereço", 
+    "horario", "horário", "funciona", "localizacao", "localização", "onde fica", 
+    "instagram", "insta", "rede social", "redes sociais", "original", "originais", 
+    "nota fiscal", "nf", "compras", "compra", "orcamento", "orçamento", "cotacao", 
+    "cotação", "como funciona", "que horas"
+  ].some(kw => text.includes(kw));
   let isProductNotFound = false;
 
-  if (!hasProd && !hasCat && !hasEnv && !entities?.hasIsolatedAttribute && hasAvailabilityVerb && words.length >= 2 && words.length <= 6 && !isOffTopic && !isMoreOptions && !isHumanSupport) {
+  if (!hasProd && !hasCat && !hasEnv && !entities?.hasIsolatedAttribute && hasAvailabilityVerb && words.length >= 2 && words.length <= 6 && !isOffTopic && !isMoreOptions && !isHumanSupport && !isFaqKeyword) {
     isProductNotFound = true;
     scores.push({ intent: "product_not_found", score: 150, reasons: ["Verbo de disponibilidade sem produto reconhecido (+150)"] });
   }
@@ -137,12 +152,13 @@ export function calculateAdvancedIntentScores(
   if (v15Recommendation && v15Recommendation.some(p => text.includes(p))) { prScore += 80; prReasons.push("Padrão de recomendação V15 (+80)"); }
   if (hasProd || hasCat) { prScore += 50; prReasons.push("Produto ou categoria (+50)"); }
   if (hasEnv) { prScore += 40; prReasons.push("Ambiente (+40)"); }
+  if (isOffTopicKeyword) { prScore -= 200; prReasons.push("Termo off-topic forte (-200)"); }
   if (prScore > 0) scores.push({ intent: "product_recommendation", score: prScore, reasons: prReasons });
 
   // 4. product_spec_question
   let psqScore = 0;
   const psqReasons: string[] = [];
-  const specPatterns = ["quantos lumens", "quantos watts", "qual kelvin", "ficha tecnica", "potencia", "voltagem"];
+  const specPatterns = ["quantos lumens", "quanto lumens", "quantos watts", "quanto watts", "qual kelvin", "ficha tecnica", "potencia", "voltagem"];
   if (specPatterns.some(p => text.includes(p))) { psqScore += 80; psqReasons.push("Especificação técnica (+80)"); }
   if (hasProd || hasContext) { psqScore += 50; psqReasons.push("Produto ou contexto (+50)"); }
   if (psqScore > 0) scores.push({ intent: "product_spec_question", score: psqScore, reasons: psqReasons });
@@ -150,20 +166,28 @@ export function calculateAdvancedIntentScores(
   // 5. courtesy & greetings
   let cScore = 0;
   const cReasons: string[] = [];
+  let gScore = 0;
+  const gReasons: string[] = [];
   
   const greetingTriggers = ["oi", "oie", "oii", "oiii", "ola", "olá", "olaaa", "opa", "opaa", "eai", "eaee", "hello", "bom dia", "boa tarde", "boa noite", "bomdia", "boanoite"];
-  const courtesyTriggers = ["tudo bem", "tudo bom", "td bem", "blz", "beleza", "como vai", "como esta", "como vc ta", "como voce esta", "como voce ta"];
+  const courtesyTriggers = ["tudo bem", "tudo bom", "td bem", "blz", "beleza", "como vai", "como esta", "como vc ta", "como voce esta", "como voce ta", "tudo certo", "tudo ok", "td certo", "td ok"];
   
-  if (courtesyTriggers.some(c => text === c || text.startsWith(c))) {
-    if (words.length <= 4 && !hasProd) { cScore += 150; cReasons.push("Cortesia padrão (+150)"); }
+  if (courtesyTriggers.some(c => hasWholePhrase(text, c))) {
+    if (words.length <= 4 && !hasProd) { cScore += 155; cReasons.push("Cortesia padrão (+155)"); }
   }
-  if (greetingTriggers.some(g => text === g || text.startsWith(g))) {
-    if (words.length <= 4 && !hasProd) { cScore += 150; cReasons.push("Saudação padrão (+150)"); }
+  if (greetingTriggers.some(g => hasWholePhrase(text, g))) {
+    if (words.length <= 4 && !hasProd) { gScore += 150; gReasons.push("Saudação padrão (+150)"); }
   }
   if (cScore > 0) scores.push({ intent: "courtesy", score: cScore, reasons: cReasons });
+  if (gScore > 0) scores.push({ intent: "greeting", score: gScore, reasons: gReasons });
 
   // 6. farewells
-  if (v15Farewells && v15Farewells.some(f => text.includes(f))) {
+  if (v15Farewells && v15Farewells.some(f => {
+    if (f.length <= 4) {
+      return hasWholePhrase(text, f);
+    }
+    return text.includes(f);
+  })) {
     scores.push({ intent: "farewell", score: 90, reasons: ["Despedida V15 (+90)"] });
   }
 
@@ -173,14 +197,19 @@ export function calculateAdvancedIntentScores(
   }
 
   // 8. social_instagram
-  if (v12Social && v12Social.some(s => text.includes(s))) {
+  if (v12Social && v12Social.some(s => {
+    if (s.length <= 5) {
+      return new RegExp(`\\b${s}\\b`, 'i').test(text);
+    }
+    return text.includes(s);
+  })) {
     scores.push({ intent: "store_location", score: 100, reasons: ["Social Instagram V12 (+100)"] }); 
   }
 
   // 9. off_topic
   let otScore = 0;
   const otReasons: string[] = [];
-  if (strongOffTopicTerms.some(t => text.includes(t)) && !hasProd) {
+  if (isOffTopicKeyword && !hasProd) {
     otScore += 200; otReasons.push("Termo off-topic forte sem produto (+200)");
   }
   if (otScore > 0) scores.push({ intent: "off_topic", score: otScore, reasons: otReasons });
@@ -192,20 +221,26 @@ export function calculateAdvancedIntentScores(
   if (explScore > 0) scores.push({ intent: "technical_explanation", score: explScore, reasons: explReasons });
 
   // 11. FAQ / Store Info (Granular)
-  if (["onde fica", "endereco", "localizacao", "chegar", "rota", "rua", "bairro"].some(kw => text.includes(kw))) {
+  if (["onde fica", "endereco", "localizacao", "chegar", "rota", "bairro"].some(kw => text.includes(kw)) || /\brua\b/i.test(text)) {
     scores.push({ intent: "store_location", score: 85, reasons: ["FAQ Loja (+85)"] });
   } else if (text.includes("horario") || text.includes("abre")) {
     scores.push({ intent: "store_hours", score: 85, reasons: ["FAQ Loja (+85)"] });
-  } else if (text.includes("pagamento") || text.includes("parcela") || text.includes("pix")) {
+  } else if (text.includes("pagamento") || text.includes("parcela") || /\bpix\b/i.test(text)) {
     scores.push({ intent: "payment", score: 85, reasons: ["FAQ Loja (+85)"] });
   } else if (text.includes("entrega") || text.includes("frete") || text.includes("envia")) {
     scores.push({ intent: "delivery", score: 85, reasons: ["FAQ Loja (+85)"] });
-  } else if (text.includes("garantia") || text.includes("defeito") || text.includes("troca") || text.includes("nota fiscal")) {
-    scores.push({ intent: "store_warranty", score: 85, reasons: ["FAQ Loja (+85)"] });
-  } else if (text.includes("carrinho") || text.includes("compra")) {
-    scores.push({ intent: "store_cart", score: 85, reasons: ["FAQ Loja (+85)"] });
-  } else if (v12StoreFaq && v12StoreFaq.some(kw => text.includes(kw))) {
-    scores.push({ intent: "store_warranty", score: 85, reasons: ["FAQ Loja V12 (+85)"] });
+  } else if (text.includes("garantia") || text.includes("defeito") || text.includes("troca") || text.includes("nota fiscal") || text.includes("original") || text.includes("originais")) {
+    scores.push({ intent: "warranty_original_products", score: 85, reasons: ["FAQ Loja (+85)"] });
+  } else if (text.includes("carrinho") || (/\bcompras?\b/i.test(text) && !text.includes("comprar"))) {
+    const cartScore = text.includes("carrinho") ? 125 : 85;
+    scores.push({ intent: "cart_or_quote_info", score: cartScore, reasons: ["FAQ Loja (+85)"] });
+  } else if (v12StoreFaq && v12StoreFaq.some(kw => {
+    if (kw.length <= 5) {
+      return hasWholePhrase(text, kw);
+    }
+    return text.includes(kw);
+  })) {
+    scores.push({ intent: "warranty_original_products", score: 85, reasons: ["FAQ Loja V12 (+85)"] });
   }
 
   // 12. human_support
@@ -257,7 +292,11 @@ export function calculateAdvancedIntentScores(
   // 16. current_date
   const isStoreHoursQuery = ["horario", "abre", "fecha", "funcionamento"].some(kw => text.includes(kw));
   if (!isStoreHoursQuery && v12DateTime && v12DateTime.some(d => text.includes(d))) {
-    scores.push({ intent: "current_date", score: 100, reasons: ["Pergunta sobre a data/hora V12 (+100)"] });
+    if (["dia", "hoje", "data"].some(d => text.includes(d))) {
+      scores.push({ intent: "current_date", score: 100, reasons: ["Pergunta sobre a data V12 (+100)"] });
+    } else {
+      scores.push({ intent: "real_time", score: 100, reasons: ["Pergunta sobre a hora real V12 (+100)"] });
+    }
   }
 
   // 17. product_or_technical_infrared
@@ -275,7 +314,7 @@ export function calculateAdvancedIntentScores(
   }
 
   // 19. quote_start
-  if (["orcamento", "cotacao", "quero cotar"].some(kw => text.includes(kw))) {
+  if (["orcamento", "cotacao", "quero cotar"].some(kw => text.includes(kw)) && !text.includes("carrinho")) {
     scores.push({ intent: "quote_start", score: 120, reasons: ["Solicitação de orçamento (+120)"] });
   }
 
@@ -289,10 +328,15 @@ export function calculateAdvancedIntentScores(
     }
   }
 
+  // 21. multi_entity_product_or_technical
+  if (text.includes("infravermelh") && entities?.products && entities.products.length > 1) {
+    scores.push({ intent: "multi_entity_product_or_technical", score: 190, reasons: ["Múltiplos produtos com infravermelho (+190)"] });
+  }
+
   // Calculate confidence and sort
   const scoredIntents = scores.map(s => {
     let confidence = Math.min(1, s.score / 100);
-    if (Object.keys(ambiguousTerms).some(t => text.includes(t)) && s.score < 100) {
+    if (words.length <= 3 && Object.keys(ambiguousTerms).some(t => text.includes(t)) && s.score < 100) {
       confidence -= 0.2;
     }
     if (hasContext && s.intent !== "off_topic") {

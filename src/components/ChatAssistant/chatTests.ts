@@ -73,7 +73,7 @@ const tests: ChatTestCase[] = [
   {
     id: 1003,
     input: "isso não é lâmpada",
-    expectedIntent: "human_support",
+    expectedIntent: "correction_wrong_result",
     description: "V5.0: Deve acionar correção de erro"
   },
   {

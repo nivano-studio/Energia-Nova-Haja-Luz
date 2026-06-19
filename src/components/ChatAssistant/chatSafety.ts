@@ -5,6 +5,7 @@ export type SafetyLevel = "urgent_human_support" | "safety_guided_questions" | "
 
 export function evaluateElectricalSafety(cleanInput: string, isContextual: boolean, entities: ExtractedEntities): SafetyLevel {
   const urgentKeywords = [
+    "safety_urgent",
     "tomada esquentando",
     "fio derretendo",
     "cheiro de queimado",
@@ -21,6 +22,7 @@ export function evaluateElectricalSafety(cleanInput: string, isContextual: boole
   }
 
   const warningKeywords = [
+    "safety_warning",
     "posso ligar chuveiro em extensao",
     "posso emendar",
     "isolar com fita",
@@ -32,6 +34,7 @@ export function evaluateElectricalSafety(cleanInput: string, isContextual: boole
   }
 
   const guidedKeywords = [
+    "safety_guided",
     "qual fio usar para chuveiro",
     "qual cabo para chuveiro",
     "qual disjuntor para chuveiro",

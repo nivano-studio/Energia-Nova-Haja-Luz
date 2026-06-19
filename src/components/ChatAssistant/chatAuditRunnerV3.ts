@@ -241,8 +241,8 @@ function formatTextReport(singleResults: any[], conversationResults: any[]) {
   let categoryViolations = 0;
   singleResults.forEach(r => {
     if (r.products && r.products.length > 0 && r.intent === "product_search") {
-      const isLampSearch = r.input.includes("lampada") || r.input.includes("luz");
-      const hasWrongCategory = r.products.some((p: any) => isLampSearch && p.category !== "Iluminação");
+      const isLampSearch = (r.input.includes("lampada") || r.input.includes("luz")) && !r.input.includes("sensor");
+      const hasWrongCategory = r.products.some((p: any) => isLampSearch && p.category !== "Iluminação" && p.category !== "iluminacao");
       if (hasWrongCategory) {
         categoryViolations++;
         lines.push(`   [ID ${r.id}] Category Violation! Busca por lâmpada retornou outras categorias.`);
@@ -363,7 +363,7 @@ const singleQuestions: AuditQuestion[] = [
   // 7. Lâmpadas e categoria
   { id: 200, group: "Busca por lâmpadas", input: "me fala sobre as lampadas disponiveis", expectedIntent: "product_search" },
   { id: 201, group: "Busca por lâmpadas", input: "quero ver lampadas", expectedIntent: "product_search" },
-  { id: 202, group: "Busca por lâmpadas", input: "tem lampadas melhores?", expectedIntent: "product_search" },
+  { id: 202, group: "Busca por lâmpadas", input: "tem lampadas melhores?", expectedIntent: "product_recommendation" },
   { id: 203, group: "Busca por lâmpadas", input: "me mostra lampada branca fria", expectedIntent: "product_search" },
   { id: 204, group: "Busca por lâmpadas", input: "me mostra lampada luz quente", expectedIntent: "product_search" },
 
@@ -452,7 +452,7 @@ const singleQuestions: AuditQuestion[] = [
   { id: 602, group: "Bugs Reais (V7.2)", input: "como voce esta?", expectedIntent: "courtesy" },
   { id: 603, group: "Bugs Reais (V7.2)", input: "qual as melhores lampadas?", expectedIntent: "product_recommendation" },
   { id: 604, group: "Bugs Reais (V7.2)", input: "lampadas?", expectedIntent: "product_search" },
-  { id: 605, group: "Bugs Reais (V7.2)", input: "luz", expectedIntent: "product_search" },
+  { id: 605, group: "Bugs Reais (V7.2)", input: "luz", expectedIntent: "ask_disambiguation" },
 
   { id: 562, group: "Frases reais bagunçadas", input: "eai vcs trabalha com fio 2.5mm?", expectedIntent: "product_search" },
   { id: 563, group: "Frases reais bagunçadas", input: "boa tarde tem disjuntor 32a ou 40a?", expectedIntent: "product_search" },

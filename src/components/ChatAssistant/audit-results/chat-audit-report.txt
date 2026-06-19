@@ -13,10 +13,10 @@ PERGUNTAS ISOLADAS
 [1] Grupo: Saudações
 Pergunta: oi
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -26,10 +26,10 @@ Ações/Botões:
 [2] Grupo: Saudações
 Pergunta: oii
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -39,10 +39,10 @@ Ações/Botões:
 [3] Grupo: Saudações
 Pergunta: oiii
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -52,10 +52,10 @@ Ações/Botões:
 [4] Grupo: Saudações
 Pergunta: oire
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -65,10 +65,10 @@ Ações/Botões:
 [5] Grupo: Saudações
 Pergunta: oie
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -78,10 +78,10 @@ Ações/Botões:
 [6] Grupo: Saudações
 Pergunta: olaaa
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -91,10 +91,10 @@ Ações/Botões:
 [7] Grupo: Saudações
 Pergunta: opa
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -104,10 +104,10 @@ Ações/Botões:
 [8] Grupo: Saudações
 Pergunta: eai
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -117,10 +117,10 @@ Ações/Botões:
 [9] Grupo: Saudações
 Pergunta: hello
 Intent: greeting
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Olá! Seja bem-vindo à Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
+Olá! Seja bem-vindo à Energia Nova Haja Luz 💡 Posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você procura hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -130,10 +130,10 @@ Ações/Botões:
 [20] Grupo: Cortesia
 Pergunta: como esta?
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -143,10 +143,10 @@ Ações/Botões:
 [21] Grupo: Cortesia
 Pergunta: como vai?
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -156,10 +156,10 @@ Ações/Botões:
 [22] Grupo: Cortesia
 Pergunta: tudo bem?
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -169,10 +169,10 @@ Ações/Botões:
 [23] Grupo: Cortesia
 Pergunta: blz?
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -182,10 +182,10 @@ Ações/Botões:
 [24] Grupo: Cortesia
 Pergunta: eai tudo bem
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -198,15 +198,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de fios e cabos elétricos. Separei alguns modelos relacionados:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Fio Sólido 2,5mm² 100m | Categoria: fios-cabos | Preço: 139.9
-- Cabo Flexível 2,5mm² 100m Azul | Categoria: fios-cabos | Preço: 149.9
-- Cabo Flexível 4,0mm² 100m Preto | Categoria: fios-cabos | Preço: 239.9
+- Fio Sólido 2,5mm² 100m | Categoria: fios-cabos | Valor sob consulta
+- Esquadro de aço temperado 12 polegadas 30 cm | Categoria: ferramentas | Valor sob consulta
+- Cabo Flexível 2,5mm² 100m Azul | Categoria: fios-cabos | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [41] Grupo: Abreviações
@@ -215,16 +216,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Ver mais lâmpadas | Tipo: category
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [42] Grupo: Abreviações
@@ -233,42 +234,43 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de tomadas, incluindo modelos 10A, 20A e USB quando disponíveis. Veja algumas opções:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Tomada 2P+T 20A Branca | Categoria: tomadas | Preço: 8.5
-- Tomada 2P+T 10A Branca | Categoria: tomadas | Preço: 7.9
-- Tomada USB Dupla 2.1A Branca | Categoria: tomadas | Preço: 45
+- Tomada 2P+T 20A Branca | Categoria: tomadas | Valor sob consulta
+- Tomada 2P+T 10A Branca | Categoria: tomadas | Valor sob consulta
+- Tomada USB Dupla 2.1A Branca | Categoria: tomadas | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [43] Grupo: Abreviações
 Pergunta: qto custa lampada
-Intent: product_search
-Confidence: 0.85
-WhatsApp: Sim
+Intent: product_price
+Confidence: 1
+WhatsApp: Não
 Resposta:
-Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:
+Os valores são sob consulta. Posso te mostrar opções relacionadas.
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Ver mais lâmpadas | Tipo: category
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [44] Grupo: Abreviações
 Pergunta: oq e luz fria
 Intent: technical_explanation
-Confidence: 0.9
+Confidence: 0.95
 WhatsApp: Não
 Resposta:
-Luz fria, geralmente entre 6000K e 6500K, tem tom mais branco e passa sensação de maior claridade. É comum em cozinhas, banheiros, áreas de serviço e escritórios.
+Luz fria é mais branca e indicada para locais que precisam de maior visibilidade, como cozinhas, banheiros e áreas de serviço.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -278,10 +280,10 @@ Ações/Botões:
 [45] Grupo: Abreviações
 Pergunta: tem zap
 Intent: human_support
-Confidence: 1
+Confidence: 0.9
 WhatsApp: Sim
 Resposta:
-Desculpa, acho que não entendi bem sua dúvida. Para te ajudar melhor, posso te encaminhar para um atendente da Haja Luz.
+Claro! Posso te encaminhar para o atendimento da Energia Nova Haja Luz pelo WhatsApp.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -291,10 +293,10 @@ Ações/Botões:
 [46] Grupo: Abreviações
 Pergunta: manda wpp
 Intent: human_support
-Confidence: 1
+Confidence: 0.9
 WhatsApp: Sim
 Resposta:
-Desculpa, acho que não entendi bem sua dúvida. Para te ajudar melhor, posso te encaminhar para um atendente da Haja Luz.
+Claro! Posso te encaminhar para o atendimento da Energia Nova Haja Luz pelo WhatsApp.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -309,13 +311,14 @@ WhatsApp: Sim
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [71] Grupo: Produtos
@@ -324,29 +327,33 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Ver mais lâmpadas | Tipo: category
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [72] Grupo: Produtos
 Pergunta: tem mais lampadas melhores?
-Intent: show_more_results
-Confidence: 0.9
+Intent: product_recommendation
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Me desculpe, não entendi sobre qual busca você quer ver mais resultados. Pode me dizer novamente o que você procura?
+Aqui estão as melhores opções que encontrei:
 Produtos:
-- Nenhum produto retornado
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Nenhuma ação retornada
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [73] Grupo: Produtos
@@ -355,15 +362,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de fios e cabos elétricos. Separei alguns modelos relacionados:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Fio Sólido 2,5mm² 100m | Categoria: fios-cabos | Preço: 139.9
-- Cabo Flexível 2,5mm² 100m Azul | Categoria: fios-cabos | Preço: 149.9
-- Cabo Flexível 4,0mm² 100m Preto | Categoria: fios-cabos | Preço: 239.9
+- Fio Sólido 2,5mm² 100m | Categoria: fios-cabos | Valor sob consulta
+- Esquadro de aço temperado 12 polegadas 30 cm | Categoria: ferramentas | Valor sob consulta
+- Cabo Flexível 2,5mm² 100m Azul | Categoria: fios-cabos | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [74] Grupo: Produtos
@@ -372,15 +380,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de tomadas, incluindo modelos 10A, 20A e USB quando disponíveis. Veja algumas opções:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Tomada 2P+T 20A Branca | Categoria: tomadas | Preço: 8.5
-- Tomada 2P+T 10A Branca | Categoria: tomadas | Preço: 7.9
-- Tomada USB Dupla 2.1A Branca | Categoria: tomadas | Preço: 45
+- Tomada 2P+T 20A Branca | Categoria: tomadas | Valor sob consulta
+- Disjuntor 20A 1P 4.5kA DIN TAF | Categoria: disjuntores | Valor sob consulta
+- Disjuntor 20A 2P 4.5kA DIN TAF | Categoria: disjuntores | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [75] Grupo: Produtos
@@ -389,15 +398,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de disjuntores. Para escolher corretamente, é importante considerar corrente, tensão e uso. Separei alguns modelos:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Disjuntor DIN Monopolar 16A | Categoria: disjuntores | Preço: 11.9
-- Disjuntor DIN Monopolar 25A | Categoria: disjuntores | Preço: 11.9
-- Disjuntor DIN Monopolar 32A | Categoria: disjuntores | Preço: 12.5
+- Disjuntor DIN Monopolar 16A | Categoria: disjuntores | Valor sob consulta
+- Disjuntor DIN Monopolar 25A | Categoria: disjuntores | Valor sob consulta
+- Disjuntor DIN Monopolar 32A | Categoria: disjuntores | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [76] Grupo: Produtos
@@ -408,39 +418,50 @@ WhatsApp: Sim
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Refletor LED 50W IP66 Branco Frio | Categoria: iluminacao | Preço: 45
-- Refletor LED 100W IP66 Branco Frio | Categoria: iluminacao | Preço: 79.9
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
+- Refletor LED 50W IP66 Branco Frio | Categoria: iluminacao | Valor sob consulta
+- Refletor LED 100W IP66 Branco Frio | Categoria: iluminacao | Valor sob consulta
+- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [77] Grupo: Produtos
 Pergunta: tem ventilador?
-Intent: context_continuation
-Confidence: 0.7
-WhatsApp: Não
+Intent: product_search
+Confidence: 0.85
+WhatsApp: Sim
 Resposta:
-Ainda falando do mesmo assunto? Se puder me dar mais detalhes do que precisa, posso achar os produtos ideais!
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Nenhum produto retornado
+- Ventilador de Teto 3 Pás 127V | Categoria: ventiladores | Valor sob consulta
+- Ventilador de Teto c/ Luminária LED | Categoria: ventiladores | Valor sob consulta
+- Ventilador de Mesa 40cm 127V | Categoria: ventiladores | Valor sob consulta
 Ações/Botões:
-- Nenhuma ação retornada
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [78] Grupo: Produtos
 Pergunta: tem ferramenta?
-Intent: context_continuation
-Confidence: 0.7
-WhatsApp: Não
+Intent: product_search
+Confidence: 0.85
+WhatsApp: Sim
 Resposta:
-Ainda falando do mesmo assunto? Se puder me dar mais detalhes do que precisa, posso achar os produtos ideais!
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Nenhum produto retornado
+- Esquadro de aço temperado 12 polegadas 30 cm | Categoria: ferramentas | Valor sob consulta
+- Prumo cilíndrico 400 g aço pintado com guia e madeira | Categoria: ferramentas | Valor sob consulta
+- Lápis de carpinteiro octogonal caixa com 12 unidades | Categoria: ferramentas | Valor sob consulta
 Ações/Botões:
-- Nenhuma ação retornada
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [100] Grupo: Erros de digitação
@@ -449,16 +470,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Ver mais lâmpadas | Tipo: category
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [101] Grupo: Erros de digitação
@@ -467,16 +488,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Ver mais lâmpadas | Tipo: category
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [102] Grupo: Erros de digitação
@@ -485,15 +506,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de disjuntores. Para escolher corretamente, é importante considerar corrente, tensão e uso. Separei alguns modelos:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Disjuntor DIN Monopolar 16A | Categoria: disjuntores | Preço: 11.9
-- Disjuntor DIN Monopolar 25A | Categoria: disjuntores | Preço: 11.9
-- Disjuntor DIN Monopolar 32A | Categoria: disjuntores | Preço: 12.5
+- Disjuntor DIN Monopolar 16A | Categoria: disjuntores | Valor sob consulta
+- Disjuntor DIN Monopolar 25A | Categoria: disjuntores | Valor sob consulta
+- Disjuntor DIN Monopolar 32A | Categoria: disjuntores | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [103] Grupo: Erros de digitação
@@ -502,15 +524,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de disjuntores. Para escolher corretamente, é importante considerar corrente, tensão e uso. Separei alguns modelos:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Disjuntor DIN Monopolar 16A | Categoria: disjuntores | Preço: 11.9
-- Disjuntor DIN Monopolar 25A | Categoria: disjuntores | Preço: 11.9
-- Disjuntor DIN Monopolar 32A | Categoria: disjuntores | Preço: 12.5
+- Disjuntor DIN Monopolar 16A | Categoria: disjuntores | Valor sob consulta
+- Disjuntor DIN Monopolar 25A | Categoria: disjuntores | Valor sob consulta
+- Disjuntor DIN Monopolar 32A | Categoria: disjuntores | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [104] Grupo: Erros de digitação
@@ -519,15 +542,16 @@ Intent: product_search
 Confidence: 0.85
 WhatsApp: Sim
 Resposta:
-Temos opções de tomadas, incluindo modelos 10A, 20A e USB quando disponíveis. Veja algumas opções:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Tomada 2P+T 20A Branca | Categoria: tomadas | Preço: 8.5
-- Tomada 2P+T 10A Branca | Categoria: tomadas | Preço: 7.9
-- Tomada USB Dupla 2.1A Branca | Categoria: tomadas | Preço: 45
+- Tomada 2P+T 20A Branca | Categoria: tomadas | Valor sob consulta
+- Tomada 2P+T 10A Branca | Categoria: tomadas | Valor sob consulta
+- Tomada USB Dupla 2.1A Branca | Categoria: tomadas | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [105] Grupo: Erros de digitação
@@ -538,13 +562,14 @@ WhatsApp: Sim
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Refletor LED 50W IP66 Branco Frio | Categoria: iluminacao | Preço: 45
-- Refletor LED 100W IP66 Branco Frio | Categoria: iluminacao | Preço: 79.9
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
+- Refletor LED 50W IP66 Branco Frio | Categoria: iluminacao | Valor sob consulta
+- Refletor LED 100W IP66 Branco Frio | Categoria: iluminacao | Valor sob consulta
+- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [106] Grupo: Erros de digitação
@@ -555,66 +580,62 @@ WhatsApp: Sim
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Plafon LED de Embutir Quadrado 18W | Categoria: iluminacao | Preço: 24.9
-- Plafon LED de Sobrepor Redondo 24W | Categoria: iluminacao | Preço: 34.9
-- Painel LED Slim 60x60 45W | Categoria: iluminacao | Preço: 89.9
+- Plafon LED de Embutir Quadrado 18W | Categoria: iluminacao | Valor sob consulta
+- Plafon LED de Sobrepor Redondo 24W | Categoria: iluminacao | Valor sob consulta
+- Esquadro de aço temperado 12 polegadas 30 cm | Categoria: ferramentas | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [130] Grupo: Infravermelho
 Pergunta: tem luz infravermelha?
 Intent: product_or_technical_infrared
-Confidence: 0.95
-WhatsApp: Não
+Confidence: 0.8
+WhatsApp: Sim
 Resposta:
 Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.
 Produtos:
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
+- Nenhum produto retornado
 Ações/Botões:
-- Falar com atendente | Tipo: whatsapp
-- Ver Instalação e Acessórios | Tipo: category
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [131] Grupo: Infravermelho
 Pergunta: vc tem luz infravermelha?
 Intent: product_or_technical_infrared
-Confidence: 0.95
-WhatsApp: Não
+Confidence: 1
+WhatsApp: Sim
 Resposta:
 Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.
 Produtos:
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
+- Nenhum produto retornado
 Ações/Botões:
-- Falar com atendente | Tipo: whatsapp
-- Ver Instalação e Acessórios | Tipo: category
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [132] Grupo: Infravermelho
 Pergunta: tem lampada ou luzinfravermelha?
-Intent: product_or_technical_infrared
-Confidence: 0.95
+Intent: multi_entity_product_or_technical
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.
+Temos opções de lâmpadas comuns, como LED bulbo, luz fria e luz quente. Já luz infravermelha normalmente envolve sensor, câmera, controle, lâmpada especial ou aquecimento. Você quer ver lâmpadas comuns ou confirmar um produto infravermelho específico?
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Nenhum produto retornado
 Ações/Botões:
-- Falar com atendente | Tipo: whatsapp
-- Ver Instalação e Acessórios | Tipo: category
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [133] Grupo: Infravermelho
 Pergunta: o que e luz infravermelha?
-Intent: technical_explanation
-Confidence: 0.8
-WhatsApp: Sim
+Intent: technical_infrared
+Confidence: 1
+WhatsApp: Não
 Resposta:
-Entendi que você quer uma explicação sobre esse produto. Para te dar detalhes exatos, posso verificar no nosso sistema ou você pode confirmar com nossa equipe no WhatsApp!
+A luz infravermelha é uma radiação que o olho humano não consegue enxergar, mas que é usada em sensores, controles remotos, câmeras de segurança, sistemas de presença e alguns equipamentos de aquecimento. Se você procura um produto com infravermelho, me diga se é para sensor, câmera, aquecimento ou outro uso.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -624,39 +645,39 @@ Ações/Botões:
 [134] Grupo: Infravermelho
 Pergunta: tem sensor infravermelho?
 Intent: product_or_technical_infrared
-Confidence: 0.95
-WhatsApp: Não
+Confidence: 0.8
+WhatsApp: Sim
 Resposta:
 Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.
 Produtos:
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
+- Nenhum produto retornado
 Ações/Botões:
-- Falar com atendente | Tipo: whatsapp
-- Ver Instalação e Acessórios | Tipo: category
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [135] Grupo: Infravermelho
 Pergunta: tem sensor de presença?
 Intent: product_search
-Confidence: 0.85
+Confidence: 1
 WhatsApp: Sim
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
-- Esquadro de aço temperado 12 polegadas 30 cm | Categoria: ferramentas | Preço: -
+- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Valor sob consulta
+- Esquadro de aço temperado 12 polegadas 30 cm | Categoria: ferramentas | Valor sob consulta
 Ações/Botões:
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [160] Grupo: Técnica
 Pergunta: o que e luz quente?
 Intent: technical_explanation
-Confidence: 0.9
+Confidence: 0.95
 WhatsApp: Não
 Resposta:
-Luz quente, geralmente entre 2700K e 3000K, tem tom mais amarelado e aconchegante. É muito usada em quartos, salas e áreas de descanso.
+Luz quente é mais amarelada e confortável, indicada para quartos, salas e ambientes de descanso.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -666,10 +687,10 @@ Ações/Botões:
 [161] Grupo: Técnica
 Pergunta: o que e luz fria?
 Intent: technical_explanation
-Confidence: 0.9
+Confidence: 0.95
 WhatsApp: Não
 Resposta:
-Luz fria, geralmente entre 6000K e 6500K, tem tom mais branco e passa sensação de maior claridade. É comum em cozinhas, banheiros, áreas de serviço e escritórios.
+Luz fria é mais branca e indicada para locais que precisam de maior visibilidade, como cozinhas, banheiros e áreas de serviço.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -679,10 +700,10 @@ Ações/Botões:
 [162] Grupo: Técnica
 Pergunta: qual diferenca entre luz quente e fria?
 Intent: technical_explanation
-Confidence: 0.9
+Confidence: 0.95
 WhatsApp: Não
 Resposta:
-Luz quente, geralmente entre 2700K e 3000K, tem tom mais amarelado e aconchegante. É muito usada em quartos, salas e áreas de descanso.
+Luz quente é mais amarelada e confortável, indicada para quartos, salas e ambientes de descanso.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -692,10 +713,10 @@ Ações/Botões:
 [163] Grupo: Técnica
 Pergunta: o que e lumen?
 Intent: technical_explanation
-Confidence: 0.8
-WhatsApp: Sim
+Confidence: 0.95
+WhatsApp: Não
 Resposta:
-Entendi que você quer uma explicação sobre esse produto. Para te dar detalhes exatos, posso verificar no nosso sistema ou você pode confirmar com nossa equipe no WhatsApp!
+Lúmen indica a quantidade de luz emitida por uma lâmpada. Quanto maior o número de lúmens, maior tende a ser a claridade.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -705,10 +726,10 @@ Ações/Botões:
 [164] Grupo: Técnica
 Pergunta: o que significa kelvin?
 Intent: technical_explanation
-Confidence: 0.8
-WhatsApp: Sim
+Confidence: 0.95
+WhatsApp: Não
 Resposta:
-Entendi que você quer uma explicação sobre esse produto. Para te dar detalhes exatos, posso verificar no nosso sistema ou você pode confirmar com nossa equipe no WhatsApp!
+Kelvin indica a cor da luz. Valores como 3000K são mais amarelados; 4000K são neutros; 6500K são mais brancos/frios.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -717,11 +738,11 @@ Ações/Botões:
 
 [165] Grupo: Técnica
 Pergunta: essa lampada entrega quantos lumens?
-Intent: technical_explanation
-Confidence: 0.9
+Intent: product_spec_question
+Confidence: 0.95
 WhatsApp: Não
 Resposta:
-Lúmen indica a quantidade de luz que uma lâmpada entrega. Quanto maior o número de lúmens, mais claridade ela tende a gerar. Watts indicam consumo de energia, não exatamente claridade.
+Lúmen indica a quantidade de luz emitida por uma lâmpada. Quanto maior o número de lúmens, maior tende a ser a claridade.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -815,38 +836,36 @@ Ações/Botões:
 [220] Grupo: Loja
 Pergunta: onde fica a loja?
 Intent: store_location
-Confidence: 0.9
+Confidence: 0.85
 WhatsApp: Não
 Resposta:
-A Haja Luz fica em Mata Roma – MA, na Av. José Ribamar Castro.
+Av. José Ribamar Castro
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
 - Como chegar | Tipo: whatsapp
-- Falar com atendente | Tipo: whatsapp
 --------------------------------------------------------------------------------
 
 [221] Grupo: Loja
 Pergunta: qual endereco da Haja Luz?
 Intent: store_location
-Confidence: 0.9
+Confidence: 0.85
 WhatsApp: Não
 Resposta:
-A Haja Luz fica em Mata Roma – MA, na Av. José Ribamar Castro.
+Av. José Ribamar Castro
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
 - Como chegar | Tipo: whatsapp
-- Falar com atendente | Tipo: whatsapp
 --------------------------------------------------------------------------------
 
 [222] Grupo: Loja
 Pergunta: que horas abre?
 Intent: store_hours
-Confidence: 0.9
+Confidence: 0.85
 WhatsApp: Não
 Resposta:
-De segunda a sexta, o atendimento é das 07h às 18h. Aos sábados, o atendimento é pela manhã. Como há variação de informação no site entre 12h e 13h, recomendo confirmar com a equipe pelo WhatsApp.
+Segunda a sexta: 07h às 18h\nSábado pela manhã
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -856,10 +875,10 @@ Ações/Botões:
 [223] Grupo: Loja
 Pergunta: que horas sao?
 Intent: real_time
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Agora são 11:06
+Agora são 13:06.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -869,14 +888,10 @@ Ações/Botões:
 [224] Grupo: Loja
 Pergunta: aceita pix?
 Intent: payment
-Confidence: 0.9
+Confidence: 0.85
 WhatsApp: Não
 Resposta:
-Oferecemos diversas opções de pagamento:
-
-💵 **PIX e Dinheiro**
-💳 **Cartões de Crédito e Débito**
-🏢 **Faturamento Corporativo**
+Aceitamos PIX, Dinheiro e Cartões.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -886,11 +901,10 @@ Ações/Botões:
 [225] Grupo: Loja
 Pergunta: faz entrega?
 Intent: delivery
-Confidence: 0.9
+Confidence: 0.85
 WhatsApp: Não
 Resposta:
-Sim, nós entregamos! Fazemos entregas em **Mata Roma** e em todas as regiões vizinhas.
-📦 Também pode optar por retirar os produtos em nossa loja física.
+Fazemos entregas em Mata Roma – MA e regiões vizinhas.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -899,11 +913,11 @@ Ações/Botões:
 
 [226] Grupo: Loja
 Pergunta: como funciona o carrinho?
-Intent: cart_info
-Confidence: 0.95
+Intent: cart_or_quote_info
+Confidence: 0.9
 WhatsApp: Não
 Resposta:
-Você pode adicionar os produtos ao carrinho e usar a opção de solicitar orçamento. Como os preços podem estar sob consulta, a equipe da Haja Luz confirma valores, disponibilidade e condições pelo atendimento.
+Nosso carrinho funciona como uma lista de orçamento. Você adiciona os produtos que precisa e envia para o nosso WhatsApp, onde nossa equipe fará o orçamento sem compromisso.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -912,11 +926,11 @@ Ações/Botões:
 
 [227] Grupo: Loja
 Pergunta: os produtos sao originais?
-Intent: warranty_info
-Confidence: 0.95
+Intent: warranty_original_products
+Confidence: 0.85
 WhatsApp: Não
 Resposta:
-Os produtos da Haja Luz são 100% originais, com nota fiscal e garantia conforme o fabricante. Para qualquer item específico, a equipe pode confirmar os detalhes no atendimento.
+Os produtos da Energia Nova Haja Luz são 100% originais, com nota fiscal e garantia conforme o fabricante. Para qualquer item específico, a equipe pode confirmar os detalhes no atendimento.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -926,12 +940,10 @@ Ações/Botões:
 [250] Grupo: Nivano
 Pergunta: quem fez o site?
 Intent: developer_credit
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-O site, a IA e a experiência digital da Haja Luz foram desenvolvidos pela Nivano 🚀
-
-A Nivano cria sites, sistemas, automações e assistentes de inteligência artificial para empresas que querem ter uma presença digital mais profissional, moderna e eficiente.
+O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -941,12 +953,10 @@ Ações/Botões:
 [251] Grupo: Nivano
 Pergunta: quem criou essa ia?
 Intent: developer_credit
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-O site, a IA e a experiência digital da Haja Luz foram desenvolvidos pela Nivano 🚀
-
-A Nivano cria sites, sistemas, automações e assistentes de inteligência artificial para empresas que querem ter uma presença digital mais profissional, moderna e eficiente.
+O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -956,12 +966,10 @@ Ações/Botões:
 [252] Grupo: Nivano
 Pergunta: quem desenvolveu esse chatbot?
 Intent: developer_credit
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-O site, a IA e a experiência digital da Haja Luz foram desenvolvidos pela Nivano 🚀
-
-A Nivano cria sites, sistemas, automações e assistentes de inteligência artificial para empresas que querem ter uma presença digital mais profissional, moderna e eficiente.
+O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -971,42 +979,36 @@ Ações/Botões:
 [280] Grupo: Correção do usuário
 Pergunta: isso nao e lampada
 Intent: correction_wrong_result
-Confidence: 0.95
-WhatsApp: Não
+Confidence: 1
+WhatsApp: Sim
 Resposta:
-Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário.
+Desculpa pela confusão. Vou refazer a busca focando exatamente no item que você pediu.
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Nenhum produto retornado
 Ações/Botões:
-- Ver mais lampada | Tipo: product_search
-- Falar com atendente | Tipo: whatsapp
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [281] Grupo: Correção do usuário
 Pergunta: isso nao e fio
 Intent: correction_wrong_result
-Confidence: 0.95
-WhatsApp: Não
+Confidence: 1
+WhatsApp: Sim
 Resposta:
-Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário.
+Desculpa pela confusão. Vou refazer a busca focando exatamente no item que você pediu.
 Produtos:
-- Fio Sólido 2,5mm² 100m | Categoria: fios-cabos | Preço: 139.9
-- Cabo Flexível 2,5mm² 100m Azul | Categoria: fios-cabos | Preço: 149.9
-- Cabo Flexível 4,0mm² 100m Preto | Categoria: fios-cabos | Preço: 239.9
+- Nenhum produto retornado
 Ações/Botões:
-- Ver mais fio | Tipo: product_search
-- Falar com atendente | Tipo: whatsapp
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [282] Grupo: Correção do usuário
 Pergunta: nao e isso
-Intent: context_continuation
-Confidence: 0.7
-WhatsApp: Não
+Intent: correction_wrong_result
+Confidence: 1
+WhatsApp: Sim
 Resposta:
-Ainda falando do mesmo assunto? Se puder me dar mais detalhes do que precisa, posso achar os produtos ideais!
+Desculpa pela confusão. Vou refazer a busca focando exatamente no item que você pediu.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -1016,10 +1018,10 @@ Ações/Botões:
 [300] Grupo: Off-topic
 Pergunta: me ensina a investir em bitcoin hoje
 Intent: off_topic
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Eu sou a IA da Haja Luz e consigo ajudar principalmente com materiais elétricos, iluminação, ferramentas, orçamento ou informações da loja.
+Eu sou a IA da Energia Nova Haja Luz e consigo ajudar principalmente com materiais elétricos, iluminação, ferramentas, orçamento ou informações da loja.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -1029,10 +1031,10 @@ Ações/Botões:
 [301] Grupo: Off-topic
 Pergunta: qual o melhor celular para comprar
 Intent: off_topic
-Confidence: 0.95
+Confidence: 1
 WhatsApp: Não
 Resposta:
-Eu sou a IA da Haja Luz e consigo ajudar principalmente com materiais elétricos, iluminação, ferramentas, orçamento ou informações da loja.
+Eu sou a IA da Energia Nova Haja Luz e consigo ajudar principalmente com materiais elétricos, iluminação, ferramentas, orçamento ou informações da loja.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -1052,45 +1054,44 @@ Confidence: 0.85
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 
 Usuário: tem mais lampadas melhores?
-Intent: show_more_results
-Confidence: 0.95
+Intent: product_search
+Confidence: 1
 Resposta:
-Claro! Vou continuar mostrando opções dessa categoria. Aqui vão mais algumas:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Tubular T8 18W | Categoria: iluminacao | Preço: 18.5
-- Plafon LED de Sobrepor Redondo 24W | Categoria: iluminacao | Preço: 34.9
-- Painel LED Slim 60x60 45W | Categoria: iluminacao | Preço: 89.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 
 Usuário: isso nao e lampada
 Intent: correction_wrong_result
-Confidence: 0.95
+Confidence: 1
 Resposta:
-Desculpa pela confusão. Me diga melhor o que você procura ou escolha uma opção: produto, orçamento, atendimento, endereço ou horário.
+Desculpa pela confusão. Vou refazer a busca focando exatamente no item que você pediu.
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Nenhum produto retornado
 Ações/Botões:
-- Ver mais lampada | Tipo: product_search
-- Falar com atendente | Tipo: whatsapp
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [CONVERSA 2] Grupo: Contexto saudação/cortesia
 Mensagens: me fala sobre as lampadas disponiveis -> como esta? -> tudo bem? -> tem mais lampadas?
-Intent final: show_more_results
+Intent final: product_search
 
 Usuário: me fala sobre as lampadas disponiveis
 Intent: product_search
@@ -1098,19 +1099,20 @@ Confidence: 0.85
 Resposta:
 Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 
 Usuário: como esta?
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -1118,27 +1120,28 @@ Ações/Botões:
 
 Usuário: tudo bem?
 Intent: courtesy
-Confidence: 0.95
+Confidence: 1
 Resposta:
-Tudo ótimo por aqui! 😊 Sou a IA da Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
+Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
 - Nenhuma ação retornada
 
 Usuário: tem mais lampadas?
-Intent: show_more_results
-Confidence: 0.95
+Intent: product_search
+Confidence: 1
 Resposta:
-Claro! Vou continuar mostrando opções dessa categoria. Aqui vão mais algumas:
+Aqui estão algumas opções relacionadas ao que você buscou:
 Produtos:
-- Lâmpada LED Tubular T8 18W | Categoria: iluminacao | Preço: 18.5
-- Plafon LED de Sobrepor Redondo 24W | Categoria: iluminacao | Preço: 34.9
-- Painel LED Slim 60x60 45W | Categoria: iluminacao | Preço: 89.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Mostrar mais itens parecidos | Tipo: show_more
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 --------------------------------------------------------------------------------
 
 [CONVERSA 3] Grupo: Contexto segurança elétrica
@@ -1187,19 +1190,18 @@ Mensagens: quero uma lampada para quarto -> qual melhor?
 Intent final: product_recommendation
 
 Usuário: quero uma lampada para quarto
-Intent: product_search
-Confidence: 0.85
+Intent: product_recommendation
+Confidence: 0.9
 Resposta:
-Temos opções de lâmpadas e iluminação, como LED bulbo, luz fria, luz quente e outros modelos. Separei algumas opções relacionadas:
+Para quarto e sala, normalmente recomendo luz quente ou neutra, porque deixa o ambiente mais confortável e aconchegante.
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Valor sob consulta
+- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Valor sob consulta
 Ações/Botões:
-- Ver mais opções | Tipo: show_more
-- Ver mais lâmpadas | Tipo: category
-- Fazer orçamento | Tipo: quote
-- Falar com atendente | Tipo: whatsapp
+- Adicionar ao orçamento | Tipo: quote
+- Consultar valor no WhatsApp | Tipo: whatsapp
+- Ver todos relacionados | Tipo: category
 
 Usuário: qual melhor?
 Intent: product_recommendation
@@ -1217,28 +1219,24 @@ Mensagens: tem lampada ou luzinfravermelha? -> tem sensor infravermelho?
 Intent final: product_or_technical_infrared
 
 Usuário: tem lampada ou luzinfravermelha?
-Intent: product_or_technical_infrared
-Confidence: 0.95
+Intent: multi_entity_product_or_technical
+Confidence: 1
 Resposta:
-Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.
+Temos opções de lâmpadas comuns, como LED bulbo, luz fria e luz quente. Já luz infravermelha normalmente envolve sensor, câmera, controle, lâmpada especial ou aquecimento. Você quer ver lâmpadas comuns ou confirmar um produto infravermelho específico?
 Produtos:
-- Lâmpada LED Bulbo 9W Branca Fria | Categoria: iluminacao | Preço: 5.99
-- Lâmpada LED Bulbo 12W Branca Fria | Categoria: iluminacao | Preço: 7.49
-- Lâmpada LED Bulbo 15W Branca Quente | Categoria: iluminacao | Preço: 9.9
+- Nenhum produto retornado
 Ações/Botões:
-- Falar com atendente | Tipo: whatsapp
-- Ver Instalação e Acessórios | Tipo: category
+- Nenhuma ação retornada
 
 Usuário: tem sensor infravermelho?
 Intent: product_or_technical_infrared
-Confidence: 0.95
+Confidence: 0.9000000000000001
 Resposta:
 Você procura sensor infravermelho para presença/movimento, iluminação automática, alarme ou câmera? Posso verificar opções relacionadas e, se não aparecer no catálogo online, te encaminho para o atendimento confirmar disponibilidade.
 Produtos:
-- Refletor LED 200W IP66 c/ Sensor | Categoria: iluminacao | Preço: 149.9
+- Nenhum produto retornado
 Ações/Botões:
-- Falar com atendente | Tipo: whatsapp
-- Ver Instalação e Acessórios | Tipo: category
+- Nenhuma ação retornada
 --------------------------------------------------------------------------------
 
 [CONVERSA 6] Grupo: Orçamento
@@ -1247,7 +1245,7 @@ Intent final: quote_item
 
 Usuário: quero fazer um orçamento
 Intent: quote_start
-Confidence: 0.95
+Confidence: 1
 Resposta:
 Claro! Posso te ajudar a montar um orçamento. Me envie a lista de materiais com quantidades, por exemplo: 2 lâmpadas, 10 metros de fio, 3 tomadas.
 Produtos:

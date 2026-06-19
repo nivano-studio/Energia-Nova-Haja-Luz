@@ -17,6 +17,7 @@ export const requiredCorrections: Record<string, string> = {
   "comovoceesta": "como voce esta",
   "tudobem": "tudo bem",
   "tudobom": "tudo bom",
+  "oire": "oie",
 
   // gerais
   "minah": "minha",
