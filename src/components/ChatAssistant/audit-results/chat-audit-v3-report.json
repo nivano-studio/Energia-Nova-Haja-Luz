@@ -7286,7 +7286,7 @@
       "input": "que horas sao?",
       "expectedIntent": "real_time",
       "notes": "",
-      "responseText": "Agora são 13:00.",
+      "responseText": "Agora são 13:14.",
       "intent": "real_time",
       "confidence": 1,
       "entities": {
