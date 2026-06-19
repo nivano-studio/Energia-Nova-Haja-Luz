@@ -3921,7 +3921,7 @@
       "id": 223,
       "group": "Loja",
       "input": "que horas sao?",
-      "responseText": "Agora são 13:06.",
+      "responseText": "Agora são 13:29.",
       "intent": "real_time",
       "confidence": 1,
       "products": [],

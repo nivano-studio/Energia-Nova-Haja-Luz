@@ -2,8 +2,8 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from 'url';
-import { processQuery } from "./chatEngine.js";
-import { resetChatContext } from "./chatContext.js";
+import { processQuery } from "./chatEngine";
+import { resetChatContext } from "./chatContext";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
