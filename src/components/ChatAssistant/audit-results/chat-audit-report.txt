@@ -878,7 +878,7 @@ Intent: real_time
 Confidence: 1
 WhatsApp: Não
 Resposta:
-Agora são 13:29.
+Agora são 14:42.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -944,6 +944,7 @@ Confidence: 1
 WhatsApp: Não
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -957,6 +958,7 @@ Confidence: 1
 WhatsApp: Não
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -970,6 +972,7 @@ Confidence: 1
 WhatsApp: Não
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:

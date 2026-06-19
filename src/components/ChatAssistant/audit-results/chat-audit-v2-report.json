@@ -7286,7 +7286,7 @@
       "input": "que horas sao?",
       "expectedIntent": "real_time",
       "notes": "",
-      "responseText": "Agora são 13:12.",
+      "responseText": "Agora são 14:43.",
       "intent": "real_time",
       "confidence": 1,
       "entities": {
@@ -7427,7 +7427,7 @@
       "input": "quem fez o site?",
       "expectedIntent": "developer_credit",
       "notes": "",
-      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀",
+      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀\nhttps://www.instagram.com/nivanostudio/",
       "intent": "developer_credit",
       "confidence": 1,
       "entities": {
@@ -7459,9 +7459,9 @@
         "intentScores": [
           {
             "intent": "developer_credit",
-            "score": 100,
+            "score": 120,
             "reasons": [
-              "Créditos do dev V12 (+100)"
+              "Créditos do dev robusto (+120)"
             ],
             "confidence": 1
           }
@@ -7474,7 +7474,7 @@
       "input": "quem criou essa ia?",
       "expectedIntent": "developer_credit",
       "notes": "",
-      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀",
+      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀\nhttps://www.instagram.com/nivanostudio/",
       "intent": "developer_credit",
       "confidence": 1,
       "entities": {
@@ -7506,9 +7506,9 @@
         "intentScores": [
           {
             "intent": "developer_credit",
-            "score": 100,
+            "score": 120,
             "reasons": [
-              "Créditos do dev V12 (+100)"
+              "Créditos do dev robusto (+120)"
             ],
             "confidence": 1
           }
@@ -7521,7 +7521,7 @@
       "input": "quem desenvolveu esse chatbot?",
       "expectedIntent": "developer_credit",
       "notes": "",
-      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀",
+      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀\nhttps://www.instagram.com/nivanostudio/",
       "intent": "developer_credit",
       "confidence": 1,
       "entities": {
@@ -7553,9 +7553,9 @@
         "intentScores": [
           {
             "intent": "developer_credit",
-            "score": 100,
+            "score": 120,
             "reasons": [
-              "Créditos do dev V12 (+100)"
+              "Créditos do dev robusto (+120)"
             ],
             "confidence": 1
           }
@@ -7568,7 +7568,7 @@
       "input": "quem programou esse sistema?",
       "expectedIntent": "developer_credit",
       "notes": "",
-      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀",
+      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀\nhttps://www.instagram.com/nivanostudio/",
       "intent": "developer_credit",
       "confidence": 1,
       "entities": {
@@ -7600,9 +7600,9 @@
         "intentScores": [
           {
             "intent": "developer_credit",
-            "score": 100,
+            "score": 120,
             "reasons": [
-              "Créditos do dev V12 (+100)"
+              "Créditos do dev robusto (+120)"
             ],
             "confidence": 1
           }
@@ -7615,7 +7615,7 @@
       "input": "quem fez a ia de atendimento?",
       "expectedIntent": "developer_credit",
       "notes": "",
-      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀",
+      "responseText": "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀\nhttps://www.instagram.com/nivanostudio/",
       "intent": "developer_credit",
       "confidence": 1,
       "entities": {
@@ -7647,9 +7647,9 @@
         "intentScores": [
           {
             "intent": "developer_credit",
-            "score": 100,
+            "score": 120,
             "reasons": [
-              "Créditos do dev V12 (+100)"
+              "Créditos do dev robusto (+120)"
             ],
             "confidence": 1
           }

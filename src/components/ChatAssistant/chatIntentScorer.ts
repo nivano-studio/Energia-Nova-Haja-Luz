@@ -192,8 +192,14 @@ export function calculateAdvancedIntentScores(
   }
 
   // 7. developer_credit
-  if (v12Developer && v12Developer.some(c => text.includes(c)) || text.includes("desenvolveu") && text.includes("chatbot")) {
-    scores.push({ intent: "developer_credit", score: 100, reasons: ["Créditos do dev V12 (+100)"] });
+  const creatorKeywords = ["nivano", "desenvolvedor", "desenvolveu", "desenvedor", "criou", "programou", "desenvolvel", "desenvelveu", "fez o", "fez a", "fez esse", "fez essa", "criador", "autor", "programador"];
+  const systemKeywords = ["site", "bot", "chatbot", "ia", "sistema", "plataforma", "pagina", "assistente", "inteligencia", "instagram", "insta", "rede social", "redes sociais"];
+  const hasCreator = creatorKeywords.some(k => text.includes(k));
+  const hasSystem = systemKeywords.some(k => text.includes(k));
+  const hasDirectPhrase = v12Developer && v12Developer.some(c => text.includes(c));
+
+  if (hasDirectPhrase || (hasCreator && hasSystem) || text.includes("nivano")) {
+    scores.push({ intent: "developer_credit", score: 120, reasons: ["Créditos do dev robusto (+120)"] });
   }
 
   // 8. social_instagram

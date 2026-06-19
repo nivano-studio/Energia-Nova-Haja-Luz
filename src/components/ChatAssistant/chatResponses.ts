@@ -3,7 +3,7 @@ export const responses = {
   courtesy: "Tudo ótimo por aqui! 😊 Sou a IA da Energia Nova Haja Luz e posso te ajudar com lâmpadas, iluminação, fios, tomadas, disjuntores, orçamento ou informações da loja. O que você precisa hoje?",
   humanSupport: "Desculpa, acho que não entendi bem sua dúvida. Para te ajudar melhor, posso te encaminhar para um atendente da Energia Nova Haja Luz.",
   humanSupportDirect: "Claro! Posso te encaminhar para o atendimento da Energia Nova Haja Luz pelo WhatsApp.",
-  developerCredit: "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀",
+  developerCredit: "O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀\nhttps://www.instagram.com/nivanostudio/",
   
   // Safety
   electricalSafety: "Esse tipo de instalação envolve segurança elétrica. Para orientar melhor, preciso saber a potência do equipamento, a tensão da rede e a distância até o quadro. Mesmo assim, recomendo confirmar com um eletricista, principalmente em chuveiros, ar-condicionado, tomadas de alta potência e disjuntores.",
@@ -63,7 +63,7 @@ export const responses = {
   storeInstagram: "O Instagram oficial da Energia Nova Haja Luz é @hajaluzenergianova.",
   storeOriginals: "Os produtos da Energia Nova Haja Luz são 100% originais, com nota fiscal e garantia conforme o fabricante. Para qualquer item específico, a equipe pode confirmar os detalhes no atendimento.",
   storeCart: "Você pode adicionar os produtos ao carrinho de orçamento e enviar a solicitação para a equipe da Energia Nova Haja Luz. Como os valores são sob consulta, a equipe confirma preço, disponibilidade e condições de pagamento pelo atendimento.",
-  developerInstagram: "O Instagram oficial da Nivano Studio é @nivanostudio.",
+  developerInstagram: "O Instagram oficial da Nivano Studio é https://www.instagram.com/nivanostudio/.",
 
   // Quote
   quoteStart: "Claro! Posso te ajudar a montar um orçamento. Me envie a lista de materiais com quantidades, por exemplo: 2 lâmpadas, 10 metros de fio, 3 tomadas.",

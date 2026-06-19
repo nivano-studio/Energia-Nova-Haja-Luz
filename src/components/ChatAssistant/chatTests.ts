@@ -181,7 +181,35 @@ const tests: ChatTestCase[] = [
   { id: 1025, input: "fita", expectedIntent: "product_search", description: "V9.2: Fita deve virar fita isolante" },
   { id: 1026, input: "bocau", expectedIntent: "product_search", description: "V9.2: Bocau deve virar suporte" },
   { id: 1027, input: "quadro", expectedIntent: "product_search", description: "V9.2: Quadro deve virar quadro_energia" },
-  { id: 1028, input: "dijumtore", expectedIntent: "product_search", description: "V15: dijumtore phonetic match to disjuntor" }
+  { id: 1028, input: "dijumtore", expectedIntent: "product_search", description: "V15: dijumtore phonetic match to disjuntor" },
+  {
+    id: 1029,
+    input: "tem luz infravemelha?",
+    expectedIntent: "product_or_technical_infrared",
+    mustInclude: ["infravermelho"],
+    description: "V15: tem luz infravemelha com erro de digitação"
+  },
+  {
+    id: 1030,
+    input: "e que mdesenvolvel o bot",
+    expectedIntent: "developer_credit",
+    mustInclude: ["Nivano Studio", "https://www.instagram.com/nivanostudio/"],
+    description: "V15: e que mdesenvolvel o bot com erros"
+  },
+  {
+    id: 1031,
+    input: "qual o instagram do desenvolvedor",
+    expectedIntent: "developer_credit",
+    mustInclude: ["https://www.instagram.com/nivanostudio/"],
+    description: "V15: qual o instagram do desenvolvedor"
+  },
+  {
+    id: 1032,
+    input: "qual o instagram de quem desenvolveu o site",
+    expectedIntent: "developer_credit",
+    mustInclude: ["https://www.instagram.com/nivanostudio/"],
+    description: "V15: qual o instagram de quem desenvolveu o site"
+  }
 ];
 
 function runTests() {

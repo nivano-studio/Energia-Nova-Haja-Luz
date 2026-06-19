@@ -30,6 +30,14 @@ export const requiredCorrections: Record<string, string> = {
   "vc": "voce",
   "vcs": "voces",
   "ce": "voce",
+  "mdesenvolvel": "desenvolveu",
+  "desenvolvel": "desenvolveu",
+  "mdesenvolveu": "desenvolveu",
+  "desenvelveu": "desenvolveu",
+  "infravemelha": "infravermelha",
+  "infravemelho": "infravermelho",
+  "infravemelhas": "infravermelha",
+  "infravemelhos": "infravermelho",
 
   // redes sociais
   "istagram": "instagram",

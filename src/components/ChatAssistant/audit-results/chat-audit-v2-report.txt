@@ -6362,7 +6362,7 @@ Entidades:
   "products": []
 }
 Resposta:
-Agora são 13:12.
+Agora são 14:43.
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -6510,6 +6510,7 @@ Entidades:
 }
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -6537,9 +6538,9 @@ Debug:
   "intentScores": [
     {
       "intent": "developer_credit",
-      "score": 100,
+      "score": 120,
       "reasons": [
-        "Créditos do dev V12 (+100)"
+        "Créditos do dev robusto (+120)"
       ],
       "confidence": 1
     }
@@ -6559,6 +6560,7 @@ Entidades:
 }
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -6586,9 +6588,9 @@ Debug:
   "intentScores": [
     {
       "intent": "developer_credit",
-      "score": 100,
+      "score": 120,
       "reasons": [
-        "Créditos do dev V12 (+100)"
+        "Créditos do dev robusto (+120)"
       ],
       "confidence": 1
     }
@@ -6608,6 +6610,7 @@ Entidades:
 }
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -6635,9 +6638,9 @@ Debug:
   "intentScores": [
     {
       "intent": "developer_credit",
-      "score": 100,
+      "score": 120,
       "reasons": [
-        "Créditos do dev V12 (+100)"
+        "Créditos do dev robusto (+120)"
       ],
       "confidence": 1
     }
@@ -6657,6 +6660,7 @@ Entidades:
 }
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -6684,9 +6688,9 @@ Debug:
   "intentScores": [
     {
       "intent": "developer_credit",
-      "score": 100,
+      "score": 120,
       "reasons": [
-        "Créditos do dev V12 (+100)"
+        "Créditos do dev robusto (+120)"
       ],
       "confidence": 1
     }
@@ -6706,6 +6710,7 @@ Entidades:
 }
 Resposta:
 O site, a IA e a experiência digital da Energia Nova Haja Luz foram desenvolvidos pela Nivano Studio 🚀
+https://www.instagram.com/nivanostudio/
 Produtos:
 - Nenhum produto retornado
 Ações/Botões:
@@ -6733,9 +6738,9 @@ Debug:
   "intentScores": [
     {
       "intent": "developer_credit",
-      "score": 100,
+      "score": 120,
       "reasons": [
-        "Créditos do dev V12 (+100)"
+        "Créditos do dev robusto (+120)"
       ],
       "confidence": 1
     }
