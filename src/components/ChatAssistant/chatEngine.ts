@@ -113,6 +113,9 @@ export function understandBeforeAnswer(original: string): { response: ChatRespon
     const subject = chatContext.softContext.subject;
     let replaced = false;
     for (const pr of pronouns) {
+      if ((pr === "esta" || pr === "estas") && new RegExp(`\\b(como|voce|vc|ele|ela|tudo|onde|quem)\\s+${pr}\\b`, 'i').test(clean)) {
+        continue;
+      }
       const regex = new RegExp(`\\b${pr}\\b`, 'gi');
       if (regex.test(clean)) {
         clean = clean.replace(regex, subject);
