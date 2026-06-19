@@ -64,7 +64,7 @@ const RAW_PRODUCTS: Product[] = [
   { id: '33', name: 'Disjuntor Bipolar 40A', category: 'disjuntores', subcategory: 'disjuntor-bipolar', image: '/images/products/disjuntor_bipolar.png', price: 35.00, oldPrice: 48.00, salesCount: 320 },
   { id: '34', name: 'Disjuntor Tripolar 50A', category: 'disjuntores', subcategory: 'disjuntor-tripolar', image: '/images/products/disjuntor_tripolar.png', price: 58.00, oldPrice: 75.00, salesCount: 150 },
   { id: '35', name: 'IDR 40A 30mA Bipolar', category: 'disjuntores', subcategory: 'idr-ddr', image: '/images/products/idr_bipolar.png', price: 145.00, oldPrice: 180.00, salesCount: 110 },
-  { id: '36', name: 'Quadro de Distribuição 12 Disjuntores', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao.png', price: 65.00, oldPrice: 89.00, salesCount: 240 },
+  { id: '36', name: 'Quadro de Distribuição 12 Disjuntores', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao_12.png', price: 65.00, oldPrice: 89.00, salesCount: 240 },
 
   // === FERRAMENTAS ===
   { id: '48', name: 'Abraçadeira preta 3,6 x 200 mm com 100 unidades', category: 'ferramentas', subcategory: 'abracadeiras', image: '/images/products/abracadeiras.png' },
@@ -278,9 +278,9 @@ const RAW_PRODUCTS: Product[] = [
   { id: '250', name: 'Barra de aterramento laminada 1.2 9.52 mm x 1500 mm', category: 'instalacao-acessorios', subcategory: 'aterramento-hastes', image: '/images/products/eletroduto_soldavel.png' },
   { id: '251', name: 'Barra de aterramento laminada 1.2 9.52 mm x 2000 mm', category: 'instalacao-acessorios', subcategory: 'aterramento-hastes', image: '/images/products/eletroduto_soldavel.png' },
   { id: '252', name: 'Barra de aterramento laminada 1.2 9.52 mm x 2400 mm', category: 'instalacao-acessorios', subcategory: 'aterramento-hastes', image: '/images/products/eletroduto_soldavel.png' },
-  { id: '253', name: 'Quadro de distribuição 4 disjuntores de embutir branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao.png' },
-  { id: '254', name: 'Quadro de distribuição 8 disjuntores de embutir branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao.png' },
-  { id: '255', name: 'Quadro de distribuição 16 disjuntores de embutir branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao.png' },
+  { id: '253', name: 'Quadro de distribuição 4 disjuntores de embutir branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao_4.png' },
+  { id: '254', name: 'Quadro de distribuição 8 disjuntores de embutir branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao_8.png' },
+  { id: '255', name: 'Quadro de distribuição 16 disjuntores de embutir branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/quadro_distribuicao_16.png' },
   { id: '256', name: 'Caixa de medição monofásica CM1 M1 cinza com visor de vidro padrão Equatorial', category: 'instalacao-acessorios', subcategory: 'grampos-curvas-caixas', image: '/images/products/eletroduto_soldavel.png' },
 
   // Linha Tramontina Aria
@@ -334,7 +334,7 @@ const RAW_PRODUCTS: Product[] = [
   { id: '300', name: 'Grampo para haste de aterramento GTDU 5/8', category: 'instalacao-acessorios', subcategory: 'aterramento-hastes', image: '/images/products/eletroduto_soldavel.png' },
   { id: '301', name: 'Tubo de aterramento N1', category: 'instalacao-acessorios', subcategory: 'aterramento-hastes', image: '/images/products/eletroduto_soldavel.png' },
   { id: '302', name: 'Tubo de aterramento N3', category: 'instalacao-acessorios', subcategory: 'aterramento-hastes', image: '/images/products/eletroduto_soldavel.png' },
-  { id: '303', name: 'Centro de distribuição para 1 disjuntor de sobrepor branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/caixa_disjuntor_1.png' },
+  { id: '303', name: 'Centro de distribuição para 1 disjuntor de sobrepor branco', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/centro_distribuicao_1_novo.png' },
   { id: '304', name: 'Barramento pente fase 63A 12P 22cm monofásico', category: 'disjuntores', subcategory: 'quadros-distribuicao', image: '/images/products/barramento_pente.png' },
   { id: '23', name: 'TUBO PVC SOLDAVEL - 6M - 20MM', category: 'hidraulicos', subcategory: 'tubos-conexoes-soldaveis', image: '/images/products/tubo_pvc_soldavel.png' },
   { id: '24', name: 'TUBO PVC SOLDAVEL - 6M - 25MM', category: 'hidraulicos', subcategory: 'tubos-conexoes-soldaveis', image: '/images/products/tubo_pvc_soldavel.png' },
