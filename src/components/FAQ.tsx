@@ -26,7 +26,7 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     question: "Os produtos são originais e possuem garantia?",
-    answer: "Todos os nossos produtos são **100% originais**, comprados diretamente de distribuidores oficiais, com nota fiscal e garantia de fábrica. A **Haja Luz** foi fundada em **2014** e é referência em confiabilidade em Mata Roma - MA."
+    answer: "Todos os nossos produtos são **100% originais**, comprados diretamente de distribuidores oficiais, com nota fiscal e garantia de fábrica. A **Energia Nova Haja Luz** foi fundada em **2014** e é referência em confiabilidade em Mata Roma - MA."
   }
 ];
 

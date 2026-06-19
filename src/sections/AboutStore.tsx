@@ -74,7 +74,7 @@ export default function AboutStore() {
             <div className="relative rounded-[1.8rem] overflow-hidden bg-[#1C2978] aspect-square lg:aspect-[4/5] xl:aspect-square">
               <img 
                 src="/images/products/loja.webp" 
-                alt="Fachada da loja Haja Luz em Mata Roma" 
+                alt="Fachada da loja Energia Nova Haja Luz em Mata Roma" 
                 className="w-full h-full object-cover opacity-90"
               />
               
@@ -119,7 +119,7 @@ export default function AboutStore() {
             
             <ScrollReveal delay={0.2} yOffset={20} blur="8px">
               <p className="text-blue-100/50 text-base sm:text-lg mb-10 max-w-xl leading-relaxed font-light">
-                A Haja Luz nasceu do sonho de levar qualidade e segurança elétrica para todo o Maranhão. Hoje somos referência em materiais elétricos, iluminação e ferramentas profissionais.
+                A Energia Nova Haja Luz nasceu do sonho de levar qualidade e segurança elétrica para todo o Maranhão. Hoje somos referência em materiais elétricos, iluminação e ferramentas profissionais.
               </p>
             </ScrollReveal>
 

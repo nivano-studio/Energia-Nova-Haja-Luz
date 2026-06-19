@@ -115,7 +115,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
           <img
             ref={logoRef}
             src="/images/logos/logo-carregamento.webp"
-            alt="Logo Haja Luz"
+            alt="Logo Energia Nova Haja Luz"
             className="w-52 sm:w-64 md:w-80 h-auto object-contain drop-shadow-[0_0_25px_rgba(28,41,120,0.5)] relative z-10"
           />
         </div>

@@ -1,7 +1,7 @@
 export const storeInfo = {
   name: "Energia Nova Haja Luz",
   officialName: "Energia Nova Haja Luz",
-  shortName: "Haja Luz",
+  shortName: "Energia Nova Haja Luz",
   city: "Mata Roma – MA",
   address: "Av. José Ribamar Castro",
   instagram: "@hajaluzenergianova",

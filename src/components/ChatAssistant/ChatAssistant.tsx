@@ -20,7 +20,7 @@ export default function ChatAssistant() {
     {
       id: 'welcome',
       sender: 'ai',
-      text: 'Olá! Sou a **Inteligência Artificial da Haja Luz**! 💡\n\nEstou aqui para tirar suas dúvidas sobre materiais elétricos e ajudar no seu projeto. Como posso te ajudar hoje?',
+      text: 'Olá! Sou a **Inteligência Artificial da Energia Nova Haja Luz**! 💡\n\nEstou aqui para tirar suas dúvidas sobre materiais elétricos e ajudar no seu projeto. Como posso te ajudar hoje?',
     }
   ]);
 
@@ -158,7 +158,7 @@ export default function ChatAssistant() {
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-primary-700"></div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white leading-tight">Assistente Haja Luz</h3>
+                  <h3 className="font-bold text-white leading-tight">Assistente Energia Nova Haja Luz</h3>
                   <p className="text-primary-100 text-xs font-medium">Online agora</p>
                 </div>
               </div>

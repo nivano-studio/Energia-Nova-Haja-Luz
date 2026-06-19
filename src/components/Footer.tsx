@@ -63,7 +63,7 @@ export default function Footer() {
             >
               <div>
                 <div className="w-20 h-20 bg-white rounded-full overflow-hidden flex items-center justify-center p-2.5 mb-8 group-hover:scale-105 transition-transform duration-500 origin-left">
-                  <img src="/images/logos/LOGO.webp" alt="Haja Luz" className="max-w-full max-h-full object-contain" />
+                  <img src="/images/logos/LOGO.webp" alt="Energia Nova Haja Luz" className="max-w-full max-h-full object-contain" />
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed mb-8">
                   Sua loja especializada em materiais elétricos, ferramentas e iluminação em Mata Roma - MA. Tudo para sua obra ou reforma.
@@ -212,7 +212,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <ScrollReveal delay={0.1} yOffset={20} blur="6px" className="relative z-10 border-t border-white/5 bg-black/20">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-widest font-semibold text-slate-500">
-          <p>© {currentYear} Haja Luz. Desenvolvido por <span className="font-bold text-white">Nivano Studio</span></p>
+          <p>© {currentYear} Energia Nova Haja Luz. Desenvolvido por <span className="font-bold text-white">Nivano Studio</span></p>
           <p className="flex items-center gap-2">
             <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
             Imagens ilustrativas

@@ -107,7 +107,7 @@ export default function Header() {
               <div className="cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <img 
                   src="/images/logos/logo-topo.webp" 
-                  alt="Haja Luz" 
+                  alt="Energia Nova Haja Luz" 
                   className={`object-contain origin-left transition-all duration-300 group-hover:scale-105 mix-blend-multiply ${isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-20'}`} 
                 />
               </div>
