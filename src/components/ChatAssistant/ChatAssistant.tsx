@@ -148,7 +148,7 @@ export default function ChatAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
-            className="fixed md:bottom-24 md:right-6 lg:right-16 bottom-0 right-0 w-full md:w-[400px] h-[100dvh] md:h-[600px] bg-white md:rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden border border-gray-100"
+            className="fixed md:bottom-24 md:right-6 lg:right-16 bottom-0 right-0 w-full md:w-[360px] h-[100dvh] md:h-[calc(100dvh-130px)] md:max-h-[550px] bg-white md:rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden border border-gray-100"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-4 flex justify-between items-center shrink-0">
