@@ -80,14 +80,75 @@ function similarity(s1: string, s2: string): number {
   return (longerLength - levenshteinDistance(longer, shorter)) / parseFloat(longerLength.toString());
 }
 
+export function getPhoneticKey(word: string): string {
+  if (!word) return "";
+  let clean = word.toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // remove accents
+  
+  // Basic phonetic mapping for Portuguese (PT-BR)
+  clean = clean.replace(/ph/g, "f");
+  clean = clean.replace(/ch/g, "x");
+  clean = clean.replace(/lh/g, "l");
+  clean = clean.replace(/nh/g, "n");
+  
+  // g/j before e/i
+  clean = clean.replace(/g(?=[ei])/g, "j");
+  // c/ç/s/z similarities
+  clean = clean.replace(/c(?=[ei])/g, "s");
+  clean = clean.replace(/ç/g, "s");
+  clean = clean.replace(/z(?=\b)/g, "s"); // z at end of word -> s
+  clean = clean.replace(/s(?=[aeiou])(?<=[aeiou])/g, "z"); // s between vowels -> z
+  
+  // k/q similarities
+  clean = clean.replace(/qu/g, "k");
+  clean = clean.replace(/q/g, "k");
+  clean = clean.replace(/c/g, "k"); // other c -> k
+  
+  // double letters
+  clean = clean.replace(/([a-z])\1+/g, "$1");
+  
+  // nasalization simplification
+  clean = clean.replace(/m/g, "n");
+  // drop s before consonants (e.g. disjuntor -> dijuntor)
+  clean = clean.replace(/s(?=[bcdfghjklmnpqrstvwxyz])/g, "");
+  
+  // vocalic endings and 'l' vocalization
+  clean = clean.replace(/l(?=\b|[^aeiou])/g, "u"); // l at end or before consonant -> u (bocal -> bocau)
+  clean = clean.replace(/o(?=\b)/g, "u"); // o at end -> u (cabo -> cabu)
+  
+  // remove starting h
+  if (clean.startsWith("h")) clean = clean.substring(1);
+  
+  return clean;
+}
+
 export function fuzzyCorrectToken(token: string, vocabulary: string[]): string {
   if (token.length < 4 || /\d/.test(token)) return token;
   
   let best = { term: token, score: 0 };
+  const tokenPhonetic = getPhoneticKey(token);
 
   for (const term of vocabulary) {
-    const score = similarity(token, term);
-    if (score > best.score) best = { term, score };
+    const termPhonetic = getPhoneticKey(term);
+    
+    // 1. Exact phonetic match (highest confidence fallback)
+    if (tokenPhonetic === termPhonetic) {
+      return term;
+    }
+
+    // 2. Standard Levenshtein similarity
+    const stdScore = similarity(token, term);
+    
+    // 3. Phonetic similarity
+    const phoneticScore = similarity(tokenPhonetic, termPhonetic);
+    
+    // Weighted combination
+    const score = Math.max(stdScore, phoneticScore * 0.95);
+    
+    if (score > best.score) {
+      best = { term, score };
+    }
   }
 
   if (best.score >= 0.82) return best.term;
@@ -153,6 +214,10 @@ export function preprocessMessage(input: string): { original: string; clean: str
   const fuzzyTokens = tokens.map(t => fuzzyCorrectToken(t, fuzzyVocabulary));
   current = fuzzyTokens.join(' ');
   steps.push(`Applied fuzzy matching: ${current}`);
+  
+  // Re-apply plural-to-singular normalization after fuzzy matching to catch any plural corrections from spelling matches
+  current = replaceWholeWords(current, pluralCorrections);
+  steps.push(`Applied post-fuzzy plural corrections: ${current}`);
   
   current = normalizeUnits(current);
   steps.push(`Normalized units: ${current}`);

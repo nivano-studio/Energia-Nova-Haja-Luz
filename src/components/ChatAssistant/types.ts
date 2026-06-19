@@ -95,6 +95,7 @@ export interface Message {
   products?: Product[];
   whatsappBtn?: boolean;
   suggestedQuestions?: string[];
+  actions?: ChatAction[];
 }
 
 export type LastSearchState = {

@@ -77,7 +77,8 @@ export const requiredCorrections: Record<string, string> = {
   "fiu": "fio",
   "cabu": "cabo",
   "chuvero": "chuveiro",
-  "shuveiro": "chuveiro"
+  "shuveiro": "chuveiro",
+  "pv": "pvc"
 };
 
 export const repeatedCorrections: Record<string, string> = {
@@ -126,5 +127,6 @@ export const fuzzyVocabulary: string[] = [
   ...productAndTechnicalKeywords,
   "iluminacao", "ferramentas", "ventiladores", "disjuntores", "cabos",
   "oi", "ola", "opa", "bom dia", "boa tarde", "boa noite",
-  "tem", "vende", "quero", "preciso", "quanto", "custa", "valor", "preco", "melhor", "recomenda"
+  "tem", "vende", "quero", "preciso", "quanto", "custa", "valor", "preco", "melhor", "recomenda",
+  "quarto", "sala", "cozinha", "banheiro", "garagem", "jardim", "chale", "chalé"
 ];

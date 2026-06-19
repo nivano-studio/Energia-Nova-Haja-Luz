@@ -180,7 +180,8 @@ const tests: ChatTestCase[] = [
   { id: 1024, input: "qual seu instagram", expectedIntent: "store_location", mustInclude: ["instagram"], description: "V9.2: Pergunta de instagram -> store_location (ou criar intent de instagram)" },
   { id: 1025, input: "fita", expectedIntent: "product_search", description: "V9.2: Fita deve virar fita isolante" },
   { id: 1026, input: "bocau", expectedIntent: "product_search", description: "V9.2: Bocau deve virar suporte" },
-  { id: 1027, input: "quadro", expectedIntent: "product_search", description: "V9.2: Quadro deve virar quadro_energia" }
+  { id: 1027, input: "quadro", expectedIntent: "product_search", description: "V9.2: Quadro deve virar quadro_energia" },
+  { id: 1028, input: "dijumtore", expectedIntent: "product_search", description: "V15: dijumtore phonetic match to disjuntor" }
 ];
 
 function runTests() {
@@ -287,6 +288,18 @@ function runTests() {
     passed++;
   } else {
     console.error(`❌ FALHOU: Contexto 2 -> Esperado electrical_safety, recebeu ${ctx2.intent}`);
+    failed++;
+  }
+
+  // Pronoun context test
+  resetChatContext();
+  processQuery("tem tomada?");
+  const ctx4 = processQuery("quanto custa ela?");
+  if (ctx4.intent === "product_price" && ctx4.entities?.products?.includes("tomada")) {
+    console.log(`✅ PASSOU: Contexto 4 (pronomes: tomada + quanto custa ela) -> ${ctx4.intent}`);
+    passed++;
+  } else {
+    console.error(`❌ FALHOU: Contexto 4 -> Esperado product_price com entidade tomada, recebeu ${ctx4.intent} com entidades ${JSON.stringify(ctx4.entities)}`);
     failed++;
   }
 

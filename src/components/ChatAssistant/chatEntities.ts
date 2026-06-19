@@ -45,9 +45,16 @@ export function hasTrueMultipleEntities(entities: ExtractedEntities, clean: stri
   );
 
   if (distinctProducts.length < 2) return false;
-  const hasConnector = /\b(e|ou|tambem|alem de)\b|,/.test(clean);
+
+  let cleanForConnectors = clean.toLowerCase();
+  cleanForConnectors = cleanForConnectors.replace(/\bcabo\s+e\s+fio\b/gi, "");
+  cleanForConnectors = cleanForConnectors.replace(/\btomada\s+e\s+interruptor\b/gi, "");
+  cleanForConnectors = cleanForConnectors.replace(/\bferragens?\s+e\s+fixacao\b/gi, "");
+
+  const hasConnector = /\b(e|ou|tambem|alem de)\b|,/.test(cleanForConnectors);
   return hasConnector;
 }
+
 
 export function classifyLuzUsage(cleanText: string): "product" | "store_name" | "power_issue" | "technical" | "location" | "ambiguous" | "unknown" {
   if (cleanText.includes("onde fica") || cleanText.includes("endereco")) {
@@ -247,6 +254,12 @@ export function extractEntities(cleanText: string): { entities: ExtractedEntitie
   if (kelvinMatch) {
     entities.colorTemperatureKelvin = parseInt(kelvinMatch[1], 10);
     addMatch(`${entities.colorTemperatureKelvin}k`, "unit", 1.0, "exact");
+  }
+
+  const isRawNumber = /^\d+(?:\.\d+)?$/.test(cleanText);
+  if (isRawNumber && !entities.type) {
+    entities.type = cleanText;
+    addMatch(cleanText, "attribute", 1.0, "exact");
   }
 
   // Determine hasIsolatedAttribute

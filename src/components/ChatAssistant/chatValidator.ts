@@ -85,7 +85,7 @@ export function validateResponseBeforeReturn(
   }
 
   // 8. If confidence is very low, force disambiguation/fallback
-  const exemptIntents = ["ask_disambiguation", "ambiguous_short_query", "greeting", "courtesy"];
+  const exemptIntents = ["ask_disambiguation", "ambiguous_short_query", "greeting", "courtesy", "fallback"];
   if (validResponse.confidence < 0.6 && !exemptIntents.includes(validResponse.intent || "")) {
     validResponse.products = [];
     

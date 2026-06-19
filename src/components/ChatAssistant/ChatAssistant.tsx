@@ -62,6 +62,18 @@ export default function ChatAssistant() {
     sendMessage(question);
   };
 
+  const handleActionClick = (action: any) => {
+    if (action.type === 'show_more') {
+      sendMessage('ver mais');
+    } else if (action.type === 'category') {
+      const catSlug = action.payload?.category;
+      if (catSlug) {
+        window.dispatchEvent(new CustomEvent('select-product', { detail: { category: catSlug } }));
+        setIsOpen(false);
+      }
+    }
+  };
+
   const sendMessage = async (textToSend: string) => {
     if (!textToSend.trim()) return;
 
@@ -88,6 +100,7 @@ export default function ChatAssistant() {
         products: response.products,
         whatsappBtn: response.whatsappBtn,
         suggestedQuestions: response.suggestedQuestions,
+        actions: response.actions,
       };
       setMessages(prev => [...prev, aiMsg]);
       setIsTyping(false);
@@ -226,6 +239,34 @@ export default function ChatAssistant() {
                       >
                         Falar com Atendente
                       </a>
+                    </motion.div>
+                  )}
+
+                  {/* Render General Actions (e.g. show_more, category) */}
+                  {message.actions && message.actions.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-3 flex flex-col gap-2 w-full max-w-[85%]"
+                    >
+                      {message.actions
+                        .filter(action => action.type === 'show_more' || action.type === 'category')
+                        .map((action, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleActionClick(action)}
+                            className={`
+                              w-full py-2.5 px-4 rounded-xl text-sm font-bold transition-all border text-center active:scale-95
+                              ${action.type === 'show_more'
+                                ? 'bg-primary-50 hover:bg-primary-100 text-primary-700 border-primary-100'
+                                : 'bg-[#1C2978] hover:bg-[#152060] text-white border-transparent shadow-md shadow-blue-500/10'
+                              }
+                            `}
+                          >
+                            {action.label}
+                          </button>
+                        ))
+                      }
                     </motion.div>
                   )}
 

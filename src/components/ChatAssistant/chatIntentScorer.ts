@@ -1,4 +1,5 @@
 import type { ExtractedEntities } from './types';
+import { hasTrueMultipleEntities } from './chatEntities';
 import { 
   v15Farewells, 
   v15Price, 
@@ -19,12 +20,31 @@ export interface IntentScore {
   reasons: string[];
 }
 
+function isLaughter(text: string): boolean {
+  const normalized = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z]/g, "");
+  if (!normalized) return false;
+  if (/^k+$/.test(normalized)) return true;
+  if (/^(rs)+r?$/.test(normalized)) return true;
+  if (/^(ha)+h?$/.test(normalized)) return true;
+  if (/^(he)+h?$/.test(normalized)) return true;
+  if (/^(kk?a)+k?$/.test(normalized)) return true;
+  if (/^(hu[eh]u[eh])+$/.test(normalized)) return true;
+  return false;
+}
+
 export function calculateAdvancedIntentScores(
   text: string,
   entities?: ExtractedEntities,
   contextStrength: 'none' | 'weak' | 'medium' | 'strong' = 'none'
 ): IntentScore[] {
   const scores: Omit<IntentScore, 'confidence'>[] = [];
+  
+  // Check for laughter first
+  if (isLaughter(text)) {
+    scores.push({ intent: "courtesy", score: 150, reasons: ["Risada detectada (+150)"] });
+    return scores.map(s => ({ ...s, confidence: 1.0 })) as any;
+  }
+
   const words = text.split(/\s+/);
   
   const hasProd = entities?.products && entities.products.length > 0;
@@ -33,16 +53,27 @@ export function calculateAdvancedIntentScores(
   const hasTechAttr = (entities?.voltage !== undefined || entities?.powerWatts !== undefined || entities?.currentAmps !== undefined) && words.length <= 3;
   const hasContext = contextStrength !== 'none';
   const isContextMediumOrStrong = contextStrength === 'medium' || contextStrength === 'strong';
+  
+  const supportTriggers = ["atendente", "vendedor", "humano", "falar com atendente", "falar com vendedor", "whatsapp", "zap", "wpp", "telefone", "contato", "manda o zap", "tem zap", "passa contato"];
+  const isHumanSupport = supportTriggers.some(p => text.includes(p)) || (text.includes("suporte") && !text.includes("lampada") && !text.includes("parede") && !text.includes("refletor"));
 
   // 1. product_search
   let psScore = 0;
   const psReasons: string[] = [];
+  
+  const searchVerbs = ["tem", "vende", "procuro", "quero", "queria", "arruma", "consegue", "preciso", "comprar", "busca"];
+  const hasSearchVerb = searchVerbs.some(v => words.includes(v) || text.startsWith(v));
+  
   if (hasProd) { 
     psScore += 50; 
     psReasons.push("Produto detectado (+50)");
     if (hasContext) {
       psScore += 60; // Produto novo forte vence contexto
       psReasons.push("Produto forte ignora/domina contexto (+60)");
+    }
+    if (hasSearchVerb) {
+      psScore += 25;
+      psReasons.push("Verbo de busca com produto (+25)");
     }
   }
   if (hasCat) { psScore += 20; psReasons.push("Categoria detectada (+20)"); }
@@ -72,7 +103,7 @@ export function calculateAdvancedIntentScores(
   const isMoreOptions = moreOptionsTriggers.some(t => text.includes(t));
   let isProductNotFound = false;
 
-  if (!hasProd && !hasCat && !hasEnv && !entities?.hasIsolatedAttribute && hasAvailabilityVerb && words.length >= 2 && words.length <= 6 && !isOffTopic && !isMoreOptions) {
+  if (!hasProd && !hasCat && !hasEnv && !entities?.hasIsolatedAttribute && hasAvailabilityVerb && words.length >= 2 && words.length <= 6 && !isOffTopic && !isMoreOptions && !isHumanSupport) {
     isProductNotFound = true;
     scores.push({ intent: "product_not_found", score: 150, reasons: ["Verbo de disponibilidade sem produto reconhecido (+150)"] });
   }
@@ -86,12 +117,15 @@ export function calculateAdvancedIntentScores(
   let ppScore = 0;
   const ppReasons: string[] = [];
   if (!isProductNotFound) { // Only score price if it's not a missing product
-    if (v15Price && v15Price.some(p => text.includes(p))) { ppScore += 80; ppReasons.push("Padrão de preço V15 (+80)"); }
-    if (v15Quote && v15Quote.some(p => text.includes(p))) { ppScore += 80; ppReasons.push("Padrão de orçamento V15 (+80)"); }
-    if (hasProd || hasContext) { 
-      ppScore += 50; ppReasons.push("Produto ou contexto (+50)"); 
-      if (hasContext && !hasProd && hasTechAttr) {
-        ppScore += 15; ppReasons.push("Atributo técnico isolado em contexto (+15)");
+    const hasPriceSignal = (v15Price && v15Price.some(p => text.includes(p))) || (v15Quote && v15Quote.some(p => text.includes(p)));
+    if (hasPriceSignal) {
+      if (v15Price && v15Price.some(p => text.includes(p))) { ppScore += 80; ppReasons.push("Padrão de preço V15 (+80)"); }
+      if (v15Quote && v15Quote.some(p => text.includes(p))) { ppScore += 80; ppReasons.push("Padrão de orçamento V15 (+80)"); }
+      if (hasProd || hasContext) { 
+        ppScore += 50; ppReasons.push("Produto ou contexto (+50)"); 
+        if (hasContext && !hasProd && hasTechAttr) {
+          ppScore += 15; ppReasons.push("Atributo técnico isolado em contexto (+15)");
+        }
       }
     }
     if (ppScore > 0) scores.push({ intent: "product_price", score: ppScore, reasons: ppReasons });
@@ -121,10 +155,10 @@ export function calculateAdvancedIntentScores(
   const courtesyTriggers = ["tudo bem", "tudo bom", "td bem", "blz", "beleza", "como vai", "como esta", "como vc ta", "como voce esta", "como voce ta"];
   
   if (courtesyTriggers.some(c => text === c || text.startsWith(c))) {
-    if (words.length <= 4) { cScore += 150; cReasons.push("Cortesia padrão (+150)"); }
+    if (words.length <= 4 && !hasProd) { cScore += 150; cReasons.push("Cortesia padrão (+150)"); }
   }
   if (greetingTriggers.some(g => text === g || text.startsWith(g))) {
-    if (words.length <= 4) { cScore += 150; cReasons.push("Saudação padrão (+150)"); }
+    if (words.length <= 4 && !hasProd) { cScore += 150; cReasons.push("Saudação padrão (+150)"); }
   }
   if (cScore > 0) scores.push({ intent: "courtesy", score: cScore, reasons: cReasons });
 
@@ -154,7 +188,7 @@ export function calculateAdvancedIntentScores(
   // 10. technical_explanation
   let explScore = 0;
   const explReasons: string[] = [];
-  if (v15Technical && v15Technical.some(p => text.includes(p))) { explScore += 80; explReasons.push("Pergunta técnica V15 (+80)"); }
+  if (v15Technical && v15Technical.some(p => text.includes(p))) { explScore += 120; explReasons.push("Pergunta técnica V15 (+120)"); }
   if (explScore > 0) scores.push({ intent: "technical_explanation", score: explScore, reasons: explReasons });
 
   // 11. FAQ / Store Info (Granular)
@@ -175,14 +209,9 @@ export function calculateAdvancedIntentScores(
   }
 
   // 12. human_support
-  let hsScore = 0;
-  const hsReasons: string[] = [];
-  const supportTriggers = ["atendente", "vendedor", "humano", "falar com atendente", "falar com vendedor", "whatsapp", "zap", "wpp", "telefone", "contato", "manda o zap", "tem zap", "passa contato"];
-  if (supportTriggers.some(p => text.includes(p))) { hsScore += 90; hsReasons.push("Suporte humano padrão (+90)"); }
-  if (text.includes("suporte") && !text.includes("lampada") && !text.includes("parede") && !text.includes("refletor")) {
-    hsScore += 90; hsReasons.push("Palavra suporte sem contexto de produto (+90)");
+  if (isHumanSupport) {
+    scores.push({ intent: "human_support", score: 90, reasons: ["Suporte humano padrão (+90)"] });
   }
-  if (hsScore > 0) scores.push({ intent: "human_support", score: hsScore, reasons: hsReasons });
 
   // 13. Ask Disambiguation
   if (Object.keys(ambiguousTerms).some(term => text === term || text === `${term}?`)) {
@@ -191,9 +220,13 @@ export function calculateAdvancedIntentScores(
 
   // 14. complaint_correction
   let mpcScore = 0;
-  const mpcReasons: string[] = [];
   const complaintTriggers = ["cade as", "cade os", "nao achei", "nao encontrei", "nao tem"];
-  const correctionTriggers = ["nao e isso", "produto errado", "voce errou", "isso nao e", "errado"];
+  const correctionTriggers = [
+    "nao e isso", "produto errado", "voce errou", "isso nao e", "errado",
+    "nao sao essas", "nao sao esses", "nao era isso", "nao sao estes",
+    "nao e nada disso", "nao e esse", "nao e essa", "nao sao os que", "nao sao as que",
+    "nada a ver"
+  ];
   if (complaintTriggers.some(p => text.includes(p))) {
     mpcScore += 120; mpcReasons.push("Reclamação padrão (+120)");
   }
@@ -221,8 +254,38 @@ export function calculateAdvancedIntentScores(
   }
 
   // 16. current_date
-  if (v12DateTime && v12DateTime.some(d => text.includes(d))) {
+  const isStoreHoursQuery = ["horario", "abre", "fecha", "funcionamento"].some(kw => text.includes(kw));
+  if (!isStoreHoursQuery && v12DateTime && v12DateTime.some(d => text.includes(d))) {
     scores.push({ intent: "current_date", score: 100, reasons: ["Pergunta sobre a data/hora V12 (+100)"] });
+  }
+
+  // 17. product_or_technical_infrared
+  if (text.includes("infravermelh") && !text.includes("serve") && !text.includes("o que e") && !text.includes("oq e") && !text.includes("diferenca")) {
+    if (text.includes("luz") || hasProd) {
+      scores.push({ intent: "product_or_technical_infrared", score: 180, reasons: ["Menção a infravermelho com contexto de produto (+180)"] });
+    } else {
+      scores.push({ intent: "product_or_technical_infrared", score: 180, reasons: ["Menção a infravermelho (+180)"] });
+    }
+  }
+
+  // 18. technical_infrared
+  if (text.includes("infravermelh") && (text.includes("serve") || text.includes("o que e") || text.includes("oq e") || text.includes("diferenca"))) {
+    scores.push({ intent: "technical_infrared", score: 180, reasons: ["Dúvida técnica sobre infravermelho (+180)"] });
+  }
+
+  // 19. quote_start
+  if (["orcamento", "cotacao", "quero cotar"].some(kw => text.includes(kw))) {
+    scores.push({ intent: "quote_start", score: 120, reasons: ["Solicitação de orçamento (+120)"] });
+  }
+
+  // 20. multiple_entities
+  if (entities?.products && hasTrueMultipleEntities(entities, text)) {
+    const queryPart = text.split('|')[0].trim();
+    if (/\b(?:e|ou|,)\b/.test(queryPart)) {
+      scores.push({ intent: "multiple_entities", score: 130, reasons: ["Múltiplos produtos detectados com conectores (+130)"] });
+    } else {
+      scores.push({ intent: "multiple_entities", score: 110, reasons: ["Múltiplos produtos detectados sem conectores claros (+110)"] });
+    }
   }
 
   // Calculate confidence and sort

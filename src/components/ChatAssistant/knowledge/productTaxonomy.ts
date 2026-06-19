@@ -37,8 +37,8 @@ export const productTaxonomy = {
   },
   instalacao_acessorios: {
     label: "Instalação e Acessórios",
-    canonicalProducts: ["conduíte", "eletroduto", "corrugado", "canaleta", "caixa de passagem", "adaptador", "plug", "conector", "sensor", "fotocélula", "relé", "timer"],
-    aliases: ["conduite", "rele"],
+    canonicalProducts: ["conduíte", "eletroduto", "corrugado", "canaleta", "caixa de passagem", "adaptador", "plug", "conector", "sensor", "fotocélula", "relé", "timer", "fita isolante"],
+    aliases: ["conduite", "rele", "fita"],
     rejectCategories: []
   },
   ventiladores_exaustores: {
