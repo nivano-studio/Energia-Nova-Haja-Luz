@@ -220,6 +220,7 @@ export function calculateAdvancedIntentScores(
 
   // 14. complaint_correction
   let mpcScore = 0;
+  const mpcReasons: string[] = [];
   const complaintTriggers = ["cade as", "cade os", "nao achei", "nao encontrei", "nao tem"];
   const correctionTriggers = [
     "nao e isso", "produto errado", "voce errou", "isso nao e", "errado",
