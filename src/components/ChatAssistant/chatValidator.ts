@@ -17,10 +17,9 @@ const localSafetyRules = {
 export function validateResponseBeforeReturn(
   response: ChatResponse,
   intent: string,
-  entities?: ExtractedEntities,
-  _cleanInput?: string
+  entities?: ExtractedEntities
 ): ChatResponse {
-  let validResponse = { ...response };
+  const validResponse = { ...response };
   
   // 1. Remove duplicate products and cap at 3
   if (validResponse.products && validResponse.products.length > 0) {

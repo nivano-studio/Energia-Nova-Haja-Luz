@@ -22,6 +22,7 @@ function analyzeLogs() {
   }
 
   const data = fs.readFileSync(LOG_FILE, 'utf-8');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let logs: any[] = [];
   try {
     logs = JSON.parse(data);

@@ -39,6 +39,7 @@ export interface UnderstandingResult {
   clarificationQuestion: string | null;
   validationWarnings: string[];
   entities: ExtractedEntities;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   productSearchDebug?: Record<string, any>;
 }
 

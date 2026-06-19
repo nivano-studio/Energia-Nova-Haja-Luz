@@ -33,7 +33,7 @@ function isLaughter(text: string): boolean {
 }
 
 function hasWholePhrase(text: string, phrase: string): boolean {
-  const escaped = phrase.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  const escaped = phrase.replace(/[-\\/\\^$*+?.()|[\]{}]/g, '\\$&');
   const regex = new RegExp(`\\b${escaped}\\b`, 'i');
   return regex.test(text);
 }
@@ -48,7 +48,7 @@ export function calculateAdvancedIntentScores(
   // Check for laughter first
   if (isLaughter(text)) {
     scores.push({ intent: "courtesy", score: 150, reasons: ["Risada detectada (+150)"] });
-    return scores.map(s => ({ ...s, confidence: 1.0 })) as any;
+    return scores.map(s => ({ ...s, confidence: 1.0 })) as IntentScore[];
   }
 
   const words = text.split(/\s+/);

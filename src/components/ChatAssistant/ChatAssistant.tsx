@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../../contexts/CartContext';
 import { WHATSAPP_URL } from '../../data/constants';
 import { processQuery } from './chatEngine';
-import type { Message } from './types';
+import type { Message, ChatAction } from './types';
 
 export default function ChatAssistant() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +62,7 @@ export default function ChatAssistant() {
     sendMessage(question);
   };
 
-  const handleActionClick = (action: any) => {
+  const handleActionClick = (action: ChatAction) => {
     if (action.type === 'show_more') {
       sendMessage('ver mais');
     } else if (action.type === 'category') {

@@ -242,7 +242,7 @@ function formatTextReport(singleResults: any[], conversationResults: any[]) {
   singleResults.forEach(r => {
     if (r.products && r.products.length > 0 && r.intent === "product_search") {
       const isLampSearch = (r.input.includes("lampada") || r.input.includes("luz")) && !r.input.includes("sensor");
-      const hasWrongCategory = r.products.some((p: any) => isLampSearch && p.category !== "Iluminação" && p.category !== "iluminacao");
+      const hasWrongCategory = r.products.some((p: { category: string }) => isLampSearch && p.category !== "Iluminação" && p.category !== "iluminacao");
       if (hasWrongCategory) {
         categoryViolations++;
         lines.push(`   [ID ${r.id}] Category Violation! Busca por lâmpada retornou outras categorias.`);

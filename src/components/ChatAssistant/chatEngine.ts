@@ -1,4 +1,5 @@
-import type { ChatResponse, ExtractedEntities, ChatAction, UnderstandingResult } from './types';
+import type { ChatResponse, ExtractedEntities, ChatAction, UnderstandingResult, IntentScore } from './types';
+import type { Product } from '../../data/products';
 import { preprocessMessage, normalizeText } from './chatPreprocess';
 import { extractEntities } from './chatEntities';
 import { checkContextDecision, chatContext, activateHardContext, clearHardContext, incrementSearchOffset, checkContextExpiration, updateContext, updateLastSearch, getContextStrength } from './chatContext';
@@ -266,8 +267,7 @@ export function understandBeforeAnswer(original: string): { response: ChatRespon
 
   // Step 12: searchKnowledgeOrProducts (done inside routeIntent)
 
-  // Step 13: validateResponse
-  response = validateResponseBeforeReturn(response, response.intent || primaryIntent, entities, processed.clean);
+  response = validateResponseBeforeReturn(response, response.intent || primaryIntent, entities);
 
   // Step 14: logDecision
   response.entities = entities;
@@ -275,7 +275,7 @@ export function understandBeforeAnswer(original: string): { response: ChatRespon
     original: processed.original,
     clean: processed.clean,
     normalizedSteps: processed.normalizedSteps,
-    intentScores: scores as any
+    intentScores: scores as IntentScore[]
   };
 
   // Agora logamos TODAS as interações na planilha, independentemente da confiança
@@ -499,7 +499,7 @@ export function routeIntent(
       if (products.length > 0) recProducts = products;
     }
     
-    const getActionsForRecs = (prods: any[] | undefined): ChatAction[] | undefined => {
+    const getActionsForRecs = (prods: Product[] | undefined): ChatAction[] | undefined => {
       if (!prods || prods.length === 0) return undefined;
       return [
         { type: "quote", label: "Adicionar ao orçamento" },
