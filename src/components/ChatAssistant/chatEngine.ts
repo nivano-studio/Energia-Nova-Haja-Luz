@@ -12,6 +12,25 @@ import { logInteraction } from './chatLogger';
 import { storeInfo } from './knowledge/storeInfo';
 import { electricalGlossary } from './knowledge/electricalGlossary';
 import { faqKnowledge } from './knowledge/faqKnowledge';
+import { productAndTechnicalKeywords, synonyms } from './chatDictionaries';
+
+function isProductOrCategory(word: string): boolean {
+  if (!word) return false;
+  const normalized = word.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  
+  if (productAndTechnicalKeywords.includes(normalized)) return true;
+  
+  if (synonyms[normalized]) return true;
+  for (const [key, synList] of Object.entries(synonyms)) {
+    if (synList.includes(normalized)) return true;
+  }
+  
+  const commonProducts = ["lampada", "fio", "cabo", "tomada", "interruptor", "disjuntor", "refletor", "plafon", "sensor", "ventilador", "ferramenta", "luminaria", "chuveiro"];
+  if (commonProducts.includes(normalized)) return true;
+  if (commonProducts.some(p => normalized === p + "s" || normalized === p + "es")) return true;
+  
+  return false;
+}
 
 // validateResponseBeforeReturn is now imported from chatValidator.ts
 
@@ -110,6 +129,7 @@ export function understandBeforeAnswer(original: string): { response: ChatRespon
   // Conversational Context Pronoun Resolution
   if (chatContext.softContext.active && chatContext.softContext.subject) {
     const pronouns = ["ele", "ela", "dele", "dela", "esse", "este", "aquele", "essa", "esta", "aquela", "deles", "delas", "esses", "estes", "aqueles", "essas", "estas", "aquelas"];
+    const demonstratives = ["esse", "este", "aquele", "essa", "esta", "aquela", "esses", "estes", "aqueles", "essas", "estas", "aquelas"];
     const subject = chatContext.softContext.subject;
     let replaced = false;
     for (const pr of pronouns) {
@@ -118,7 +138,15 @@ export function understandBeforeAnswer(original: string): { response: ChatRespon
       }
       const regex = new RegExp(`\\b${pr}\\b`, 'gi');
       if (regex.test(clean)) {
-        clean = clean.replace(regex, subject);
+        clean = clean.replace(regex, (match, offset) => {
+          const rest = clean.substring(offset + match.length).trim();
+          const nextWordMatch = rest.match(/^[a-zA-Z0-9áàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]+/);
+          const nextWord = nextWordMatch ? nextWordMatch[0] : "";
+          if (demonstratives.includes(pr) && isProductOrCategory(nextWord)) {
+            return match;
+          }
+          return subject;
+        });
         replaced = true;
       }
     }
