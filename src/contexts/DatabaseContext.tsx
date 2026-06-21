@@ -51,8 +51,10 @@ interface DatabaseContextType {
   
   // Operações de Categoria
   addCategory: (name: string, iconName: string) => Promise<{ success: boolean; error?: string }>;
+  updateCategory: (id: string, name: string, iconName: string) => Promise<{ success: boolean; error?: string }>;
   deleteCategory: (id: string, slug: string) => Promise<{ success: boolean; error?: string }>;
   addSubcategory: (categoryId: string, name: string) => Promise<{ success: boolean; error?: string }>;
+  updateSubcategory: (id: string, name: string, catSlug: string) => Promise<{ success: boolean; error?: string }>;
   deleteSubcategory: (id: string, catSlug: string, subSlug: string) => Promise<{ success: boolean; error?: string }>;
   
   // Operações de Produto
@@ -315,6 +317,47 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   };
 
+  // Atualizar Categoria
+  const updateCategory = async (id: string, name: string, iconName: string) => {
+    if (!supabase) return { success: false, error: 'Modo offline: Alterações não permitidas.' };
+    try {
+      const { data: cat, error: fetchError } = await supabase
+        .from('categories')
+        .select('slug')
+        .eq('id', id)
+        .single();
+      
+      if (fetchError) throw fetchError;
+      const oldSlug = cat.slug;
+
+      const newSlug = name.toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9 -]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+
+      const { error: updateError } = await supabase
+        .from('categories')
+        .update({ name, slug: newSlug, icon: iconName })
+        .eq('id', id);
+
+      if (updateError) throw updateError;
+
+      if (oldSlug !== newSlug) {
+        const { error: prodError } = await supabase
+          .from('products')
+          .update({ category: newSlug })
+          .eq('category', oldSlug);
+        if (prodError) throw prodError;
+      }
+
+      await loadData();
+      return { success: true };
+    } catch (err: any) {
+      return { success: false, error: err.message || 'Erro ao atualizar categoria.' };
+    }
+  };
+
   // Adicionar Subcategoria
   const addSubcategory = async (categoryId: string, name: string) => {
     if (!supabase) return { success: false, error: 'Modo offline: Alterações não permitidas.' };
@@ -361,6 +404,48 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       return { success: true };
     } catch (err: any) {
       return { success: false, error: err.message || 'Erro ao excluir subcategoria.' };
+    }
+  };
+
+  // Atualizar Subcategoria
+  const updateSubcategory = async (id: string, name: string, catSlug: string) => {
+    if (!supabase) return { success: false, error: 'Modo offline: Alterações não permitidas.' };
+    try {
+      const { data: sub, error: fetchError } = await supabase
+        .from('subcategories')
+        .select('slug')
+        .eq('id', id)
+        .single();
+
+      if (fetchError) throw fetchError;
+      const oldSlug = sub.slug;
+
+      const newSlug = name.toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9 -]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+
+      const { error: updateError } = await supabase
+        .from('subcategories')
+        .update({ name, slug: newSlug })
+        .eq('id', id);
+
+      if (updateError) throw updateError;
+
+      if (oldSlug !== newSlug) {
+        const { error: prodError } = await supabase
+          .from('products')
+          .update({ subcategory: newSlug })
+          .eq('category', catSlug)
+          .eq('subcategory', oldSlug);
+        if (prodError) throw prodError;
+      }
+
+      await loadData();
+      return { success: true };
+    } catch (err: any) {
+      return { success: false, error: err.message || 'Erro ao atualizar subcategoria.' };
     }
   };
 
@@ -540,6 +625,8 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       addProduct,
       updateProduct,
       deleteProduct,
+      updateCategory,
+      updateSubcategory,
       seedDatabase
     }}>
       {children}

@@ -13,7 +13,8 @@ export default function AdminControls() {
     products, categories, isAdmin, login, logout,
     addCategory, deleteCategory, addSubcategory, deleteSubcategory, 
     addProduct, updateProduct, deleteProduct,
-    seedDatabase, isDbEmpty
+    seedDatabase, isDbEmpty,
+    updateCategory, updateSubcategory
   } = useDatabase();
 
   const [seedLoading, setSeedLoading] = useState(false);
@@ -330,6 +331,46 @@ export default function AdminControls() {
     }
   };
 
+  // Renomear Categoria
+  const handleRenameCategory = async (id: string, oldName: string, oldIcon: string) => {
+    const newName = prompt(`Digite o novo nome para a categoria "${oldName}":`, oldName);
+    if (newName === null) return;
+    if (!newName.trim()) {
+      alert('O nome da categoria não pode ser vazio.');
+      return;
+    }
+    
+    setCategoryFormLoading(true);
+    const result = await updateCategory(id, newName.trim(), oldIcon);
+    setCategoryFormLoading(false);
+    
+    if (!result.success) {
+      alert(result.error || 'Erro ao renomear categoria.');
+    } else {
+      alert(`Categoria renomeada para "${newName.trim()}" com sucesso!`);
+    }
+  };
+
+  // Renomear Subcategoria
+  const handleRenameSubcategory = async (id: string, oldName: string, catSlug: string) => {
+    const newName = prompt(`Digite o novo nome para a subcategoria "${oldName}":`, oldName);
+    if (newName === null) return;
+    if (!newName.trim()) {
+      alert('O nome da subcategoria não pode ser vazio.');
+      return;
+    }
+
+    setCategoryFormLoading(true);
+    const result = await updateSubcategory(id, newName.trim(), catSlug);
+    setCategoryFormLoading(false);
+
+    if (!result.success) {
+      alert(result.error || 'Erro ao renomear subcategoria.');
+    } else {
+      alert(`Subcategoria renomeada para "${newName.trim()}" com sucesso!`);
+    }
+  };
+
   // Adicionar Categoria
   const handleAddCategorySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -390,6 +431,16 @@ export default function AdminControls() {
     { name: 'Plug', label: 'Instalação/Plugue' },
     { name: 'Fan', label: 'Ventilador' },
     { name: 'Droplet', label: 'Hidráulica' },
+    { name: 'Zap', label: 'Elétrica/Raio' },
+    { name: 'HardHat', label: 'Equipamento/EPI' },
+    { name: 'Paintbrush', label: 'Pintura' },
+    { name: 'Ruler', label: 'Medição/Régua' },
+    { name: 'Flame', label: 'Aquecedores' },
+    { name: 'Truck', label: 'Distribuição' },
+    { name: 'Cpu', label: 'Eletrônicos' },
+    { name: 'Scissors', label: 'Cortes' },
+    { name: 'Box', label: 'Caixas/Quadros' },
+    { name: 'Settings', label: 'Engrenagem' },
     { name: 'Package', label: 'Pacote/Geral' }
   ];
 
@@ -860,16 +911,26 @@ export default function AdminControls() {
                                   <span className="ml-2 text-xs font-semibold text-slate-400">({catProducts.length} {catProducts.length === 1 ? 'produto' : 'produtos'})</span>
                                 </div>
                               </button>
-                              <div className="flex items-center gap-2">
+                              <div className="flex items-center gap-1.5">
                                 {cat.id && (
-                                  <button
-                                    type="button"
-                                    onClick={() => handleDeleteCategory(cat.id!, cat.slug, cat.name)}
-                                    className="p-1.5 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center mr-2"
-                                    title="Excluir Categoria"
-                                  >
-                                    <Trash2 className="w-4 h-4" />
-                                  </button>
+                                  <>
+                                    <button
+                                      type="button"
+                                      onClick={() => handleRenameCategory(cat.id!, cat.name, cat.iconName)}
+                                      className="p-1.5 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center"
+                                      title="Renomear Categoria"
+                                    >
+                                      <Edit2 className="w-4 h-4" />
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => handleDeleteCategory(cat.id!, cat.slug, cat.name)}
+                                      className="p-1.5 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center mr-2"
+                                      title="Excluir Categoria"
+                                    >
+                                      <Trash2 className="w-4 h-4" />
+                                    </button>
+                                  </>
                                 )}
                                 <button
                                   type="button"
@@ -904,14 +965,24 @@ export default function AdminControls() {
                                               {subProducts.length}
                                             </span>
                                             {sub.id && (
-                                              <button
-                                                type="button"
-                                                onClick={() => handleDeleteSubcategory(sub.id!, cat.slug, sub.slug, sub.name)}
-                                                className="p-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center"
-                                                title="Excluir Subcategoria"
-                                              >
-                                                <Trash2 className="w-3.5 h-3.5" />
-                                              </button>
+                                              <>
+                                                <button
+                                                  type="button"
+                                                  onClick={() => handleRenameSubcategory(sub.id!, sub.name, cat.slug)}
+                                                  className="p-1 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center"
+                                                  title="Renomear Subcategoria"
+                                                >
+                                                  <Edit2 className="w-3.5 h-3.5" />
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  onClick={() => handleDeleteSubcategory(sub.id!, cat.slug, sub.slug, sub.name)}
+                                                  className="p-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center"
+                                                  title="Excluir Subcategoria"
+                                                >
+                                                  <Trash2 className="w-3.5 h-3.5" />
+                                                </button>
+                                              </>
                                             )}
                                           </div>
                                           
@@ -1258,9 +1329,86 @@ export default function AdminControls() {
                         </button>
                       </form>
                     </div>
+                  
+
+                  {/* Gerenciamento de Categorias e Subcategorias Existentes */}
+                  <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
+                    <h3 className="font-extrabold text-[#1C2978] text-base border-b border-slate-100 pb-2 flex items-center gap-2">
+                      <Settings className="w-5 h-5" /> Gerenciar Categorias e Subcategorias Existentes
+                    </h3>
+                    
+                    <div className="divide-y divide-slate-100 max-h-[500px] overflow-y-auto pr-2">
+                      {categories.map(cat => {
+                        return (
+                          <div key={cat.slug} className="py-4 space-y-3">
+                            {/* Categoria Pai */}
+                            <div className="flex items-center justify-between gap-3">
+                              <div className="flex items-center gap-2.5">
+                                <span className="p-1.5 bg-[#1C2978]/10 text-[#1C2978] rounded-lg">
+                                  <cat.icon className="w-4.5 h-4.5" />
+                                </span>
+                                <span className="font-extrabold text-slate-800 text-sm">{cat.name}</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                {cat.id && (
+                                  <>
+                                    <button
+                                      onClick={() => handleRenameCategory(cat.id!, cat.name, cat.iconName)}
+                                      className="px-2 py-1 text-[10px] font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-md transition-colors cursor-pointer"
+                                    >
+                                      Renomear
+                                    </button>
+                                    <button
+                                      onClick={() => handleDeleteCategory(cat.id!, cat.slug, cat.name)}
+                                      className="px-2 py-1 text-[10px] font-bold text-red-600 bg-red-50 hover:bg-red-100 rounded-md transition-colors cursor-pointer"
+                                    >
+                                      Excluir
+                                    </button>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Subcategorias vinculadas */}
+                            {cat.subcategories && cat.subcategories.length > 0 ? (
+                              <div className="pl-9 space-y-2">
+                                {cat.subcategories.map(sub => (
+                                  <div key={sub.slug} className="flex items-center justify-between text-xs py-1.5 border-b border-slate-50">
+                                    <div className="flex items-center gap-2 text-slate-600">
+                                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                      <span>{sub.name}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                      {sub.id && (
+                                        <>
+                                          <button
+                                            onClick={() => handleRenameSubcategory(sub.id!, sub.name, cat.slug)}
+                                            className="px-1.5 py-0.5 text-[9px] font-bold text-blue-500 hover:text-blue-700 hover:underline cursor-pointer"
+                                          >
+                                            Renomear
+                                          </button>
+                                          <button
+                                            onClick={() => handleDeleteSubcategory(sub.id!, cat.slug, sub.slug, sub.name)}
+                                            className="px-1.5 py-0.5 text-[9px] font-bold text-red-500 hover:text-red-700 hover:underline cursor-pointer"
+                                          >
+                                            Excluir
+                                          </button>
+                                        </>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <p className="text-[10px] text-slate-400 pl-9 italic">Nenhuma subcategoria vinculada.</p>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </motion.div>
           </div>
         )}
