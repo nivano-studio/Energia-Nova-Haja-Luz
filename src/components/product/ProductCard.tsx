@@ -56,7 +56,7 @@ export default function ProductCard({ product, onSelectingChange }: ProductCardP
     <>
       <motion.div 
         id={`product-${product.id}`} 
-        onTap={() => setIsDetailsOpen(true)}
+        onClick={() => setIsDetailsOpen(true)}
         className="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-slate-100/80 hover:border-[#1C2978]/40 flex flex-col h-full overflow-hidden relative hover:-translate-y-1.5 hover:shadow-[0_16px_32px_rgba(28, 41, 120,0.08)] transition-all duration-300 group/card cursor-pointer"
       >
         {/* Imagem */}

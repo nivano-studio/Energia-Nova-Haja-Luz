@@ -119,8 +119,6 @@ export default function BestSellers() {
 
           {/* Indicators / Gradient Overlays */}
           <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#f3f4f6] to-transparent z-10 pointer-events-none"></div>
-          {/* Indicators / Gradient Overlays */}
-          <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#f3f4f6] to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#f3f4f6] to-transparent z-10 pointer-events-none"></div>
         </div>
       </ScrollReveal>

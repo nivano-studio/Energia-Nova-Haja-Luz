@@ -19,7 +19,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
 
     // Iniciar posições escondidas
     gsap.set([logoRef.current, textRef.current], { opacity: 0, y: 30 });
-    gsap.set(progressBarRef.current, { scaleX: 0.9 });
+    gsap.set(progressBarRef.current, { scaleX: 0 });
 
     // Timeline de entrada suave
     const tl = gsap.timeline({
@@ -43,7 +43,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
     }, "-=0.4");
 
     const startLoadingProcess = () => {
-      const progress = { value: 0.9 };
+      const progress = { value: 0 };
       
       gsap.to(progress, {
         value: 1,
