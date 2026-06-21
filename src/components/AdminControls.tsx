@@ -1222,7 +1222,8 @@ export default function AdminControls() {
 
                 {/* ABA DE CATEGORIAS */}
                 {activeTab === 'categories' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Nova Categoria */}
                     <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4 h-fit">
                       <h3 className="font-extrabold text-[#1C2978] text-base border-b border-slate-100 pb-2 flex items-center gap-2">
@@ -1329,7 +1330,7 @@ export default function AdminControls() {
                         </button>
                       </form>
                     </div>
-                  
+                  </div>
 
                   {/* Gerenciamento de Categorias e Subcategorias Existentes */}
                   <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
@@ -1409,10 +1410,11 @@ export default function AdminControls() {
                   </div>
                 </div>
               )}
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
     </>
   );
 }
