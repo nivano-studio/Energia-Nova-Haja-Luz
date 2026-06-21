@@ -3,10 +3,10 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDatabase } from '../contexts/DatabaseContext';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/product/ProductCard';
 import { useCart } from '../contexts/CartContext';
-import ScrollReveal from '../components/ScrollReveal';
-import SpotlightCard from '../components/SpotlightCard';
+import ScrollReveal from '../components/ui/ScrollReveal';
+import SpotlightCard from '../components/product/SpotlightCard';
 
 export default function CategoryShowcase() {
   const { products, categories } = useDatabase();

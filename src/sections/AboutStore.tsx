@@ -5,7 +5,7 @@ import {
   ShieldCheck, Package, Users, Shield
 } from 'lucide-react';
 import { MAPS_URL, WHATSAPP_URL, INSTAGRAM_URL } from '../data/constants';
-import ScrollReveal from '../components/ScrollReveal';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const WhatsAppIcon = ({ className = "w-5 h-5", style }: { className?: string, style?: React.CSSProperties }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} style={style} viewBox="0 0 24 24" fill="currentColor">

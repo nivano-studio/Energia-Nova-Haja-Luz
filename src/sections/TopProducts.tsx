@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/product/ProductCard';
 import { useDatabase } from '../contexts/DatabaseContext';
 import { ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart, Star, TrendingUp } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
-import ScrollReveal from '../components/ScrollReveal';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 export default function TopProducts() {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);

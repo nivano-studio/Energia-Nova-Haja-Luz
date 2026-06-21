@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from '../data/constants';
+import { WHATSAPP_URL } from '../../data/constants';
 
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">

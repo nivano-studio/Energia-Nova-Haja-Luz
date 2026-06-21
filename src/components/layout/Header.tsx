@@ -1,7 +1,7 @@
 import { Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
-import { useCart } from '../contexts/CartContext';
-import { useDatabase } from '../contexts/DatabaseContext';
+import { useCart } from '../../contexts/CartContext';
+import { useDatabase } from '../../contexts/DatabaseContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {

@@ -1,6 +1,6 @@
 import { Home, LayoutGrid, ShoppingCart, Store } from 'lucide-react';
-import { useCart } from '../contexts/CartContext';
-import { WHATSAPP_URL } from '../data/constants';
+import { useCart } from '../../contexts/CartContext';
+import { WHATSAPP_URL } from '../../data/constants';
 
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">

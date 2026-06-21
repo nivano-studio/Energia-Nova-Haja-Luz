@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type { Product } from '../data/products';
+import type { Product } from '../../data/products';
 import { ShoppingCart, Plus, Minus, Edit2 } from 'lucide-react';
-import { useCart } from '../contexts/CartContext';
-import { useDatabase } from '../contexts/DatabaseContext';
+import { useCart } from '../../contexts/CartContext';
+import { useDatabase } from '../../contexts/DatabaseContext';
 
 interface ProductCardProps {
   product: Product;

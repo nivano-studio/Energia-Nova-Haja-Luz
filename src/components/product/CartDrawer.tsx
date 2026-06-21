@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { X, Minus, Plus, ShoppingCart, Send, Trash2, PackageOpen } from 'lucide-react';
-import { useCart } from '../contexts/CartContext';
-import { WHATSAPP_NUMBER } from '../data/constants';
+import { useCart } from '../../contexts/CartContext';
+import { WHATSAPP_NUMBER } from '../../data/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CartDrawer() {

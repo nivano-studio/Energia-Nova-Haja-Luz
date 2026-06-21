@@ -1,5 +1,5 @@
 import { useDatabase } from '../contexts/DatabaseContext';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/product/ProductCard';
 
 export default function ProductFeed() {
   const { products } = useDatabase();

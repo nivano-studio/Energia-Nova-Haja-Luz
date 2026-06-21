@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useDatabase } from '../contexts/DatabaseContext';
-import { optimizeImage } from '../utils/imageOptimizer';
+import { useDatabase } from '../../contexts/DatabaseContext';
+import { optimizeImage } from '../../utils/imageOptimizer';
 import { 
   Settings, Plus, Edit2, Trash2, LogOut, X, 
   Upload, FolderPlus, Save, Lock, Key, Eye, EyeOff, Check,
