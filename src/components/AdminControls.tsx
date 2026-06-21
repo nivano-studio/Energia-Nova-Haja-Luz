@@ -542,6 +542,24 @@ export default function AdminControls() {
 
                 <div className="flex items-center gap-2">
                   <button
+                    onClick={async () => {
+                      if (confirm('ATENÇÃO: Isso apagará TODOS os dados atuais no Supabase e recarregará a lista padrão completa (466 produtos). Deseja continuar?')) {
+                        setSeedLoading(true);
+                        const res = await seedDatabase();
+                        setSeedLoading(false);
+                        if (res.success) {
+                          alert('Banco de dados resetado e semeado com sucesso!');
+                        } else {
+                          alert(res.error || 'Erro ao semear banco de dados.');
+                        }
+                      }
+                    }}
+                    disabled={seedLoading}
+                    className="flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-colors cursor-pointer shadow-sm disabled:opacity-50"
+                  >
+                    {seedLoading ? 'Processando...' : 'Recarregar Padrão'}
+                  </button>
+                  <button
                     onClick={handleLogout}
                     className="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-colors cursor-pointer shadow-sm"
                   >
