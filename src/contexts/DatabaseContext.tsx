@@ -249,7 +249,15 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const uploadImage = async (file: File): Promise<string> => {
     if (!supabase) throw new Error('Supabase não configurado');
     
-    const fileExt = file.name.split('.').pop();
+    // Validar tipo de arquivo e extensão por segurança
+    const allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+    const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    const fileExt = file.name.split('.').pop()?.toLowerCase();
+
+    if (!fileExt || !allowedExtensions.includes(fileExt) || !allowedMimeTypes.includes(file.type)) {
+      throw new Error('Apenas imagens nos formatos JPG, JPEG, PNG ou WEBP são permitidas.');
+    }
+    
     const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 9)}.${fileExt}`;
     const filePath = `products/${fileName}`;
 

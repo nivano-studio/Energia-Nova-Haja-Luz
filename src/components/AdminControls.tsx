@@ -218,6 +218,17 @@ export default function AdminControls() {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Validar tipo de imagem e extensão
+      const allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+      const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp'];
+      const fileExt = file.name.split('.').pop()?.toLowerCase();
+
+      if (!fileExt || !allowedExtensions.includes(fileExt) || !allowedMimeTypes.includes(file.type)) {
+        alert('Apenas imagens nos formatos JPG, JPEG, PNG ou WEBP são permitidas.');
+        e.target.value = ''; // Reseta o campo
+        return;
+      }
+
       setProductImageFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -836,7 +847,7 @@ export default function AdminControls() {
                                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Foto do Produto *</label>
                                 <input 
                                   type="file"
-                                  accept="image/*"
+                                  accept="image/png, image/jpeg, image/webp"
                                   ref={fileInputRef}
                                   onChange={handleImageChange}
                                   className="hidden"
