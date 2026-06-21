@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDatabase } from '../contexts/DatabaseContext';
+import { optimizeImage } from '../utils/imageOptimizer';
 import { 
   Settings, Plus, Edit2, Trash2, LogOut, X, 
   Upload, FolderPlus, Save, Lock, Key, Eye, EyeOff, Check,
@@ -49,6 +50,10 @@ export default function AdminControls() {
   const [productFormLoading, setProductFormLoading] = useState(false);
   const [productSearch, setProductSearch] = useState('');
 
+  // Estados para otimização de imagem
+  const [isOptimizingImage, setIsOptimizingImage] = useState(false);
+  const [imageOptimizationInfo, setImageOptimizationInfo] = useState('');
+
   // Estado para armazenar quais categorias estão expandidas no painel
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
 
@@ -97,6 +102,8 @@ export default function AdminControls() {
     setProductImagePreview('');
     setProductFormError('');
     setIsProductFormOpen(true);
+    setIsOptimizingImage(false);
+    setImageOptimizationInfo('');
   };
 
   // Estados de Criação de Categorias/Subcategorias
@@ -196,6 +203,8 @@ export default function AdminControls() {
     setProductImagePreview('');
     setProductFormError('');
     setIsProductFormOpen(true);
+    setIsOptimizingImage(false);
+    setImageOptimizationInfo('');
   };
 
   // Preparar formulário para Editar Produto
@@ -212,10 +221,12 @@ export default function AdminControls() {
     setProductImagePreview(product.image);
     setProductFormError('');
     setIsProductFormOpen(true);
+    setIsOptimizingImage(false);
+    setImageOptimizationInfo('');
   };
 
-  // Gerenciar mudança de arquivo de imagem com preview
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Gerenciar mudança de arquivo de imagem com preview e otimização
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       // Validar tipo de imagem e extensão
@@ -229,20 +240,58 @@ export default function AdminControls() {
         return;
       }
 
-      // Validar tamanho máximo de 2 MB (2 * 1024 * 1024 bytes)
-      const maxSize = 2 * 1024 * 1024;
-      if (file.size > maxSize) {
-        alert('A imagem é muito pesada. O tamanho máximo permitido é de 2 MB.');
+      // Validar limite de segurança extremo de 15 MB antes de tentar renderizar no Canvas
+      const absoluteMaxSize = 15 * 1024 * 1024;
+      if (file.size > absoluteMaxSize) {
+        alert('O arquivo de imagem original é muito grande. O limite máximo para otimização é de 15 MB.');
         e.target.value = ''; // Reseta o campo
         return;
       }
 
-      setProductImageFile(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProductImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+      setIsOptimizingImage(true);
+      setImageOptimizationInfo('Otimizando imagem para carregamento rápido...');
+
+      try {
+        const optimizedFile = await optimizeImage(file);
+        
+        // Calcular redução de tamanho
+        const originalSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+        const optimizedSizeKB = (optimizedFile.size / 1024).toFixed(0);
+        const reductionPercent = Math.round(((file.size - optimizedFile.size) / file.size) * 100);
+
+        if (file.size > optimizedFile.size) {
+          setImageOptimizationInfo(`Imagem reduzida de ${originalSizeMB} MB para ${optimizedSizeKB} KB (${reductionPercent}% mais leve!)`);
+        } else {
+          setImageOptimizationInfo(`Imagem já otimizada (${optimizedSizeKB} KB).`);
+        }
+
+        setProductImageFile(optimizedFile);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setProductImagePreview(reader.result as string);
+        };
+        reader.readAsDataURL(optimizedFile);
+      } catch (err: any) {
+        console.error('Erro ao otimizar imagem:', err);
+        // Se falhar a compressão, tenta verificar se o arquivo original está sob o limite de 2MB do Supabase
+        const maxSize = 2 * 1024 * 1024;
+        if (file.size > maxSize) {
+          alert('A imagem é muito pesada e não pôde ser comprimida. Escolha uma imagem de até 2 MB.');
+          e.target.value = '';
+          setImageOptimizationInfo('');
+        } else {
+          // Se for menor que 2MB, prossegue com a imagem original
+          setProductImageFile(file);
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            setProductImagePreview(reader.result as string);
+          };
+          reader.readAsDataURL(file);
+          setImageOptimizationInfo('Utilizando imagem original (compressão indisponível).');
+        }
+      } finally {
+        setIsOptimizingImage(false);
+      }
     }
   };
 
@@ -861,10 +910,19 @@ export default function AdminControls() {
                                   className="hidden"
                                 />
                                 
-                                <div className="border-2 border-dashed border-slate-200 hover:border-[#1C2978]/50 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-50 hover:bg-slate-100/50 flex flex-col items-center justify-center gap-2"
-                                     onClick={() => fileInputRef.current?.click()}
+                                <div className={`border-2 border-dashed rounded-xl p-4 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2 ${
+                                  isOptimizingImage 
+                                    ? 'border-yellow-300 bg-yellow-50/30 text-yellow-700' 
+                                    : 'border-slate-200 hover:border-[#1C2978]/50 bg-slate-50 hover:bg-slate-100/50'
+                                }`}
+                                     onClick={() => !isOptimizingImage && fileInputRef.current?.click()}
                                 >
-                                  {productImagePreview ? (
+                                  {isOptimizingImage ? (
+                                    <div className="flex flex-col items-center justify-center py-4">
+                                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-600 mb-2"></div>
+                                      <span className="text-xs font-bold text-yellow-700">Otimizando foto...</span>
+                                    </div>
+                                  ) : productImagePreview ? (
                                     <div className="relative w-32 h-32 bg-white rounded-lg p-1 border border-slate-100 shadow-sm shrink-0">
                                       <img src={productImagePreview} alt="Preview" className="w-full h-full object-contain rounded-md" />
                                       <div className="absolute -top-1 -right-1 bg-green-500 text-white p-0.5 rounded-full shadow-sm"><Check className="w-3 h-3" /></div>
@@ -872,11 +930,27 @@ export default function AdminControls() {
                                   ) : (
                                     <Upload className="w-8 h-8 text-slate-400" />
                                   )}
-                                  <span className="text-xs font-bold text-slate-500 mt-1">
-                                    {productImageFile ? productImageFile.name : 'Selecionar ou arrastar foto'}
-                                  </span>
-                                  <span className="text-[10px] text-slate-400">PNG, JPG ou WEBP recomendados</span>
+                                  {!isOptimizingImage && (
+                                    <>
+                                      <span className="text-xs font-bold text-slate-500 mt-1">
+                                        {productImageFile ? productImageFile.name : 'Selecionar ou arrastar foto'}
+                                      </span>
+                                      <span className="text-[10px] text-slate-400">PNG, JPG ou WEBP recomendados</span>
+                                    </>
+                                  )}
                                 </div>
+                                {imageOptimizationInfo && (
+                                  <p className={`text-[11px] mt-1.5 font-medium flex items-center gap-1 justify-center ${
+                                    imageOptimizationInfo.includes('Erro') || imageOptimizationInfo.includes('indisponível')
+                                      ? 'text-red-500'
+                                      : 'text-green-600'
+                                  }`}>
+                                    {(!imageOptimizationInfo.includes('Erro') && !imageOptimizationInfo.includes('indisponível')) && (
+                                      <Check className="w-3.5 h-3.5 shrink-0" />
+                                    )}
+                                    {imageOptimizationInfo}
+                                  </p>
+                                )}
                               </div>
 
                               <div className="flex gap-3 pt-3">
