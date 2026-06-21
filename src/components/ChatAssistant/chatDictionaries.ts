@@ -1,10 +1,11 @@
-import abbreviations from '../../../data/chat-dictionaries/abbreviations.json';
-import typos from '../../../data/chat-dictionaries/typos.json';
-import synonymsJson from '../../../data/chat-dictionaries/synonyms.json';
-import productsList from '../../../data/chat-dictionaries/products.json';
-import technicalTerms from '../../../data/chat-dictionaries/technical_terms.json';
-import phraseCorrections from '../../../data/chat-dictionaries/phrase_corrections.json';
-import offTopicTerms from '../../../data/chat-dictionaries/off_topic_terms.json';
+import abbreviations from './dictionaries/abbreviations.json';
+import typos from './dictionaries/typos.json';
+import synonymsJson from './dictionaries/synonyms.json';
+import productsList from './dictionaries/products.json';
+import technicalTerms from './dictionaries/technical_terms.json';
+import phraseCorrections from './dictionaries/phrase_corrections.json';
+import offTopicTerms from './dictionaries/off_topic_terms.json';
+
 
 export const requiredCorrections: Record<string, string> = {
   // humano/social

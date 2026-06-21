@@ -1,6 +1,6 @@
-import { processQuery } from './chatEngine';
-import type { ChatTestCase } from './types';
-import { resetChatContext } from './chatContext';
+import { processQuery } from '../chatEngine';
+import type { ChatTestCase } from '../types';
+import { resetChatContext } from '../chatContext';
 
 const tests: ChatTestCase[] = [
   // Abreviações
@@ -231,19 +231,21 @@ function runTests() {
     }
 
     if (test.mustInclude) {
+      const searchContent = (result.text + " " + JSON.stringify(result.actions || [])).toLowerCase();
       for (const word of test.mustInclude) {
-        if (!textLower.includes(word.toLowerCase())) {
+        if (!searchContent.includes(word.toLowerCase())) {
           isFail = true;
-          failReasons.push(`Resposta não incluiu a palavra obrigatória: '${word}'`);
+          failReasons.push(`Resposta ou ações não incluíram a palavra obrigatória: '${word}'`);
         }
       }
     }
 
     if (test.mustNotInclude) {
+      const searchContent = (result.text + " " + JSON.stringify(result.actions || [])).toLowerCase();
       for (const word of test.mustNotInclude) {
-        if (textLower.includes(word.toLowerCase())) {
+        if (searchContent.includes(word.toLowerCase())) {
           isFail = true;
-          failReasons.push(`Resposta incluiu a palavra proibida: '${word}'`);
+          failReasons.push(`Resposta ou ações incluíram a palavra proibida: '${word}'`);
         }
       }
     }

@@ -2,8 +2,8 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { processQuery } from "./chatEngine";
-import { resetChatContext } from "./chatContext";
+import { processQuery } from "../chatEngine";
+import { resetChatContext } from "../chatContext";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -109,8 +109,8 @@ function runConversation(conversation: AuditConversation) {
 function formatTextReport(singleResults: any[], conversationResults: any[]) {
   const lines: string[] = [];
 
-  lines.push("RELATÓRIO DE AUDITORIA LOCAL V2 — IA HAJA LUZ");
-  lines.push("Teste focado em erros de digitação, contexto, frases reais e falsos positivos");
+  lines.push("RELATÓRIO DE AUDITORIA LOCAL V3 — IA HAJA LUZ");
+  lines.push("Teste focado nas regras de ordem rígida V15, fallback e paginação.");
   lines.push("=".repeat(90));
   lines.push("");
   lines.push("RESUMO");
@@ -586,8 +586,8 @@ function main() {
   const outputDir = path.resolve(__dirname, "audit-results");
   fs.mkdirSync(outputDir, { recursive: true });
 
-  const jsonPath = path.join(outputDir, "chat-audit-v2-report.json");
-  const txtPath = path.join(outputDir, "chat-audit-v2-report.txt");
+  const jsonPath = path.join(outputDir, "chat-audit-v3-report.json");
+  const txtPath = path.join(outputDir, "chat-audit-v3-report.txt");
 
   fs.writeFileSync(
     jsonPath,
@@ -601,7 +601,7 @@ function main() {
     "utf-8"
   );
 
-  console.log("Auditoria V2 concluída!");
+  console.log("Auditoria V3 concluída!");
   console.log(`Perguntas isoladas: ${singleResults.length}`);
   console.log(`Conversas: ${conversationResults.length}`);
   console.log(`Relatório TXT: ${txtPath}`);

@@ -1,5 +1,5 @@
-import { processQuery } from './chatEngine';
-import { chatContext, resetChatContext } from './chatContext';
+import { processQuery } from '../chatEngine';
+import { chatContext, resetChatContext } from '../chatContext';
 const testCases = [
   {
     name: '1. "oie" -> greeting/courtesy. Não apagar contexto',

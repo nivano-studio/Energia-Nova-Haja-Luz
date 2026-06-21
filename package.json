@@ -8,9 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:chat": "tsx src/components/ChatAssistant/chatTests.ts",
-    "test:chat:audit": "tsx src/components/ChatAssistant/chatAuditRunner.ts",
-    "test:chat:audit:v2": "tsx src/components/ChatAssistant/chatAuditRunnerV2.ts",
+    "test:chat": "tsx src/components/ChatAssistant/tests/chatTests.ts",
+    "test:chat:audit": "tsx src/components/ChatAssistant/tests/chatAuditRunner.ts",
+    "test:chat:audit:v2": "tsx src/components/ChatAssistant/tests/chatAuditRunnerV2.ts",
     "chat:analyze-errors": "tsx scripts/analyzeChatErrors.ts"
   },
   "dependencies": {
