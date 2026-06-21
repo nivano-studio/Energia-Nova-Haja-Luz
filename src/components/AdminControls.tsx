@@ -603,12 +603,12 @@ export default function AdminControls() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={async () => {
-                      if (confirm('ATENÇÃO: Isso apagará TODOS os dados atuais no Supabase e recarregará a lista padrão completa (466 produtos). Deseja continuar?')) {
+                      if (confirm('ATENÇÃO: Isso apagará TODOS os dados atuais no Supabase (incluindo todas as categorias, subcategorias e produtos) e recarregará a lista padrão completa (categorias, subcategorias e os 460+ produtos). Deseja continuar?')) {
                         setSeedLoading(true);
                         const res = await seedDatabase();
                         setSeedLoading(false);
                         if (res.success) {
-                          alert('Banco de dados resetado e semeado com sucesso!');
+                          alert('Banco de dados (categorias, subcategorias e produtos) resetado e semeado com sucesso!');
                         } else {
                           alert(res.error || 'Erro ao semear banco de dados.');
                         }
@@ -671,12 +671,12 @@ export default function AdminControls() {
                     </div>
                     <button
                       onClick={async () => {
-                        if (confirm('Deseja realmente carregar todos os dados locais padrão no Supabase? Isso apagará dados existentes caso existam.')) {
+                        if (confirm('Deseja realmente carregar todas as categorias, subcategorias e produtos locais padrão no Supabase? Isso apagará quaisquer dados existentes nessas tabelas.')) {
                           setSeedLoading(true);
                           const res = await seedDatabase();
                           setSeedLoading(false);
                           if (res.success) {
-                            alert('Banco de dados semeado com sucesso!');
+                            alert('Banco de dados (categorias, subcategorias e produtos) semeado com sucesso!');
                           } else {
                             alert(res.error || 'Erro ao semear banco de dados.');
                           }

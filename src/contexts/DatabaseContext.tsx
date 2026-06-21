@@ -547,9 +547,14 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (!supabase) return { success: false, error: 'Supabase não configurado.' };
     try {
       // 1. Limpar tabelas para evitar chaves duplicadas
-      await supabase.from('products').delete().neq('id', '0');
-      await supabase.from('subcategories').delete().neq('id', '00000000-0000-0000-0000-000000000000');
-      await supabase.from('categories').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+      const { error: prodDelError } = await supabase.from('products').delete().neq('id', '0');
+      if (prodDelError) throw prodDelError;
+
+      const { error: subDelError } = await supabase.from('subcategories').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+      if (subDelError) throw subDelError;
+
+      const { error: catDelError } = await supabase.from('categories').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+      if (catDelError) throw catDelError;
 
       // 2. Inserir Categorias e Subcategorias
       for (const cat of STATIC_CATEGORIES) {
