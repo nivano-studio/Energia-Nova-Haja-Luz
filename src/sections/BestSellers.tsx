@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '../components/ProductCard';
-import { PRODUCTS } from '../data/products';
+import { useDatabase } from '../contexts/DatabaseContext';
 import { ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart, TrendingUp } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import ScrollReveal from '../components/ScrollReveal';
@@ -12,7 +12,8 @@ export default function BestSellers() {
   const { items, setIsCartOpen } = useCart();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
-  const bestSellerProducts = PRODUCTS.filter(p => p.isBestSeller);
+  const { products } = useDatabase();
+  const bestSellerProducts = products.filter(p => p.isBestSeller);
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 

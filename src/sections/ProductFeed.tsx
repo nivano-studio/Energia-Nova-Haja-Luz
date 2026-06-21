@@ -1,7 +1,8 @@
-import { PRODUCTS } from '../data/products';
+import { useDatabase } from '../contexts/DatabaseContext';
 import ProductCard from '../components/ProductCard';
 
 export default function ProductFeed() {
+  const { products } = useDatabase();
   return (
     <section className="bg-[#f3f4f6] px-2 md:px-0 py-3 md:py-6 pb-24 md:pb-12">
       {/* Container for feed header */}
@@ -15,7 +16,7 @@ export default function ProductFeed() {
 
       {/* Grid Responsivo: 2 colunas no mobile, até 6 no PC */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-4">
-        {PRODUCTS.map(product => (
+        {products.map(product => (
           <div key={product.id} className="transition-transform hover:-translate-y-1 duration-300">
             <ProductCard product={product} />
           </div>

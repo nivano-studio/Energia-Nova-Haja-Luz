@@ -1,6 +1,6 @@
-import { Clock, MessageCircle } from 'lucide-react';
+import { Clock, MessageCircle, Lock } from 'lucide-react';
 import { INSTAGRAM_URL, WHATSAPP_URL } from '../data/constants';
-import { CATEGORIES } from '../data/categories';
+import { useDatabase } from '../contexts/DatabaseContext';
 import ScrollReveal from './ScrollReveal';
 import SpotlightCard from './SpotlightCard';
 
@@ -15,7 +15,13 @@ const WhatsAppIcon = () => (
 );
 
 export default function Footer() {
+  const { categories } = useDatabase();
   const currentYear = new Date().getFullYear();
+
+  const handleAdminClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent('open-admin-login'));
+  };
 
   const scrollToSection = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -104,7 +110,7 @@ export default function Footer() {
                 Departamentos
               </h3>
               <ul className="space-y-4">
-                {CATEGORIES.map((cat) => (
+                {categories.map((cat) => (
                   <li key={cat.slug}>
                     <a 
                       href="#ofertas" 
@@ -212,7 +218,16 @@ export default function Footer() {
       {/* Bottom Bar */}
       <ScrollReveal delay={0.1} yOffset={20} blur="6px" className="relative z-10 border-t border-white/5 bg-black/20">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-widest font-semibold text-slate-500">
-          <p>© {currentYear} Energia Nova Haja Luz. Desenvolvido por <span className="font-bold text-white">Nivano Studio</span></p>
+          <p className="flex items-center">
+            © {currentYear} Energia Nova Haja Luz. Desenvolvido por&nbsp;<span className="font-bold text-white">Nivano Studio</span>
+            <button 
+              onClick={handleAdminClick}
+              className="opacity-10 hover:opacity-100 hover:text-white transition-all ml-2 p-1 cursor-pointer"
+              title="Área do Administrador"
+            >
+              <Lock className="w-3 h-3" />
+            </button>
+          </p>
           <p className="flex items-center gap-2">
             <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
             Imagens ilustrativas

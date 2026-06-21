@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CATEGORIES } from '../data/categories';
-import { PRODUCTS } from '../data/products';
+import { useDatabase } from '../contexts/DatabaseContext';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../contexts/CartContext';
@@ -10,6 +9,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import SpotlightCard from '../components/SpotlightCard';
 
 export default function CategoryShowcase() {
+  const { products, categories } = useDatabase();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   
@@ -59,9 +59,9 @@ export default function CategoryShowcase() {
     return () => window.removeEventListener('toggle-categories', handleToggleCategories);
   }, []);
 
-  const activeCategory = CATEGORIES.find(c => c.slug === selectedCategory);
+  const activeCategory = categories.find(c => c.slug === selectedCategory);
   
-  const filteredProducts = PRODUCTS.filter(p => {
+  const filteredProducts = products.filter(p => {
     if (selectedSubcategory) return p.category === selectedCategory && p.subcategory === selectedSubcategory;
     if (selectedCategory) return p.category === selectedCategory;
     return false;
@@ -92,7 +92,7 @@ export default function CategoryShowcase() {
         
         {/* Category Grid (Home View) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {CATEGORIES.map((cat, index) => (
+          {categories.map((cat, index) => (
             <ScrollReveal 
               key={cat.slug} 
               delay={index * 0.05} 
@@ -213,7 +213,7 @@ export default function CategoryShowcase() {
 
                       {activeCategory.subcategories.map(sub => {
                         const isSubActive = selectedSubcategory === sub.slug;
-                        const count = PRODUCTS.filter(p => p.category === selectedCategory && p.subcategory === sub.slug).length;
+                        const count = products.filter(p => p.category === selectedCategory && p.subcategory === sub.slug).length;
                         return (
                           <button
                             key={sub.slug}

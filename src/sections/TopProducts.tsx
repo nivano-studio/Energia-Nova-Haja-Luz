@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '../components/ProductCard';
-import { PRODUCTS } from '../data/products';
+import { useDatabase } from '../contexts/DatabaseContext';
 import { ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart, Star, TrendingUp } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import ScrollReveal from '../components/ScrollReveal';
@@ -12,7 +12,8 @@ export default function TopProducts() {
   const { items, setIsCartOpen } = useCart();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
-  const topProducts = [...PRODUCTS]
+  const { products } = useDatabase();
+  const topProducts = [...products]
     .sort((a, b) => (b.salesCount || 0) - (a.salesCount || 0))
     .slice(0, 20);
   

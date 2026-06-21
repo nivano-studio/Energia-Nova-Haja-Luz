@@ -4,6 +4,12 @@ import { normalizeText } from './chatPreprocess';
 import type { ExtractedEntities } from './types';
 import { productTaxonomy } from './knowledge/productTaxonomy';
 
+let activeProducts: Product[] = PRODUCTS;
+
+export function updateActiveProducts(newProducts: Product[]) {
+  activeProducts = newProducts;
+}
+
 // Levenshtein distance implementation
 function levenshtein(a: string, b: string): number {
   const matrix = [];
@@ -76,7 +82,7 @@ export function searchProducts(cleanInput: string, entities: ExtractedEntities, 
     }
   }
 
-  for (const product of PRODUCTS) {
+  for (const product of activeProducts) {
     let score = 0;
     const productNameNormalized = normalizeText(product.name);
     const productTokens = productNameNormalized.split(' ');

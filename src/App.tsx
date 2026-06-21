@@ -18,6 +18,7 @@ import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import SideProgress from './components/SideProgress';
 import SplashScreen from './components/SplashScreen';
 import ChatAssistant from './components/ChatAssistant/ChatAssistant';
+import AdminControls from './components/AdminControls';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -51,6 +52,7 @@ function App() {
         <WhatsAppFloatingButton />
         <ChatAssistant />
         <SideProgress />
+        <AdminControls />
       </div>
     </CartProvider>
   )

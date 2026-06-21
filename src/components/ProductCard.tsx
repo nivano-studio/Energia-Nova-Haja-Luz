@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import type { Product } from '../data/products';
-import { ShoppingCart, Plus, Minus } from 'lucide-react';
+import { ShoppingCart, Plus, Minus, Edit2 } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
+import { useDatabase } from '../contexts/DatabaseContext';
 
 interface ProductCardProps {
   product: Product;
@@ -10,8 +11,15 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onSelectingChange }: ProductCardProps) {
   const { addToCart } = useCart();
+  const { isAdmin } = useDatabase();
   const [showQty, setShowQty] = useState(false);
   const [qty, setQty] = useState(1);
+
+  const handleEditClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.dispatchEvent(new CustomEvent('edit-product', { detail: { product } }));
+  };
 
   const handleAddClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -54,6 +62,15 @@ export default function ProductCard({ product, onSelectingChange }: ProductCardP
           <div className="absolute bottom-0 left-0 bg-gradient-to-r from-[#EE4D2D] to-[#FF3B62] text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-tr-lg shadow-sm z-10">
             Mais Vendido
           </div>
+        )}
+        {isAdmin && (
+          <button 
+            onClick={handleEditClick}
+            className="absolute top-2 right-2 bg-white/95 hover:bg-white text-[#1C2978] p-1.5 rounded-full shadow-md border border-slate-100 z-30 transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center"
+            title="Editar Produto"
+          >
+            <Edit2 className="w-3.5 h-3.5" />
+          </button>
         )}
       </div>
 

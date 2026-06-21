@@ -1,11 +1,11 @@
 import { Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useCart } from '../contexts/CartContext';
-import { PRODUCTS } from '../data/products';
-import { CATEGORIES } from '../data/categories';
+import { useDatabase } from '../contexts/DatabaseContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
+  const { products, categories } = useDatabase();
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
@@ -55,7 +55,7 @@ export default function Header() {
 
   const searchResults = searchQuery.trim() === '' 
     ? [] 
-    : PRODUCTS.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5);
+    : products.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5);
 
   const handleProductClick = (productId: string, categorySlug: string, subcategorySlug: string) => {
     setShowSearchResults(false);
@@ -237,7 +237,7 @@ export default function Header() {
 
               {/* Links */}
               <nav ref={navRef} className="flex items-center h-full relative flex-shrink-0">
-                {CATEGORIES.map((cat, index, arr) => (
+                {categories.map((cat, index, arr) => (
                   <div 
                     key={cat.slug} 
                     className="flex items-center h-full relative"

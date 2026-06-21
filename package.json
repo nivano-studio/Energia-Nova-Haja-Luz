@@ -14,6 +14,7 @@
     "chat:analyze-errors": "tsx scripts/analyzeChatErrors.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.108.2",
     "@tailwindcss/vite": "^4.2.4",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",

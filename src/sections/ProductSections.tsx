@@ -1,7 +1,7 @@
-import { PRODUCTS } from '../data/products';
+import { useDatabase, Product } from '../contexts/DatabaseContext';
 import { ChevronRight } from 'lucide-react';
 
-const Section = ({ title, products }: { title: string, products: typeof PRODUCTS }) => (
+const Section = ({ title, products }: { title: string, products: Product[] }) => (
   <div className="flex-1">
     <div className="flex items-center justify-between border-b-2 border-[#E8EDF5] mb-6 pb-2">
       <h2 className="text-xl md:text-2xl font-display font-extrabold text-[#1C2978] relative">
@@ -30,8 +30,9 @@ const Section = ({ title, products }: { title: string, products: typeof PRODUCTS
 );
 
 export default function ProductSections() {
-  const iluminationProducts = PRODUCTS.filter(p => p.category === 'Iluminação').slice(0, 4);
-  const toolsProducts = PRODUCTS.filter(p => p.category === 'Ferramentas e Acessórios').slice(0, 3);
+  const { products } = useDatabase();
+  const iluminationProducts = products.filter(p => p.category === 'iluminacao').slice(0, 4);
+  const toolsProducts = products.filter(p => p.category === 'ferramentas').slice(0, 3);
 
   return (
     <section className="py-12 bg-[#f3f4f6]">
