@@ -264,10 +264,9 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         .replace(/\s+/g, '-') // substitui espaços por hifens
         .replace(/-+/g, '-'); // evita hifens duplicados
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('categories')
-        .insert([{ name, slug, icon: iconName }])
-        .select();
+        .insert([{ name, slug, icon: iconName }]);
 
       if (error) throw error;
 

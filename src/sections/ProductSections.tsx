@@ -1,4 +1,5 @@
-import { useDatabase, Product } from '../contexts/DatabaseContext';
+import { useDatabase } from '../contexts/DatabaseContext';
+import type { Product } from '../contexts/DatabaseContext';
 import { ChevronRight } from 'lucide-react';
 
 const Section = ({ title, products }: { title: string, products: Product[] }) => (
