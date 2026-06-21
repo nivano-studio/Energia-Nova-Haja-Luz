@@ -20,7 +20,7 @@ export default function ScrollReveal({
   xOffset = 0,
   blur = '8px',
   className = '',
-  once = false,
+  once = true,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);

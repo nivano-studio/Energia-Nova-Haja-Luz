@@ -277,12 +277,8 @@ export default function CategoryShowcase() {
                   {/* Products Grid */}
                   {filteredProducts.length > 0 ? (
                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 md:gap-4 pb-10">
-                      {filteredProducts.map((product, index) => (
-                        <div 
-                          key={product.id}
-                          style={{ animationDelay: `${index * 30}ms` }}
-                          className="animate-[fadeInUp_0.5s_ease-out_both]"
-                        >
+                      {filteredProducts.map((product) => (
+                        <div key={product.id}>
                           <ProductCard product={product} />
                         </div>
                       ))}

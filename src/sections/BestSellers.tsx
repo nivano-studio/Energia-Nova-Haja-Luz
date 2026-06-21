@@ -189,12 +189,8 @@ export default function BestSellers() {
 
                 {/* Products Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 md:gap-4">
-                  {bestSellerProducts.map((product, index) => (
-                    <div 
-                      key={product.id}
-                      style={{ animationDelay: `${index * 30}ms` }}
-                      className="animate-[fadeInUp_0.5s_ease-out_both]"
-                    >
+                  {bestSellerProducts.map((product) => (
+                    <div key={product.id}>
                       <ProductCard product={product} />
                     </div>
                   ))}
