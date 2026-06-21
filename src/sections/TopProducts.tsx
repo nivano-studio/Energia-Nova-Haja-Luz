@@ -29,20 +29,20 @@ export default function TopProducts() {
       document.body.style.overflow = 'unset';
     };
   }, [isOverlayOpen]);
-
   const [isPaused, setIsPaused] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto-slide logic with 3s pause
   useEffect(() => {
-    if (isPaused || isOverlayOpen) return;
+    if (isPaused || isOverlayOpen || hasInteracted) return;
     
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % topProducts.length);
     }, 3000);
 
     return () => clearInterval(timer);
-  }, [isPaused, isOverlayOpen, topProducts.length]);
+  }, [isPaused, isOverlayOpen, hasInteracted, topProducts.length]);
 
   const itemWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 176 : 236;
 
@@ -73,17 +73,25 @@ export default function TopProducts() {
           className="relative w-full group"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onMouseDown={() => setHasInteracted(true)}
+          onTouchStart={() => setHasInteracted(true)}
         >
           {/* Navigation Arrows */}
           <button 
-            onClick={() => setCurrentIndex((prev) => (prev - 1 + topProducts.length) % topProducts.length)}
+            onClick={() => {
+              setHasInteracted(true);
+              setCurrentIndex((prev) => (prev - 1 + topProducts.length) % topProducts.length);
+            }}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 bg-white/35 backdrop-blur-md rounded-full shadow-[0_8px_32px_rgba(28, 41, 120,0.06)] flex items-center justify-center text-[#1C2978] opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/50 hover:bg-[#1C2978] hover:text-white hover:border-[#1C2978] hover:scale-105 group/arrow cursor-pointer"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 group-hover/arrow:-translate-x-0.5 transition-transform" />
           </button>
           
           <button 
-            onClick={() => setCurrentIndex((prev) => (prev + 1) % topProducts.length)}
+            onClick={() => {
+              setHasInteracted(true);
+              setCurrentIndex((prev) => (prev + 1) % topProducts.length);
+            }}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 bg-white/35 backdrop-blur-md rounded-full shadow-[0_8px_32px_rgba(28, 41, 120,0.06)] flex items-center justify-center text-[#1C2978] opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/50 hover:bg-[#1C2978] hover:text-white hover:border-[#1C2978] hover:scale-105 group/arrow cursor-pointer"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover/arrow:translate-x-0.5 transition-transform" />
@@ -108,7 +116,10 @@ export default function TopProducts() {
               stiffness: 100,
               damping: 20
             }}
-            onDragStart={() => setIsPaused(true)}
+            onDragStart={() => {
+              setIsPaused(true);
+              setHasInteracted(true);
+            }}
             style={{ width: "fit-content" }}
           >
             {/* Using clones to prevent empty space during loop */}
