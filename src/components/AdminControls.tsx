@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useDatabase } from '../contexts/DatabaseContext';
 import { 
   Settings, Plus, Edit2, Trash2, LogOut, X, 
-  Upload, FolderPlus, Save, Package, Lock, Key, Eye, EyeOff, Check
+  Upload, FolderPlus, Save, Package, Lock, Key, Eye, EyeOff, Check,
+  ChevronDown, ChevronUp
 } from 'lucide-react';
+import * as Icons from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function AdminControls() {
@@ -44,6 +46,56 @@ export default function AdminControls() {
   const [productFormError, setProductFormError] = useState('');
   const [productFormLoading, setProductFormLoading] = useState(false);
   const [productSearch, setProductSearch] = useState('');
+
+  // Estado para armazenar quais categorias estão expandidas no painel
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
+
+  // Inicializar todas as categorias como expandidas por padrão
+  useEffect(() => {
+    if (categories.length > 0) {
+      const initial: Record<string, boolean> = {};
+      categories.forEach(c => {
+        initial[c.slug] = true;
+      });
+      setExpandedCategories(prev => {
+        const next = { ...initial, ...prev };
+        return next;
+      });
+    }
+  }, [categories]);
+
+  // Se o usuário buscar algo, força a expansão de todas as categorias para facilitar a busca
+  useEffect(() => {
+    if (productSearch.trim() !== '') {
+      const updated: Record<string, boolean> = {};
+      categories.forEach(c => {
+        updated[c.slug] = true;
+      });
+      setExpandedCategories(updated);
+    }
+  }, [productSearch, categories]);
+
+  const toggleCategoryExpand = (slug: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [slug]: !prev[slug]
+    }));
+  };
+
+  const openAddProductFormForCategory = (catSlug: string, subSlug: string) => {
+    setEditingProduct(null);
+    setProductName('');
+    setProductDescription('');
+    setProductCategory(catSlug);
+    setProductSubcategory(subSlug);
+    setProductPrice('');
+    setProductOldPrice('');
+    setProductIsBestSeller(false);
+    setProductImageFile(null);
+    setProductImagePreview('');
+    setProductFormError('');
+    setIsProductFormOpen(true);
+  };
 
   // Estados de Criação de Categorias/Subcategorias
   const [categoryName, setCategoryName] = useState('');
@@ -697,73 +749,293 @@ export default function AdminControls() {
                       )}
                     </AnimatePresence>
 
-                    {/* Tabela de Produtos */}
-                    <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-left border-collapse">
-                          <thead>
-                            <tr className="bg-slate-50 text-slate-400 text-[10px] font-black uppercase tracking-wider border-b border-slate-200">
-                              <th className="px-6 py-4 w-20">Foto</th>
-                              <th className="px-6 py-4">Produto</th>
-                              <th className="px-6 py-4">Categoria/Subcategoria</th>
-                              <th className="px-6 py-4 w-32">Preço</th>
-                              <th className="px-6 py-4 w-28 text-center">Ações</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-slate-100 text-slate-700 text-sm">
-                            {filteredProducts.length > 0 ? (
-                              filteredProducts.map(p => {
-                                const catObj = categories.find(c => c.slug === p.category);
-                                const subObj = catObj?.subcategories.find(s => s.slug === p.subcategory);
-                                return (
-                                  <tr key={p.id} className="hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-6 py-3">
-                                      <div className="w-12 h-12 bg-slate-50 rounded-lg p-1 border border-slate-100 flex items-center justify-center">
-                                        <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain rounded-md" />
+                    {/* Listagem de Produtos Agrupados por Categoria e Subcategoria */}
+                    <div className="space-y-4">
+                      {categories.map(cat => {
+                        const catProducts = filteredProducts.filter(p => p.category === cat.slug);
+                        const isExpanded = !!expandedCategories[cat.slug];
+                        
+                        // Ignoramos categorias vazias se houver uma busca ativa e elas não possuírem produtos correspondentes
+                        if (productSearch.trim() !== '' && catProducts.length === 0) {
+                          return null;
+                        }
+
+                        return (
+                          <div key={cat.slug} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs">
+                            {/* Cabeçalho da Categoria */}
+                            <button
+                              type="button"
+                              onClick={() => toggleCategoryExpand(cat.slug)}
+                              className="w-full flex items-center justify-between p-4 bg-slate-50/50 hover:bg-slate-50 border-b border-slate-200 transition-colors cursor-pointer text-left font-bold text-slate-800"
+                            >
+                              <div className="flex items-center gap-2.5">
+                                <span className="p-1.5 bg-[#1C2978]/10 text-[#1C2978] rounded-lg">
+                                  <cat.icon className="w-5 h-5" />
+                                </span>
+                                <div>
+                                  <span className="text-base font-extrabold">{cat.name}</span>
+                                  <span className="ml-2 text-xs font-semibold text-slate-400">({catProducts.length} {catProducts.length === 1 ? 'produto' : 'produtos'})</span>
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                {isExpanded ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                              </div>
+                            </button>
+
+                            {/* Conteúdo da Categoria (Subcategorias e Produtos) */}
+                            {isExpanded && (
+                              <div className="p-4 space-y-6">
+                                {cat.subcategories && cat.subcategories.length > 0 ? (
+                                  cat.subcategories.map(sub => {
+                                    const subProducts = catProducts.filter(p => p.subcategory === sub.slug);
+                                    
+                                    // Ignoramos subcategorias vazias na busca
+                                    if (productSearch.trim() !== '' && subProducts.length === 0) {
+                                      return null;
+                                    }
+
+                                    return (
+                                      <div key={sub.slug} className="space-y-2.5">
+                                        {/* Cabeçalho da Subcategoria */}
+                                        <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                                          <div className="flex items-center gap-2">
+                                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                                            <h4 className="font-extrabold text-slate-700 text-sm">{sub.name}</h4>
+                                            <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-bold">
+                                              {subProducts.length}
+                                            </span>
+                                          </div>
+                                          
+                                          {/* Botão de Adicionar Produto nesta Subcategoria */}
+                                          <button
+                                            type="button"
+                                            onClick={() => openAddProductFormForCategory(cat.slug, sub.slug)}
+                                            className="flex items-center gap-1 text-[11px] font-bold text-[#1C2978] hover:text-[#141F59] hover:underline cursor-pointer"
+                                            title={`Adicionar novo produto em ${cat.name} > ${sub.name}`}
+                                          >
+                                            <Plus className="w-3.5 h-3.5" /> Adicionar Produto
+                                          </button>
+                                        </div>
+
+                                        {/* Tabela de Produtos da Subcategoria */}
+                                        <div className="border border-slate-100 rounded-xl overflow-hidden bg-white shadow-3xs">
+                                          {subProducts.length > 0 ? (
+                                            <div className="overflow-x-auto">
+                                              <table className="w-full text-left border-collapse">
+                                                <thead>
+                                                  <tr className="bg-slate-50/55 text-slate-400 text-[9px] font-black uppercase tracking-wider border-b border-slate-100">
+                                                    <th className="px-4 py-2 w-16">Foto</th>
+                                                    <th className="px-4 py-2">Produto</th>
+                                                    <th className="px-4 py-2 w-28">Preço</th>
+                                                    <th className="px-4 py-2 w-20 text-center">Ações</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-slate-100 text-slate-600 text-xs">
+                                                  {subProducts.map(p => (
+                                                    <tr key={p.id} className="hover:bg-slate-50/30 transition-colors">
+                                                      <td className="px-4 py-2">
+                                                        <div className="w-10 h-10 bg-slate-50 rounded-lg p-1 border border-slate-100 flex items-center justify-center">
+                                                          <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain rounded-md" />
+                                                        </div>
+                                                      </td>
+                                                      <td className="px-4 py-2">
+                                                        <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
+                                                        <div className="text-[9px] text-slate-400 font-mono mt-0.5">ID: {p.id} {p.isBestSeller && <span className="ml-1 bg-orange-100 text-orange-700 font-bold px-1 rounded text-[8px]">BestSeller</span>}</div>
+                                                        {p.description && <div className="text-[10px] text-slate-400 mt-0.5 line-clamp-1 italic">{p.description}</div>}
+                                                      </td>
+                                                      <td className="px-4 py-2 font-mono font-bold text-slate-700">
+                                                        {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-[10px] font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
+                                                        {p.oldPrice && <div className="text-[10px] text-slate-400 line-through font-normal">R$ {p.oldPrice.toFixed(2)}</div>}
+                                                      </td>
+                                                      <td className="px-4 py-2">
+                                                        <div className="flex items-center justify-center gap-1">
+                                                          <button
+                                                            type="button"
+                                                            onClick={() => openEditProductForm(p)}
+                                                            className="p-1 text-blue-600 hover:bg-blue-50 rounded transition-colors cursor-pointer"
+                                                            title="Editar Produto"
+                                                          >
+                                                            <Edit2 className="w-3.5 h-3.5" />
+                                                          </button>
+                                                          <button
+                                                            type="button"
+                                                            onClick={() => handleDeleteProduct(p.id, p.name)}
+                                                            className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors cursor-pointer"
+                                                            title="Excluir Produto"
+                                                          >
+                                                            <Trash2 className="w-3.5 h-3.5" />
+                                                          </button>
+                                                        </div>
+                                                      </td>
+                                                    </tr>
+                                                  ))}
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          ) : (
+                                            <div className="p-4 text-center text-slate-400 text-xs italic">Nenhum produto cadastrado nesta subcategoria.</div>
+                                          )}
+                                        </div>
                                       </div>
-                                    </td>
-                                    <td className="px-6 py-3">
-                                      <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
-                                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">ID: {p.id} {p.isBestSeller && <span className="ml-1 bg-orange-100 text-orange-700 font-bold px-1 rounded">BestSeller</span>}</div>
-                                      {p.description && <div className="text-xs text-slate-400 mt-1 line-clamp-1 italic">{p.description}</div>}
-                                    </td>
-                                    <td className="px-6 py-3">
-                                      <div className="font-semibold text-slate-600">{catObj?.name || p.category}</div>
-                                      <div className="text-xs text-slate-400">{subObj?.name || p.subcategory}</div>
-                                    </td>
-                                    <td className="px-6 py-3 font-mono font-bold text-slate-800">
-                                      {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-xs font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
-                                      {p.oldPrice && <div className="text-xs text-slate-400 line-through font-normal">R$ {p.oldPrice.toFixed(2)}</div>}
-                                    </td>
-                                    <td className="px-6 py-3">
-                                      <div className="flex items-center justify-center gap-1.5">
+                                    );
+                                  })
+                                ) : (
+                                  <div className="text-center text-slate-400 text-xs py-4">Sem subcategorias nesta categoria.</div>
+                                )}
+
+                                {/* Produtos sem subcategoria definida na categoria */}
+                                {(() => {
+                                  const unassignedProducts = catProducts.filter(p => !cat.subcategories.some(s => s.slug === p.subcategory));
+                                  if (unassignedProducts.length === 0) return null;
+
+                                  return (
+                                    <div className="space-y-2.5">
+                                      <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                                        <div className="flex items-center gap-2">
+                                          <span className="w-2 h-2 bg-slate-400 rounded-full"></span>
+                                          <h4 className="font-extrabold text-slate-500 text-sm">Sem Subcategoria</h4>
+                                          <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-bold">
+                                            {unassignedProducts.length}
+                                          </span>
+                                        </div>
                                         <button
-                                          onClick={() => openEditProductForm(p)}
-                                          className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                                          title="Editar Produto"
+                                          type="button"
+                                          onClick={() => openAddProductFormForCategory(cat.slug, '')}
+                                          className="flex items-center gap-1 text-[11px] font-bold text-[#1C2978] hover:text-[#141F59] hover:underline cursor-pointer"
+                                          title={`Adicionar novo produto em ${cat.name}`}
                                         >
-                                          <Edit2 className="w-4 h-4" />
-                                        </button>
-                                        <button
-                                          onClick={() => handleDeleteProduct(p.id, p.name)}
-                                          className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
-                                          title="Excluir Produto"
-                                        >
-                                          <Trash2 className="w-4 h-4" />
+                                          <Plus className="w-3.5 h-3.5" /> Adicionar Produto
                                         </button>
                                       </div>
-                                    </td>
-                                  </tr>
-                                );
-                              })
-                            ) : (
-                              <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-slate-400">Nenhum produto cadastrado ou encontrado.</td>
-                              </tr>
+                                      
+                                      <div className="border border-slate-100 rounded-xl overflow-hidden bg-white shadow-3xs">
+                                        <div className="overflow-x-auto">
+                                          <table className="w-full text-left border-collapse">
+                                            <thead>
+                                              <tr className="bg-slate-50/55 text-slate-400 text-[9px] font-black uppercase tracking-wider border-b border-slate-100">
+                                                <th className="px-4 py-2 w-16">Foto</th>
+                                                <th className="px-4 py-2">Produto</th>
+                                                <th className="px-4 py-2 w-28">Preço</th>
+                                                <th className="px-4 py-2 w-20 text-center">Ações</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100 text-slate-600 text-xs">
+                                              {unassignedProducts.map(p => (
+                                                <tr key={p.id} className="hover:bg-slate-50/30 transition-colors">
+                                                  <td className="px-4 py-2">
+                                                    <div className="w-10 h-10 bg-slate-50 rounded-lg p-1 border border-slate-100 flex items-center justify-center">
+                                                      <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain rounded-md" />
+                                                    </div>
+                                                  </td>
+                                                  <td className="px-4 py-2">
+                                                    <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
+                                                    <div className="text-[9px] text-slate-400 font-mono mt-0.5">ID: {p.id} {p.isBestSeller && <span className="ml-1 bg-orange-100 text-orange-700 font-bold px-1 rounded text-[8px]">BestSeller</span>}</div>
+                                                  </td>
+                                                  <td className="px-4 py-2 font-mono font-bold text-slate-700">
+                                                    {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-[10px] font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
+                                                  </td>
+                                                  <td className="px-4 py-2">
+                                                    <div className="flex items-center justify-center gap-1">
+                                                      <button
+                                                        type="button"
+                                                        onClick={() => openEditProductForm(p)}
+                                                        className="p-1 text-blue-600 hover:bg-blue-50 rounded transition-colors cursor-pointer"
+                                                        title="Editar Produto"
+                                                      >
+                                                        <Edit2 className="w-3.5 h-3.5" />
+                                                      </button>
+                                                      <button
+                                                        type="button"
+                                                        onClick={() => handleDeleteProduct(p.id, p.name)}
+                                                        className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors cursor-pointer"
+                                                        title="Excluir Produto"
+                                                      >
+                                                        <Trash2 className="w-3.5 h-3.5" />
+                                                      </button>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                              ))}
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  );
+                                })()}
+                              </div>
                             )}
-                          </tbody>
-                        </table>
-                      </div>
+                          </div>
+                        );
+                      })}
+
+                      {/* Produtos totalmente órfãos (sem categoria correspondente) */}
+                      {(() => {
+                        const orphanProducts = filteredProducts.filter(p => !categories.some(c => c.slug === p.category));
+                        if (orphanProducts.length === 0) return null;
+
+                        return (
+                          <div className="bg-white border border-red-100 rounded-2xl overflow-hidden shadow-2xs">
+                            <div className="p-4 bg-red-50/50 border-b border-red-100 font-extrabold text-red-800 text-sm">
+                              Produtos sem Categoria Cadastrada ({orphanProducts.length})
+                            </div>
+                            <div className="p-4">
+                              <div className="border border-red-50 rounded-xl overflow-hidden bg-white shadow-3xs">
+                                <div className="overflow-x-auto">
+                                  <table className="w-full text-left border-collapse">
+                                    <thead>
+                                      <tr className="bg-slate-50/55 text-slate-400 text-[9px] font-black uppercase tracking-wider border-b border-slate-100">
+                                        <th className="px-4 py-2 w-16">Foto</th>
+                                        <th className="px-4 py-2">Produto</th>
+                                        <th className="px-4 py-2 w-28">Preço</th>
+                                        <th className="px-4 py-2 w-20 text-center">Ações</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100 text-slate-600 text-xs">
+                                      {orphanProducts.map(p => (
+                                        <tr key={p.id} className="hover:bg-slate-50/30 transition-colors">
+                                          <td className="px-4 py-2">
+                                            <div className="w-10 h-10 bg-slate-50 rounded-lg p-1 border border-slate-100 flex items-center justify-center">
+                                              <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain rounded-md" />
+                                            </div>
+                                          </td>
+                                          <td className="px-4 py-2">
+                                            <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
+                                            <div className="text-[9px] text-slate-400 font-mono mt-0.5">ID: {p.id}</div>
+                                          </td>
+                                          <td className="px-4 py-2 font-mono font-bold text-slate-700">
+                                            {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-[10px] font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
+                                          </td>
+                                          <td className="px-4 py-2">
+                                            <div className="flex items-center justify-center gap-1">
+                                              <button
+                                                type="button"
+                                                onClick={() => openEditProductForm(p)}
+                                                className="p-1 text-blue-600 hover:bg-blue-50 rounded transition-colors cursor-pointer"
+                                                title="Editar Produto"
+                                              >
+                                                <Edit2 className="w-3.5 h-3.5" />
+                                              </button>
+                                              <button
+                                                type="button"
+                                                onClick={() => handleDeleteProduct(p.id, p.name)}
+                                                className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors cursor-pointer"
+                                                title="Excluir Produto"
+                                              >
+                                                <Trash2 className="w-3.5 h-3.5" />
+                                              </button>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })()}
                     </div>
                   </div>
                 )}
@@ -798,16 +1070,29 @@ export default function AdminControls() {
                           </div>
 
                           <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Mapeamento de Ícone</label>
-                            <select
-                              value={categoryIcon}
-                              onChange={(e) => setCategoryIcon(e.target.value)}
-                              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
-                            >
-                              {commonIcons.map(icon => (
-                                <option key={icon.name} value={icon.name}>{icon.label} ({icon.name})</option>
-                              ))}
-                            </select>
+                            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Selecione o Ícone da Categoria</label>
+                            <div className="grid grid-cols-5 gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                              {commonIcons.map(icon => {
+                                const IconComp = (Icons as any)[icon.name] || Icons.Package;
+                                const isSelected = categoryIcon === icon.name;
+                                return (
+                                  <button
+                                    key={icon.name}
+                                    type="button"
+                                    onClick={() => setCategoryIcon(icon.name)}
+                                    className={`flex flex-col items-center justify-center p-2 rounded-lg border-2 transition-all cursor-pointer ${
+                                      isSelected 
+                                        ? 'border-[#1C2978] bg-blue-50 text-[#1C2978] font-bold shadow-2xs' 
+                                        : 'border-transparent bg-white text-slate-400 hover:text-slate-700 hover:bg-slate-100/50 shadow-3xs'
+                                    }`}
+                                    title={icon.label}
+                                  >
+                                    <IconComp className="w-5 h-5 mb-1" />
+                                    <span className="text-[9px] truncate max-w-full leading-none font-medium">{icon.label}</span>
+                                  </button>
+                                );
+                              })}
+                            </div>
                           </div>
 
                           <button
