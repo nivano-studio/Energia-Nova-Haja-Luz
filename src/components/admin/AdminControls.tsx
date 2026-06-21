@@ -55,6 +55,16 @@ export default function AdminControls() {
   // Estado para armazenar quais categorias estão expandidas no painel
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
 
+  // Estado para armazenar quais categorias estão expandidas na aba de Gerenciar Categorias
+  const [expandedManageCategories, setExpandedManageCategories] = useState<Record<string, boolean>>({});
+
+  const toggleManageCategoryExpand = (slug: string) => {
+    setExpandedManageCategories(prev => ({
+      ...prev,
+      [slug]: !prev[slug]
+    }));
+  };
+
 
   // Se o usuário buscar algo, força a expansão de todas as categorias para facilitar a busca
   useEffect(() => {
@@ -1376,16 +1386,21 @@ export default function AdminControls() {
                     
                     <div className="divide-y divide-slate-100 max-h-[500px] overflow-y-auto pr-2">
                       {categories.map(cat => {
+                        const isExpanded = !!expandedManageCategories[cat.slug];
                         return (
                           <div key={cat.slug} className="py-4 space-y-3">
                             {/* Categoria Pai */}
                             <div className="flex items-center justify-between gap-3">
-                              <div className="flex items-center gap-2.5">
+                              <button
+                                type="button"
+                                onClick={() => toggleManageCategoryExpand(cat.slug)}
+                                className="flex-1 flex items-center gap-2.5 transition-colors cursor-pointer text-left font-bold text-slate-800"
+                              >
                                 <span className="p-1.5 bg-[#1C2978]/10 text-[#1C2978] rounded-lg">
                                   <cat.icon className="w-4.5 h-4.5" />
                                 </span>
                                 <span className="font-extrabold text-slate-800 text-sm">{cat.name}</span>
-                              </div>
+                              </button>
                               <div className="flex items-center gap-2">
                                 {cat.id && (
                                   <>
@@ -1403,11 +1418,18 @@ export default function AdminControls() {
                                     </button>
                                   </>
                                 )}
+                                <button
+                                  type="button"
+                                  onClick={() => toggleManageCategoryExpand(cat.slug)}
+                                  className="p-1 text-slate-400 hover:text-slate-600 rounded-md transition-colors cursor-pointer"
+                                >
+                                  {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                                </button>
                               </div>
                             </div>
 
                             {/* Subcategorias vinculadas */}
-                            {cat.subcategories && cat.subcategories.length > 0 ? (
+                            {isExpanded && (cat.subcategories && cat.subcategories.length > 0 ? (
                               <div className="pl-9 space-y-2">
                                 {cat.subcategories.map(sub => (
                                   <div key={sub.slug} className="flex items-center justify-between text-xs py-1.5 border-b border-slate-50">
@@ -1438,7 +1460,7 @@ export default function AdminControls() {
                               </div>
                             ) : (
                               <p className="text-[10px] text-slate-400 pl-9 italic">Nenhuma subcategoria vinculada.</p>
-                            )}
+                            ))}
                           </div>
                         );
                       })}
