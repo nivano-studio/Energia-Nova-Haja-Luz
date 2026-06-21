@@ -257,6 +257,12 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (!fileExt || !allowedExtensions.includes(fileExt) || !allowedMimeTypes.includes(file.type)) {
       throw new Error('Apenas imagens nos formatos JPG, JPEG, PNG ou WEBP são permitidas.');
     }
+
+    // Validar tamanho máximo de 2 MB (2 * 1024 * 1024 bytes)
+    const maxSize = 2 * 1024 * 1024;
+    if (file.size > maxSize) {
+      throw new Error('A imagem é muito pesada. O tamanho máximo permitido é de 2 MB.');
+    }
     
     const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 9)}.${fileExt}`;
     const filePath = `products/${fileName}`;

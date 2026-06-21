@@ -229,6 +229,14 @@ export default function AdminControls() {
         return;
       }
 
+      // Validar tamanho máximo de 2 MB (2 * 1024 * 1024 bytes)
+      const maxSize = 2 * 1024 * 1024;
+      if (file.size > maxSize) {
+        alert('A imagem é muito pesada. O tamanho máximo permitido é de 2 MB.');
+        e.target.value = ''; // Reseta o campo
+        return;
+      }
+
       setProductImageFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {

@@ -220,8 +220,6 @@ function runTests() {
   for (const test of tests) {
     resetChatContext();
     const result = processQuery(test.input);
-    const textLower = result.text.toLowerCase();
-
     let isFail = false;
     const failReasons: string[] = [];
 
