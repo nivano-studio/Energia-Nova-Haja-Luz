@@ -34,6 +34,7 @@
     font-family: var(--font-sans);
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    zoom: 0.9;
   }
   @media (min-width: 1024px) {
     html {
