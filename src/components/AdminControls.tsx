@@ -13,7 +13,7 @@ export default function AdminControls() {
     products, categories, isAdmin, login, logout,
     addCategory, deleteCategory, addSubcategory, deleteSubcategory, 
     addProduct, updateProduct, deleteProduct,
-    seedDatabase
+    seedDatabase, isDbEmpty
   } = useDatabase();
 
   const [seedLoading, setSeedLoading] = useState(false);
@@ -528,7 +528,14 @@ export default function AdminControls() {
                     <Settings className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h2 className="font-bold text-lg leading-tight">Painel de Controle Haja Luz</h2>
+                    <div className="flex items-center gap-2">
+                      <h2 className="font-bold text-lg leading-tight">Painel de Controle Haja Luz</h2>
+                      {isDbEmpty && (
+                        <span className="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full">
+                          Modo Offline / Dados Locais
+                        </span>
+                      )}
+                    </div>
                     <p className="text-xs text-blue-200/80">Gerencie produtos e categorias do site</p>
                   </div>
                 </div>
@@ -576,7 +583,7 @@ export default function AdminControls() {
               {/* Área de Conteúdo Scrollable */}
               <div className="flex-1 overflow-y-auto p-6 bg-slate-50">
                 {/* Banner de Semeador se o banco estiver vazio */}
-                {products.length === 0 && categories.length === 0 && (
+                {isDbEmpty && (
                   <div className="mb-6 p-6 bg-blue-50 border border-blue-200 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xs">
                     <div className="space-y-1 text-center md:text-left">
                       <h4 className="font-extrabold text-[#1C2978] text-base">Banco de dados Supabase vazio</h4>

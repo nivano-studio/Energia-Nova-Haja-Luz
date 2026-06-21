@@ -40,6 +40,7 @@ interface DatabaseContextType {
   categories: Category[];
   loading: boolean;
   isAdmin: boolean;
+  isDbEmpty: boolean;
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => Promise<void>;
   
@@ -73,6 +74,7 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isDbEmpty, setIsDbEmpty] = useState(false);
 
   // Helper para converter string de ícone para componente Lucide
   const getIconComponent = (iconName: string): LucideIcon => {
@@ -86,6 +88,7 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     
     if (!supabase) {
       console.log('Supabase não configurado. Carregando dados locais estáticos.');
+      setIsDbEmpty(true);
       useStaticFallback();
       setLoading(false);
       return;
@@ -122,6 +125,7 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       // ou dar a opção de seed. Se tiver dados, usamos eles.
       if ((!catData || catData.length === 0) && (!prodData || prodData.length === 0)) {
         console.log('Banco de dados Supabase vazio. Usando dados estáticos.');
+        setIsDbEmpty(true);
         useStaticFallback();
       } else {
         // Mapear categorias vindo do banco
@@ -156,9 +160,11 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         setCategories(mappedCategories);
         setProducts(mappedProducts);
         updateActiveProducts(mappedProducts);
+        setIsDbEmpty(false);
       }
     } catch (error) {
       console.error('Erro ao buscar dados do Supabase. Ativando fallback estático:', error);
+      setIsDbEmpty(true);
       useStaticFallback();
     } finally {
       setLoading(false);
@@ -519,6 +525,7 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       categories,
       loading,
       isAdmin,
+      isDbEmpty,
       login,
       logout,
       addCategory,
