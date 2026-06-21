@@ -1,28 +1,61 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function SideProgress() {
-  const [progress, setProgress] = useState(0);
   const [isDarkBg, setIsDarkBg] = useState(false);
+  const fillRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
 
+  // IntersectionObserver to watch when dark sections enter the top 50% of the screen
   useEffect(() => {
-    const handleScroll = () => {
-      // Calculate scroll progress percentage
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight <= 0) return;
-      const currentScroll = window.scrollY;
-      const currentProgress = (currentScroll / totalHeight) * 100;
-      setProgress(currentProgress);
+    const sobreSection = document.getElementById('sobre');
+    const footerSection = document.querySelector('footer');
+    
+    const activeElements = new Set<Element>();
 
-      // Check if we are over the dark section ('sobre' or footer)
-      const sobreSection = document.getElementById('sobre');
-      if (sobreSection) {
-        const rect = sobreSection.getBoundingClientRect();
-        // If the top of the 'sobre' section is above the middle of the viewport,
-        // we are scrolling into the dark region of the page.
-        setIsDarkBg(rect.top <= window.innerHeight / 2);
-      } else {
-        // Fallback to scroll position threshold
-        setIsDarkBg(currentScroll > 1800);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            activeElements.add(entry.target);
+          } else {
+            activeElements.delete(entry.target);
+          }
+        });
+        setIsDarkBg(activeElements.size > 0);
+      },
+      {
+        rootMargin: '0px 0px -50% 0px',
+      }
+    );
+
+    if (sobreSection) observer.observe(sobreSection);
+    if (footerSection) observer.observe(footerSection);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Direct DOM updates for progress fill and indicator dot
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (totalHeight > 0) {
+            const currentScroll = window.scrollY;
+            const percentage = currentScroll / totalHeight;
+            
+            if (fillRef.current) {
+              fillRef.current.style.transform = `scaleY(${percentage})`;
+            }
+            if (dotRef.current) {
+              // Position dot in middle of track container (80px height)
+              dotRef.current.style.transform = `translateX(-50%) translateY(${percentage * 80}px) translateY(-50%)`;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -60,14 +93,16 @@ export default function SideProgress() {
             
             {/* Scroll Fill Line (Brand Blue) */}
             <div 
-              className="absolute top-0 w-[1.2px] bg-brand-blue transition-all duration-150 rounded-full shadow-[0_0_8px_rgba(28,41,120,0.4)]"
-              style={{ height: `${progress}%` }}
+              ref={fillRef}
+              className="absolute top-0 w-[1.2px] bg-brand-blue rounded-full shadow-[0_0_8px_rgba(28,41,120,0.4)] origin-top"
+              style={{ height: '100%', transform: 'scaleY(0)' }}
             />
             
             {/* Scroll Indicator Dot (Brand Blue) */}
             <div 
-              className="absolute w-3 h-3 bg-brand-blue rounded-full shadow-lg border-[1.5px] border-white transition-all duration-150 ease-out z-10"
-              style={{ top: `${progress}%`, transform: 'translateY(-50%)' }}
+              ref={dotRef}
+              className="absolute w-3 h-3 bg-brand-blue rounded-full shadow-lg border-[1.5px] border-white z-10 top-0 left-1/2"
+              style={{ transform: 'translateX(-50%) translateY(0px) translateY(-50%)' }}
             />
           </div>
         </div>

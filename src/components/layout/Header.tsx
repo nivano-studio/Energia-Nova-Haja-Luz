@@ -19,22 +19,20 @@ export default function Header() {
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      // White header shrinks first
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-      
-      // Blue sections nav bar shrinks shortly after
-      if (window.scrollY > 95) {
-        setIsScrolledNav(true);
-      } else {
-        setIsScrolledNav(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const nextScrolled = window.scrollY > 20;
+          const nextScrolledNav = window.scrollY > 95;
+          setIsScrolled(prev => (prev !== nextScrolled ? nextScrolled : prev));
+          setIsScrolledNav(prev => (prev !== nextScrolledNav ? nextScrolledNav : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

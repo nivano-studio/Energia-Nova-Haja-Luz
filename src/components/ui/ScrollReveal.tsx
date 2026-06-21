@@ -24,6 +24,7 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [animationDone, setAnimationDone] = useState(false);
   const [isLocked, setIsLocked] = useState(() => {
     // Se o preloader já terminou no passado, não trava
     if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).__loadingFinished) {
@@ -85,6 +86,26 @@ export default function ScrollReveal({
       observer.unobserve(el);
     };
   }, [once, isLocked]);
+
+  // Cleanup animation classes/styles after transition finishes
+  useEffect(() => {
+    if (isIntersecting && once) {
+      const totalDuration = (delay + duration) * 1000 + 100;
+      const timer = setTimeout(() => {
+        setAnimationDone(true);
+      }, totalDuration);
+      return () => clearTimeout(timer);
+    }
+  }, [isIntersecting, once, delay, duration]);
+
+  // If the animation is done, render a plain div to free GPU layer memory
+  if (animationDone) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   const style = {
     '--delay': `${delay}s`,
