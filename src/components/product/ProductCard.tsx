@@ -5,7 +5,7 @@ import { useCart } from '../../contexts/CartContext';
 import { useDatabase } from '../../contexts/DatabaseContext';
 import { createPortal } from 'react-dom';
 import ProductDetailsModal from './ProductDetailsModal';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProductCardProps {
   product: Product;
@@ -54,9 +54,9 @@ export default function ProductCard({ product, onSelectingChange }: ProductCardP
 
   return (
     <>
-      <div 
+      <motion.div 
         id={`product-${product.id}`} 
-        onClick={() => setIsDetailsOpen(true)}
+        onTap={() => setIsDetailsOpen(true)}
         className="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-slate-100/80 hover:border-[#1C2978]/40 flex flex-col h-full overflow-hidden relative hover:-translate-y-1.5 hover:shadow-[0_16px_32px_rgba(28, 41, 120,0.08)] transition-all duration-300 group/card cursor-pointer"
       >
         {/* Imagem */}
@@ -150,13 +150,15 @@ export default function ProductCard({ product, onSelectingChange }: ProductCardP
             </div>
           )}
         </div>
-      </div>
-      <AnimatePresence>
-        {isDetailsOpen && createPortal(
-          <ProductDetailsModal product={product} onClose={() => setIsDetailsOpen(false)} />,
-          document.body
-        )}
-      </AnimatePresence>
+      </motion.div>
+      {createPortal(
+        <AnimatePresence>
+          {isDetailsOpen && (
+            <ProductDetailsModal product={product} onClose={() => setIsDetailsOpen(false)} />
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }

@@ -67,7 +67,13 @@ export default function ProductDetailsModal({ product, onClose }: ProductDetails
   const categoryName = getCategoryDisplayName(product.category);
 
   return (
-    <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 overflow-hidden select-none">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-[10000] flex items-center justify-center p-4 overflow-hidden select-none"
+    >
       {/* Backdrop */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -219,6 +225,6 @@ export default function ProductDetailsModal({ product, onClose }: ProductDetails
 
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
