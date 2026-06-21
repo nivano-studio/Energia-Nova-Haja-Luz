@@ -41,8 +41,6 @@ export default function AdminControls() {
   const [productDescription, setProductDescription] = useState('');
   const [productCategory, setProductCategory] = useState('');
   const [productSubcategory, setProductSubcategory] = useState('');
-  const [productPrice, setProductPrice] = useState('');
-  const [productOldPrice, setProductOldPrice] = useState('');
   const [productIsBestSeller, setProductIsBestSeller] = useState(false);
   const [productImageFile, setProductImageFile] = useState<File | null>(null);
   const [productImagePreview, setProductImagePreview] = useState('');
@@ -57,19 +55,6 @@ export default function AdminControls() {
   // Estado para armazenar quais categorias estão expandidas no painel
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
 
-  // Inicializar todas as categorias como expandidas por padrão
-  useEffect(() => {
-    if (categories.length > 0) {
-      const initial: Record<string, boolean> = {};
-      categories.forEach(c => {
-        initial[c.slug] = true;
-      });
-      setExpandedCategories(prev => {
-        const next = { ...initial, ...prev };
-        return next;
-      });
-    }
-  }, [categories]);
 
   // Se o usuário buscar algo, força a expansão de todas as categorias para facilitar a busca
   useEffect(() => {
@@ -95,8 +80,6 @@ export default function AdminControls() {
     setProductDescription('');
     setProductCategory(catSlug);
     setProductSubcategory(subSlug);
-    setProductPrice('');
-    setProductOldPrice('');
     setProductIsBestSeller(false);
     setProductImageFile(null);
     setProductImagePreview('');
@@ -196,8 +179,6 @@ export default function AdminControls() {
     setProductDescription('');
     setProductCategory(categories[0]?.slug || '');
     setProductSubcategory(categories[0]?.subcategories[0]?.slug || '');
-    setProductPrice('');
-    setProductOldPrice('');
     setProductIsBestSeller(false);
     setProductImageFile(null);
     setProductImagePreview('');
@@ -214,8 +195,6 @@ export default function AdminControls() {
     setProductDescription(product.description || '');
     setProductCategory(product.category);
     setProductSubcategory(product.subcategory);
-    setProductPrice(product.price ? product.price.toString() : '');
-    setProductOldPrice(product.oldPrice ? product.oldPrice.toString() : '');
     setProductIsBestSeller(!!product.isBestSeller);
     setProductImageFile(null);
     setProductImagePreview(product.image);
@@ -318,8 +297,6 @@ export default function AdminControls() {
       category: productCategory,
       subcategory: productSubcategory,
       image: editingProduct ? editingProduct.image : '', // Mantém a imagem antiga se não enviar nova
-      price: productPrice ? parseFloat(productPrice) : undefined,
-      oldPrice: productOldPrice ? parseFloat(productOldPrice) : undefined,
       isBestSeller: productIsBestSeller,
       salesCount: editingProduct ? editingProduct.salesCount : 0
     };
@@ -354,12 +331,12 @@ export default function AdminControls() {
   // Deletar Categoria com Senha Protegida
   const handleDeleteCategory = async (id: string, slug: string, name: string) => {
     const passwordConfirm = prompt(
-      `ATENÇÃO: A exclusão da categoria "${name}" apagará TODAS as suas subcategorias e produtos associados!\n\nPara confirmar esta exclusão, digite a senha "DELETLUZ":`
+      `ATENÇÃO: A exclusão da categoria "${name}" apagará TODAS as suas subcategorias e produtos associados!\n\nPara confirmar esta exclusão, digite a senha de segurança:`
     );
     
     if (passwordConfirm === null) return; // cancelou
     
-    if (passwordConfirm !== 'DELETLUZ') {
+    if (passwordConfirm.trim().toUpperCase() !== 'DELETLUZ') {
       alert('Senha incorreta! Operação de exclusão cancelada.');
       return;
     }
@@ -378,12 +355,12 @@ export default function AdminControls() {
   // Deletar Subcategoria com Senha Protegida
   const handleDeleteSubcategory = async (id: string, catSlug: string, subSlug: string, name: string) => {
     const passwordConfirm = prompt(
-      `ATENÇÃO: A exclusão da subcategoria "${name}" apagará TODOS os produtos associados a ela!\n\nPara confirmar esta exclusão, digite a senha "DELETLUZ":`
+      `ATENÇÃO: A exclusão da subcategoria "${name}" apagará TODOS os produtos associados a ela!\n\nPara confirmar esta exclusão, digite a senha de segurança:`
     );
     
     if (passwordConfirm === null) return; // cancelou
     
-    if (passwordConfirm !== 'DELETLUZ') {
+    if (passwordConfirm.trim().toUpperCase() !== 'DELETLUZ') {
       alert('Senha incorreta! Operação de exclusão cancelada.');
       return;
     }
@@ -830,30 +807,7 @@ export default function AdminControls() {
                                 />
                               </div>
 
-                              <div className="grid grid-cols-2 gap-3">
-                                <div>
-                                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Preço Atual</label>
-                                  <input 
-                                    type="number"
-                                    step="0.01"
-                                    placeholder="Ex: 49.90"
-                                    value={productPrice}
-                                    onChange={(e) => setProductPrice(e.target.value)}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
-                                  />
-                                </div>
-                                <div>
-                                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Preço Antigo</label>
-                                  <input 
-                                    type="number"
-                                    step="0.01"
-                                    placeholder="Ex: 69.90"
-                                    value={productOldPrice}
-                                    onChange={(e) => setProductOldPrice(e.target.value)}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
-                                  />
-                                </div>
-                              </div>
+
 
                               <div className="flex items-center gap-2 pt-2">
                                 <input 
@@ -1099,7 +1053,6 @@ export default function AdminControls() {
                                                   <tr className="bg-slate-50/55 text-slate-400 text-[9px] font-black uppercase tracking-wider border-b border-slate-100">
                                                     <th className="px-4 py-2 w-16">Foto</th>
                                                     <th className="px-4 py-2">Produto</th>
-                                                    <th className="px-4 py-2 w-28">Preço</th>
                                                     <th className="px-4 py-2 w-20 text-center">Ações</th>
                                                   </tr>
                                                 </thead>
@@ -1115,10 +1068,6 @@ export default function AdminControls() {
                                                         <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
                                                         <div className="text-[9px] text-slate-400 font-mono mt-0.5">ID: {p.id} {p.isBestSeller && <span className="ml-1 bg-orange-100 text-orange-700 font-bold px-1 rounded text-[8px]">BestSeller</span>}</div>
                                                         {p.description && <div className="text-[10px] text-slate-400 mt-0.5 line-clamp-1 italic">{p.description}</div>}
-                                                      </td>
-                                                      <td className="px-4 py-2 font-mono font-bold text-slate-700">
-                                                        {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-[10px] font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
-                                                        {p.oldPrice && <div className="text-[10px] text-slate-400 line-through font-normal">R$ {p.oldPrice.toFixed(2)}</div>}
                                                       </td>
                                                       <td className="px-4 py-2">
                                                         <div className="flex items-center justify-center gap-1">
@@ -1188,7 +1137,6 @@ export default function AdminControls() {
                                               <tr className="bg-slate-50/55 text-slate-400 text-[9px] font-black uppercase tracking-wider border-b border-slate-100">
                                                 <th className="px-4 py-2 w-16">Foto</th>
                                                 <th className="px-4 py-2">Produto</th>
-                                                <th className="px-4 py-2 w-28">Preço</th>
                                                 <th className="px-4 py-2 w-20 text-center">Ações</th>
                                               </tr>
                                             </thead>
@@ -1203,9 +1151,6 @@ export default function AdminControls() {
                                                   <td className="px-4 py-2">
                                                     <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
                                                     <div className="text-[9px] text-slate-400 font-mono mt-0.5">ID: {p.id} {p.isBestSeller && <span className="ml-1 bg-orange-100 text-orange-700 font-bold px-1 rounded text-[8px]">BestSeller</span>}</div>
-                                                  </td>
-                                                  <td className="px-4 py-2 font-mono font-bold text-slate-700">
-                                                    {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-[10px] font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
                                                   </td>
                                                   <td className="px-4 py-2">
                                                     <div className="flex items-center justify-center gap-1">
@@ -1260,7 +1205,7 @@ export default function AdminControls() {
                                       <tr className="bg-slate-50/55 text-slate-400 text-[9px] font-black uppercase tracking-wider border-b border-slate-100">
                                         <th className="px-4 py-2 w-16">Foto</th>
                                         <th className="px-4 py-2">Produto</th>
-                                        <th className="px-4 py-2 w-28">Preço</th>
+                                        
                                         <th className="px-4 py-2 w-20 text-center">Ações</th>
                                       </tr>
                                     </thead>
@@ -1276,9 +1221,7 @@ export default function AdminControls() {
                                             <div className="font-bold text-slate-800 leading-tight line-clamp-1">{p.name}</div>
                                             <div className="text-[9px] text-slate-400 font-mono mt-0.5">ID: {p.id}</div>
                                           </td>
-                                          <td className="px-4 py-2 font-mono font-bold text-slate-700">
-                                            {p.price ? `R$ ${p.price.toFixed(2)}` : <span className="text-slate-400 text-[10px] font-sans font-bold uppercase tracking-wider">Sob Consulta</span>}
-                                          </td>
+                                          
                                           <td className="px-4 py-2">
                                             <div className="flex items-center justify-center gap-1">
                                               <button
