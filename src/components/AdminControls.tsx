@@ -11,7 +11,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function AdminControls() {
   const { 
     products, categories, isAdmin, login, logout,
-    addCategory, addSubcategory, addProduct, updateProduct, deleteProduct,
+    addCategory, deleteCategory, addSubcategory, deleteSubcategory, 
+    addProduct, updateProduct, deleteProduct,
     seedDatabase
   } = useDatabase();
 
@@ -278,6 +279,54 @@ export default function AdminControls() {
       if (!result.success) {
         alert(result.error || 'Erro ao deletar produto.');
       }
+    }
+  };
+
+  // Deletar Categoria com Senha Protegida
+  const handleDeleteCategory = async (id: string, slug: string, name: string) => {
+    const passwordConfirm = prompt(
+      `ATENÇÃO: A exclusão da categoria "${name}" apagará TODAS as suas subcategorias e produtos associados!\n\nPara confirmar esta exclusão, digite a senha "DELETLUZ":`
+    );
+    
+    if (passwordConfirm === null) return; // cancelou
+    
+    if (passwordConfirm !== 'DELETLUZ') {
+      alert('Senha incorreta! Operação de exclusão cancelada.');
+      return;
+    }
+    
+    setCategoryFormLoading(true);
+    const result = await deleteCategory(id, slug);
+    setCategoryFormLoading(false);
+    
+    if (!result.success) {
+      alert(result.error || 'Erro ao deletar categoria.');
+    } else {
+      alert(`Categoria "${name}" excluída com sucesso.`);
+    }
+  };
+
+  // Deletar Subcategoria com Senha Protegida
+  const handleDeleteSubcategory = async (id: string, catSlug: string, subSlug: string, name: string) => {
+    const passwordConfirm = prompt(
+      `ATENÇÃO: A exclusão da subcategoria "${name}" apagará TODOS os produtos associados a ela!\n\nPara confirmar esta exclusão, digite a senha "DELETLUZ":`
+    );
+    
+    if (passwordConfirm === null) return; // cancelou
+    
+    if (passwordConfirm !== 'DELETLUZ') {
+      alert('Senha incorreta! Operação de exclusão cancelada.');
+      return;
+    }
+    
+    setCategoryFormLoading(true);
+    const result = await deleteSubcategory(id, catSlug, subSlug);
+    setCategoryFormLoading(false);
+    
+    if (!result.success) {
+      alert(result.error || 'Erro ao deletar subcategoria.');
+    } else {
+      alert(`Subcategoria "${name}" excluída com sucesso.`);
     }
   };
 
@@ -1165,15 +1214,37 @@ export default function AdminControls() {
                                 <span className="p-1 bg-[#1C2978]/10 text-[#1C2978] rounded-md"><cat.icon className="w-4 h-4" /></span>
                                 <span className="font-bold text-slate-800">{cat.name}</span>
                               </div>
-                              <span className="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">{cat.slug}</span>
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">{cat.slug}</span>
+                                {cat.id && (
+                                  <button
+                                    type="button"
+                                    onClick={() => handleDeleteCategory(cat.id!, cat.slug, cat.name)}
+                                    className="p-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded transition-colors cursor-pointer flex items-center justify-center"
+                                    title="Excluir Categoria"
+                                  >
+                                    <Trash2 className="w-3.5 h-3.5" />
+                                  </button>
+                                )}
+                              </div>
                             </div>
                             
                             <div className="flex flex-wrap gap-2 pt-1">
                               {cat.subcategories && cat.subcategories.length > 0 ? (
                                 cat.subcategories.map(sub => (
-                                  <span key={sub.slug} className="bg-white border border-slate-200 rounded-lg px-2.5 py-1 text-xs text-slate-600 shadow-3xs flex items-center gap-1.5 font-medium">
+                                  <span key={sub.slug} className="bg-white border border-slate-200 rounded-lg pl-2.5 pr-1.5 py-1 text-xs text-slate-600 shadow-3xs flex items-center gap-1.5 font-medium group">
                                     <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
                                     {sub.name}
+                                    {sub.id && (
+                                      <button
+                                        type="button"
+                                        onClick={() => handleDeleteSubcategory(sub.id!, cat.slug, sub.slug, sub.name)}
+                                        className="text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-md p-0.5 transition-colors cursor-pointer flex items-center justify-center"
+                                        title="Excluir Subcategoria"
+                                      >
+                                        <X className="w-3 h-3" />
+                                      </button>
+                                    )}
                                   </span>
                                 ))
                               ) : (

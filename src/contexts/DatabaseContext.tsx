@@ -45,7 +45,9 @@ interface DatabaseContextType {
   
   // Operações de Categoria
   addCategory: (name: string, iconName: string) => Promise<{ success: boolean; error?: string }>;
+  deleteCategory: (id: string, slug: string) => Promise<{ success: boolean; error?: string }>;
   addSubcategory: (categoryId: string, name: string) => Promise<{ success: boolean; error?: string }>;
+  deleteSubcategory: (id: string, catSlug: string, subSlug: string) => Promise<{ success: boolean; error?: string }>;
   
   // Operações de Produto
   addProduct: (product: Omit<Product, 'id'>, imageFile?: File) => Promise<{ success: boolean; error?: string }>;
@@ -277,6 +279,31 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   };
 
+  // Deletar Categoria
+  const deleteCategory = async (id: string, slug: string) => {
+    if (!supabase) return { success: false, error: 'Modo offline: Alterações não permitidas.' };
+    try {
+      // 1. Deletar todos os produtos associados a esta categoria
+      const { error: prodError } = await supabase
+        .from('products')
+        .delete()
+        .eq('category', slug);
+      if (prodError) throw prodError;
+
+      // 2. Deletar a categoria (as subcategorias associadas são removidas automaticamente via CASCADE no Supabase)
+      const { error: catError } = await supabase
+        .from('categories')
+        .delete()
+        .eq('id', id);
+      if (catError) throw catError;
+
+      await loadData();
+      return { success: true };
+    } catch (err: any) {
+      return { success: false, error: err.message || 'Erro ao excluir categoria.' };
+    }
+  };
+
   // Adicionar Subcategoria
   const addSubcategory = async (categoryId: string, name: string) => {
     if (!supabase) return { success: false, error: 'Modo offline: Alterações não permitidas.' };
@@ -297,6 +324,32 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       return { success: true };
     } catch (err: any) {
       return { success: false, error: err.message || 'Erro ao criar subcategoria.' };
+    }
+  };
+
+  // Deletar Subcategoria
+  const deleteSubcategory = async (id: string, catSlug: string, subSlug: string) => {
+    if (!supabase) return { success: false, error: 'Modo offline: Alterações não permitidas.' };
+    try {
+      // 1. Deletar todos os produtos associados a esta subcategoria
+      const { error: prodError } = await supabase
+        .from('products')
+        .delete()
+        .eq('category', catSlug)
+        .eq('subcategory', subSlug);
+      if (prodError) throw prodError;
+
+      // 2. Deletar a subcategoria
+      const { error: subError } = await supabase
+        .from('subcategories')
+        .delete()
+        .eq('id', id);
+      if (subError) throw subError;
+
+      await loadData();
+      return { success: true };
+    } catch (err: any) {
+      return { success: false, error: err.message || 'Erro ao excluir subcategoria.' };
     }
   };
 
@@ -469,7 +522,9 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       login,
       logout,
       addCategory,
+      deleteCategory,
       addSubcategory,
+      deleteSubcategory,
       addProduct,
       updateProduct,
       deleteProduct,
