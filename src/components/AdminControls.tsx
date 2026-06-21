@@ -393,12 +393,21 @@ export default function AdminControls() {
     { name: 'Package', label: 'Pacote/Geral' }
   ];
 
-  // Filtrar produtos na busca da tabela
-  const filteredProducts = products.filter(p => 
-    p.name.toLowerCase().includes(productSearch.toLowerCase()) ||
-    p.category.toLowerCase().includes(productSearch.toLowerCase()) ||
-    p.subcategory.toLowerCase().includes(productSearch.toLowerCase())
-  );
+  // Normalizar texto removendo acentos para busca
+  const normalizeText = (text: string): string => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  };
+
+  // Filtrar produtos na busca da tabela (insensível a acentos)
+  const filteredProducts = products.filter(p => {
+    const searchNormalized = normalizeText(productSearch);
+    return normalizeText(p.name).includes(searchNormalized) ||
+           normalizeText(p.category).includes(searchNormalized) ||
+           normalizeText(p.subcategory).includes(searchNormalized);
+  });
 
   return (
     <>

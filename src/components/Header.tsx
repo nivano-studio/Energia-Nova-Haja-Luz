@@ -53,9 +53,17 @@ export default function Header() {
     };
   }, []);
 
+  // Normalizar texto removendo acentos para busca
+  const normalizeText = (text: string): string => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  };
+
   const searchResults = searchQuery.trim() === '' 
     ? [] 
-    : products.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5);
+    : products.filter(p => normalizeText(p.name).includes(normalizeText(searchQuery))).slice(0, 5);
 
   const handleProductClick = (productId: string, categorySlug: string, subcategorySlug: string) => {
     setShowSearchResults(false);

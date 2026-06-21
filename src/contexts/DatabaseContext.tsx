@@ -6,6 +6,11 @@ import { updateActiveProducts } from '../components/ChatAssistant/chatProductSea
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
+const sanitizeInput = (text: string): string => {
+  if (!text) return '';
+  return text.replace(/<[^>]*>/g, '').trim();
+};
+
 export interface SubCategory {
   id?: string;
   name: string;
@@ -379,10 +384,10 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         .from('products')
         .insert([{
           id: newId,
-          name: productData.name,
-          description: productData.description || '',
-          category: productData.category,
-          subcategory: productData.subcategory,
+          name: sanitizeInput(productData.name),
+          description: sanitizeInput(productData.description || ''),
+          category: sanitizeInput(productData.category),
+          subcategory: sanitizeInput(productData.subcategory),
           image: imageUrl,
           price: productData.price || null,
           old_price: productData.oldPrice || null,
@@ -410,10 +415,10 @@ export const DatabaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       }
 
       const updates: any = {};
-      if (updatedFields.name !== undefined) updates.name = updatedFields.name;
-      if (updatedFields.description !== undefined) updates.description = updatedFields.description;
-      if (updatedFields.category !== undefined) updates.category = updatedFields.category;
-      if (updatedFields.subcategory !== undefined) updates.subcategory = updatedFields.subcategory;
+      if (updatedFields.name !== undefined) updates.name = sanitizeInput(updatedFields.name);
+      if (updatedFields.description !== undefined) updates.description = sanitizeInput(updatedFields.description || '');
+      if (updatedFields.category !== undefined) updates.category = sanitizeInput(updatedFields.category);
+      if (updatedFields.subcategory !== undefined) updates.subcategory = sanitizeInput(updatedFields.subcategory);
       if (imageUrl !== undefined) updates.image = imageUrl;
       if (updatedFields.price !== undefined) updates.price = updatedFields.price || null;
       if (updatedFields.oldPrice !== undefined) updates.old_price = updatedFields.oldPrice || null;
