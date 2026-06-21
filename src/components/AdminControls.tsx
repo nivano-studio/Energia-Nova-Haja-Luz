@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useDatabase } from '../contexts/DatabaseContext';
 import { 
   Settings, Plus, Edit2, Trash2, LogOut, X, 
-  Upload, FolderPlus, Save, Package, Lock, Key, Eye, EyeOff, Check,
+  Upload, FolderPlus, Save, Lock, Key, Eye, EyeOff, Check,
   ChevronDown, ChevronUp
 } from 'lucide-react';
 import * as Icons from 'lucide-react';
@@ -812,12 +812,12 @@ export default function AdminControls() {
                         return (
                           <div key={cat.slug} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs">
                             {/* Cabeçalho da Categoria */}
-                            <button
-                              type="button"
-                              onClick={() => toggleCategoryExpand(cat.slug)}
-                              className="w-full flex items-center justify-between p-4 bg-slate-50/50 hover:bg-slate-50 border-b border-slate-200 transition-colors cursor-pointer text-left font-bold text-slate-800"
-                            >
-                              <div className="flex items-center gap-2.5">
+                            <div className="w-full flex items-center justify-between p-4 bg-slate-50/50 border-b border-slate-200">
+                              <button
+                                type="button"
+                                onClick={() => toggleCategoryExpand(cat.slug)}
+                                className="flex-1 flex items-center gap-2.5 transition-colors cursor-pointer text-left font-bold text-slate-800"
+                              >
                                 <span className="p-1.5 bg-[#1C2978]/10 text-[#1C2978] rounded-lg">
                                   <cat.icon className="w-5 h-5" />
                                 </span>
@@ -825,11 +825,27 @@ export default function AdminControls() {
                                   <span className="text-base font-extrabold">{cat.name}</span>
                                   <span className="ml-2 text-xs font-semibold text-slate-400">({catProducts.length} {catProducts.length === 1 ? 'produto' : 'produtos'})</span>
                                 </div>
-                              </div>
+                              </button>
                               <div className="flex items-center gap-2">
-                                {isExpanded ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+                                {cat.id && (
+                                  <button
+                                    type="button"
+                                    onClick={() => handleDeleteCategory(cat.id!, cat.slug, cat.name)}
+                                    className="p-1.5 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center mr-2"
+                                    title="Excluir Categoria"
+                                  >
+                                    <Trash2 className="w-4 h-4" />
+                                  </button>
+                                )}
+                                <button
+                                  type="button"
+                                  onClick={() => toggleCategoryExpand(cat.slug)}
+                                  className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg transition-colors cursor-pointer"
+                                >
+                                  {isExpanded ? <ChevronUp className="w-4.5 h-4.5" /> : <ChevronDown className="w-4.5 h-4.5" />}
+                                </button>
                               </div>
-                            </button>
+                            </div>
 
                             {/* Conteúdo da Categoria (Subcategorias e Produtos) */}
                             {isExpanded && (
@@ -850,9 +866,19 @@ export default function AdminControls() {
                                           <div className="flex items-center gap-2">
                                             <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                                             <h4 className="font-extrabold text-slate-700 text-sm">{sub.name}</h4>
-                                            <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-bold">
+                                            <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-bold mr-1">
                                               {subProducts.length}
                                             </span>
+                                            {sub.id && (
+                                              <button
+                                                type="button"
+                                                onClick={() => handleDeleteSubcategory(sub.id!, cat.slug, sub.slug, sub.name)}
+                                                className="p-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer flex items-center justify-center"
+                                                title="Excluir Subcategoria"
+                                              >
+                                                <Trash2 className="w-3.5 h-3.5" />
+                                              </button>
+                                            )}
                                           </div>
                                           
                                           {/* Botão de Adicionar Produto nesta Subcategoria */}
@@ -1091,169 +1117,112 @@ export default function AdminControls() {
 
                 {/* ABA DE CATEGORIAS */}
                 {activeTab === 'categories' && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* Cadastrar Categoria e Subcategoria */}
-                    <div className="space-y-6">
-                      <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
-                        <h3 className="font-extrabold text-[#1C2978] text-base border-b border-slate-100 pb-2 flex items-center gap-2">
-                          <FolderPlus className="w-5 h-5" /> Nova Categoria
-                        </h3>
-                        
-                        {categoryFormError && (
-                          <div className="p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-xs font-semibold">
-                            {categoryFormError}
-                          </div>
-                        )}
-
-                        <form onSubmit={handleAddCategorySubmit} className="space-y-3">
-                          <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome da Categoria *</label>
-                            <input 
-                              type="text"
-                              required
-                              placeholder="Ex: Fios e Cabos"
-                              value={categoryName}
-                              onChange={(e) => setCategoryName(e.target.value)}
-                              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
-                            />
-                          </div>
-
-                          <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Selecione o Ícone da Categoria</label>
-                            <div className="grid grid-cols-5 gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                              {commonIcons.map(icon => {
-                                const IconComp = (Icons as any)[icon.name] || Icons.Package;
-                                const isSelected = categoryIcon === icon.name;
-                                return (
-                                  <button
-                                    key={icon.name}
-                                    type="button"
-                                    onClick={() => setCategoryIcon(icon.name)}
-                                    className={`flex flex-col items-center justify-center p-2 rounded-lg border-2 transition-all cursor-pointer ${
-                                      isSelected 
-                                        ? 'border-[#1C2978] bg-blue-50 text-[#1C2978] font-bold shadow-2xs' 
-                                        : 'border-transparent bg-white text-slate-400 hover:text-slate-700 hover:bg-slate-100/50 shadow-3xs'
-                                    }`}
-                                    title={icon.label}
-                                  >
-                                    <IconComp className="w-5 h-5 mb-1" />
-                                    <span className="text-[9px] truncate max-w-full leading-none font-medium">{icon.label}</span>
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </div>
-
-                          <button
-                            type="submit"
-                            disabled={categoryFormLoading}
-                            className="w-full bg-[#1C2978] hover:bg-[#141F59] text-white font-bold py-2.5 rounded-lg text-xs tracking-wider uppercase transition-colors shadow-sm flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
-                          >
-                            <Plus className="w-4 h-4" />
-                            {categoryFormLoading ? 'Criando...' : 'Criar Categoria'}
-                          </button>
-                        </form>
-                      </div>
-
-                      <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
-                        <h3 className="font-extrabold text-[#1C2978] text-base border-b border-slate-100 pb-2 flex items-center gap-2">
-                          <FolderPlus className="w-5 h-5" /> Nova Subcategoria
-                        </h3>
-
-                        <form onSubmit={handleAddSubcategorySubmit} className="space-y-3">
-                          <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Categoria Pai *</label>
-                            <select
-                              value={activeCategoryForSub}
-                              onChange={(e) => setActiveCategoryForSub(e.target.value)}
-                              required
-                              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
-                            >
-                              <option value="">Selecione uma Categoria...</option>
-                              {categories.map(c => (
-                                <option key={c.id || c.slug} value={c.id}>{c.name}</option>
-                              ))}
-                            </select>
-                          </div>
-
-                          <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome da Subcategoria *</label>
-                            <input 
-                              type="text"
-                              required
-                              placeholder="Ex: Plafons de LED"
-                              value={subcategoryName}
-                              onChange={(e) => setSubcategoryName(e.target.value)}
-                              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
-                            />
-                          </div>
-
-                          <button
-                            type="submit"
-                            disabled={categoryFormLoading}
-                            className="w-full bg-[#1C2978] hover:bg-[#141F59] text-white font-bold py-2.5 rounded-lg text-xs tracking-wider uppercase transition-colors shadow-sm flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
-                          >
-                            <Plus className="w-4 h-4" />
-                            {categoryFormLoading ? 'Criando...' : 'Criar Subcategoria'}
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-
-                    {/* Lista Completa de Categorias/Subcategorias */}
-                    <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4 h-full">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Nova Categoria */}
+                    <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4 h-fit">
                       <h3 className="font-extrabold text-[#1C2978] text-base border-b border-slate-100 pb-2 flex items-center gap-2">
-                        <Package className="w-5 h-5" /> Categorias e Subcategorias Existentes
+                        <FolderPlus className="w-5 h-5" /> Nova Categoria
                       </h3>
                       
-                      <div className="space-y-4 overflow-y-auto max-h-[550px] pr-2">
-                        {categories.map(cat => (
-                          <div key={cat.slug} className="border border-slate-100 rounded-xl p-3 bg-slate-50/50">
-                            <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
-                              <div className="flex items-center gap-2">
-                                <span className="p-1 bg-[#1C2978]/10 text-[#1C2978] rounded-md"><cat.icon className="w-4 h-4" /></span>
-                                <span className="font-bold text-slate-800">{cat.name}</span>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <span className="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">{cat.slug}</span>
-                                {cat.id && (
-                                  <button
-                                    type="button"
-                                    onClick={() => handleDeleteCategory(cat.id!, cat.slug, cat.name)}
-                                    className="p-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded transition-colors cursor-pointer flex items-center justify-center"
-                                    title="Excluir Categoria"
-                                  >
-                                    <Trash2 className="w-3.5 h-3.5" />
-                                  </button>
-                                )}
-                              </div>
-                            </div>
-                            
-                            <div className="flex flex-wrap gap-2 pt-1">
-                              {cat.subcategories && cat.subcategories.length > 0 ? (
-                                cat.subcategories.map(sub => (
-                                  <span key={sub.slug} className="bg-white border border-slate-200 rounded-lg pl-2.5 pr-1.5 py-1 text-xs text-slate-600 shadow-3xs flex items-center gap-1.5 font-medium group">
-                                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                                    {sub.name}
-                                    {sub.id && (
-                                      <button
-                                        type="button"
-                                        onClick={() => handleDeleteSubcategory(sub.id!, cat.slug, sub.slug, sub.name)}
-                                        className="text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-md p-0.5 transition-colors cursor-pointer flex items-center justify-center"
-                                        title="Excluir Subcategoria"
-                                      >
-                                        <X className="w-3 h-3" />
-                                      </button>
-                                    )}
-                                  </span>
-                                ))
-                              ) : (
-                                <span className="text-xs text-slate-400 italic">Sem subcategorias</span>
-                              )}
-                            </div>
+                      {categoryFormError && (
+                        <div className="p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-xs font-semibold">
+                          {categoryFormError}
+                        </div>
+                      )}
+
+                      <form onSubmit={handleAddCategorySubmit} className="space-y-3">
+                        <div>
+                          <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome da Categoria *</label>
+                          <input 
+                            type="text"
+                            required
+                            placeholder="Ex: Fios e Cabos"
+                            value={categoryName}
+                            onChange={(e) => setCategoryName(e.target.value)}
+                            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Selecione o Ícone da Categoria</label>
+                          <div className="grid grid-cols-5 gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                            {commonIcons.map(icon => {
+                              const IconComp = (Icons as any)[icon.name] || Icons.Package;
+                              const isSelected = categoryIcon === icon.name;
+                              return (
+                                <button
+                                  key={icon.name}
+                                  type="button"
+                                  onClick={() => setCategoryIcon(icon.name)}
+                                  className={`flex flex-col items-center justify-center p-2 rounded-lg border-2 transition-all cursor-pointer ${
+                                    isSelected 
+                                      ? 'border-[#1C2978] bg-blue-50 text-[#1C2978] font-bold shadow-2xs' 
+                                      : 'border-transparent bg-white text-slate-400 hover:text-slate-700 hover:bg-slate-100/50 shadow-3xs'
+                                  }`}
+                                  title={icon.label}
+                                >
+                                  <IconComp className="w-5 h-5 mb-1" />
+                                  <span className="text-[9px] truncate max-w-full leading-none font-medium">{icon.label}</span>
+                                </button>
+                              );
+                            })}
                           </div>
-                        ))}
-                      </div>
+                        </div>
+
+                        <button
+                          type="submit"
+                          disabled={categoryFormLoading}
+                          className="w-full bg-[#1C2978] hover:bg-[#141F59] text-white font-bold py-2.5 rounded-lg text-xs tracking-wider uppercase transition-colors shadow-sm flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                        >
+                          <Plus className="w-4 h-4" />
+                          {categoryFormLoading ? 'Criando...' : 'Criar Categoria'}
+                        </button>
+                      </form>
+                    </div>
+
+                    {/* Nova Subcategoria */}
+                    <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4 h-fit">
+                      <h3 className="font-extrabold text-[#1C2978] text-base border-b border-slate-100 pb-2 flex items-center gap-2">
+                        <FolderPlus className="w-5 h-5" /> Nova Subcategoria
+                      </h3>
+
+                      <form onSubmit={handleAddSubcategorySubmit} className="space-y-3">
+                        <div>
+                          <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Categoria Pai *</label>
+                          <select
+                            value={activeCategoryForSub}
+                            onChange={(e) => setActiveCategoryForSub(e.target.value)}
+                            required
+                            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
+                          >
+                            <option value="">Selecione uma Categoria...</option>
+                            {categories.map(c => (
+                              <option key={c.id || c.slug} value={c.id}>{c.name}</option>
+                            ))}
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome da Subcategoria *</label>
+                          <input 
+                            type="text"
+                            required
+                            placeholder="Ex: Plafons de LED"
+                            value={subcategoryName}
+                            onChange={(e) => setSubcategoryName(e.target.value)}
+                            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 text-sm focus:bg-white focus:border-[#1C2978] outline-none transition-all"
+                          />
+                        </div>
+
+                        <button
+                          type="submit"
+                          disabled={categoryFormLoading}
+                          className="w-full bg-[#1C2978] hover:bg-[#141F59] text-white font-bold py-2.5 rounded-lg text-xs tracking-wider uppercase transition-colors shadow-sm flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                        >
+                          <Plus className="w-4 h-4" />
+                          {categoryFormLoading ? 'Criando...' : 'Criar Subcategoria'}
+                        </button>
+                      </form>
                     </div>
                   </div>
                 )}
