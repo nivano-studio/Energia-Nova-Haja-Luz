@@ -34,7 +34,6 @@
     font-family: var(--font-sans);
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    zoom: 0.9;
   }
   @media (min-width: 1024px) {
     html {
@@ -222,8 +221,6 @@
 .liquid-glass-blue-pill {
   position: relative;
   background: linear-gradient(135deg, #1C2978 0%, #141F59 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   
   /* Clean, uniform, subtle glass border to match the premium button style in the second image */
   border: 1.5px solid rgba(255, 255, 255, 0.15);

@@ -34,16 +34,21 @@ export default function SideProgress() {
     return () => observer.disconnect();
   }, []);
 
-  // Direct DOM updates for progress fill and indicator dot
+  // Direct DOM updates for progress fill and indicator dot with cached height to avoid layout thrashing
   useEffect(() => {
     let ticking = false;
+    let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    const handleResize = () => {
+      totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    };
+
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
           if (totalHeight > 0) {
             const currentScroll = window.scrollY;
-            const percentage = currentScroll / totalHeight;
+            const percentage = Math.min(1, Math.max(0, currentScroll / totalHeight));
             
             if (fillRef.current) {
               fillRef.current.style.transform = `scaleY(${percentage})`;
@@ -60,10 +65,19 @@ export default function SideProgress() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+    
     // Run once initially
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Recalculate after 1s once dynamic product grid finishes rendering
+    const timer = setTimeout(handleResize, 1000);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
