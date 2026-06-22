@@ -10,6 +10,23 @@ interface ProductDetailsModalProps {
   onClose: () => void;
 }
 
+const getProductDescription = (product: Product): string => {
+  if (product.description) return product.description;
+  
+  const categoryDesc: Record<string, string> = {
+    'iluminacao': 'Solução de iluminação de alta eficiência, projetada para proporcionar excelente fluxo luminoso, economia de energia e longa durabilidade. Perfeito para criar um ambiente moderno, seguro e bem iluminado.',
+    'fios-cabos': 'Condutor elétrico de alto padrão de qualidade, ideal para instalações internas e fixas de baixa tensão. Fabricado sob as mais rígidas normas técnicas nacionais para assegurar excelente condutividade e isolamento seguro.',
+    'tomadas': 'Acessório de instalação elétrica com design clean, discreto e moderno. Produzido em termoplástico de engenharia de alta durabilidade com aditivo anti-UV, garantindo conexões firmes e seguras.',
+    'disjuntores': 'Dispositivo de segurança essencial para proteção de circuitos elétricos contra sobrecargas e curtos-circuitos. Alta velocidade de disparo térmico e magnético para assegurar a proteção de pessoas e patrimônio.',
+    'ferramentas': 'Ferramenta de padrão profissional fabricada com liga de alta resistência. Ergonomia aprimorada para proporcionar precisão, conforto e máxima durabilidade em trabalhos pesados de montagem e manutenção.',
+    'ventiladores': 'Ventilador e climatizador de alta performance, projetado com motor de baixo consumo e hélice de perfil aerodinâmico para assegurar excelente vazão de ar e conforto térmico silencioso.',
+    'instalacao-acessorios': 'Acessório profissional projetado para infraestrutura e conexões de redes elétricas. Fabricado com materiais de alta durabilidade para garantir passagens, fixações e isolamentos limpos e seguros.'
+  };
+
+  const baseDesc = categoryDesc[product.category] || 'Material de padrão profissional, selecionado especialmente para assegurar máxima segurança, durabilidade e desempenho técnico para o seu projeto de obra ou reforma.';
+  
+  return baseDesc;
+};
 
 const getCategoryDisplayName = (category: string): string => {
   const mapping: Record<string, string> = {
@@ -57,7 +74,7 @@ export default function ProductDetailsModal({ product, onClose }: ProductDetails
     }, 2000);
   };
 
-  const description = activeProduct.description;
+  const description = getProductDescription(activeProduct);
   const categoryName = getCategoryDisplayName(activeProduct.category);
 
   // Filter related products sharing the same category and/or subcategory
