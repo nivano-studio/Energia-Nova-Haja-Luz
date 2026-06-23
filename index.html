@@ -2,6 +2,82 @@
 <html lang="pt-BR" className="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function() {
+        var isLowEnd = false;
+        var reasons = [];
+
+        // 1. CPU cores check
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) {
+          isLowEnd = true;
+          reasons.push('cpu_cores_' + navigator.hardwareConcurrency);
+        }
+
+        // 2. RAM check
+        if (navigator.deviceMemory && navigator.deviceMemory <= 4) {
+          isLowEnd = true;
+          reasons.push('ram_gb_' + navigator.deviceMemory);
+        }
+
+        // 3. Network connection & Data Saver check
+        var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (conn) {
+          if (conn.saveData) {
+            isLowEnd = true;
+            reasons.push('save_data_enabled');
+          }
+          if (conn.effectiveType && /2g|3g/.test(conn.effectiveType)) {
+            isLowEnd = true;
+            reasons.push('slow_connection_' + conn.effectiveType);
+          }
+        }
+
+        // 4. Prefers Reduced Motion check
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          isLowEnd = true;
+          reasons.push('prefers_reduced_motion');
+        }
+
+        // Expose global state
+        window.__isLowEnd = isLowEnd;
+        window.__lowEndReasons = reasons;
+
+        if (isLowEnd) {
+          document.documentElement.classList.add('is-low-end');
+          console.warn('[Performance Optimization] Low-end conditions detected:', reasons.join(', '));
+        }
+
+        // Helper to conditionally inject script/style CDN packages
+        window.loadExternalCDN = function(url, name, options) {
+          if (isLowEnd) {
+            console.log('[Performance Optimization] Blocked loading CDN script/stylesheet on low-end device:', name || url);
+            return Promise.resolve(null);
+          }
+          return new Promise(function(resolve, reject) {
+            var tag;
+            if (url.endsWith('.css')) {
+              tag = document.createElement('link');
+              tag.rel = 'stylesheet';
+              tag.href = url;
+            } else {
+              tag = document.createElement('script');
+              tag.src = url;
+              tag.async = (options && options.async !== undefined) ? options.async : true;
+              tag.defer = (options && options.defer !== undefined) ? options.defer : false;
+            }
+            tag.onload = function() {
+              console.log('[Performance Optimization] CDN Loaded successfully:', name || url);
+              resolve(tag);
+            };
+            tag.onerror = function(err) {
+              console.error('[Performance Optimization] Failed to load CDN:', name || url, err);
+              reject(err);
+            };
+            document.head.appendChild(tag);
+          });
+        };
+      })();
+    </script>
     <link rel="icon" type="image/webp" href="/images/logos/LOGO.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     

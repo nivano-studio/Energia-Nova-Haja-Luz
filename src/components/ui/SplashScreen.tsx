@@ -17,7 +17,40 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
     // Travar scroll da página durante o carregamento
     document.body.classList.add("loading");
 
-    // Iniciar posições escondidas
+    // Se for dispositivo de baixo desempenho, bypassa o GSAP e faz transição ultra-rápida nativa
+    if (typeof window !== "undefined" && (window as any).__isLowEnd) {
+      const finishLoadingLowEnd = () => {
+        (window as unknown as Record<string, unknown>).__loadingFinished = true;
+        window.dispatchEvent(new Event("loadingComplete"));
+        document.body.classList.remove("loading");
+        onFinish();
+      };
+
+      // Iniciar posições de fallback estáticas
+      if (logoRef.current) logoRef.current.style.opacity = "1";
+      if (textRef.current) textRef.current.style.opacity = "1";
+      if (progressBarRef.current) {
+        progressBarRef.current.style.transform = "scaleX(1)";
+        progressBarRef.current.style.transition = "transform 0.2s ease-out";
+      }
+
+      const timer = setTimeout(() => {
+        if (preloaderRef.current) {
+          preloaderRef.current.style.opacity = "0";
+          preloaderRef.current.style.transition = "opacity 0.25s ease-in-out";
+          preloaderRef.current.addEventListener("transitionend", finishLoadingLowEnd, { once: true });
+        } else {
+          finishLoadingLowEnd();
+        }
+      }, 250);
+
+      return () => {
+        clearTimeout(timer);
+        document.body.classList.remove("loading");
+      };
+    }
+
+    // Iniciar posições escondidas para fluxo padrão potente
     gsap.set([logoRef.current, textRef.current], { opacity: 0, y: 30 });
     gsap.set(progressBarRef.current, { scaleX: 0 });
 

@@ -512,3 +512,136 @@
   }
 }
 
+/* ==========================================================================
+   LOW-END DEVICE FALLBACKS & PERFORMANCE OPTIMIZATION
+   ========================================================================== */
+
+/* Disable global smooth scroll to prevent jank */
+.is-low-end,
+.is-low-end html,
+.is-low-end body {
+  scroll-behavior: auto !important;
+}
+
+/* Disable all animations and transitions globally to reduce CPU/GPU workload */
+.is-low-end *,
+.is-low-end *::before,
+.is-low-end *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Remove heavy backdrop filters and replace with solid/opaque fallbacks */
+.is-low-end .glass {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.is-low-end .glass-premium {
+  background: #f8fafc !important; /* Slate 50 solid */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.is-low-end .liquid-glass {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 4px 12px rgba(28, 41, 120, 0.05) !important;
+  border-color: rgba(28, 41, 120, 0.1) !important;
+}
+
+/* Optimize heavy shadow glows */
+.is-low-end .liquid-glass-blue-pill {
+  box-shadow: 0 4px 12px rgba(28, 41, 120, 0.15) !important;
+  background: #1C2978 !important;
+}
+
+/* Force immediate visibility on scroll-reveal components */
+.is-low-end .animate-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+/* Fallback for premium category cards */
+.is-low-end .category-card-premium {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  transform: none !important;
+}
+
+/* Remove premium card sweep sweeps (shimmer) */
+.is-low-end .category-card-premium::before {
+  display: none !important;
+}
+
+.is-low-end .category-card-premium:hover {
+  transform: none !important;
+  background: #f8fafc !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.is-low-end .category-card-premium:hover .premium-icon-capsule {
+  background: #1C2978 !important;
+  color: #ffffff !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+.is-low-end .category-card-premium:hover .premium-icon-capsule svg {
+  transform: none !important;
+}
+
+.is-low-end .category-card-premium:hover .premium-category-title {
+  transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Fallback for Info cards in about section */
+.is-low-end .about-info-card-premium {
+  background: #0f172a !important; /* Solid Slate 900 */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.is-low-end .about-info-card-premium::before,
+.is-low-end .about-info-card-premium::after {
+  display: none !important;
+}
+
+/* Flat fallback for Hero Banner stack of cards */
+.is-low-end .card-stack-item {
+  transition: none !important;
+  filter: none !important;
+}
+
+.is-low-end .card-stack-middle {
+  opacity: 0.8 !important;
+  filter: none !important;
+}
+
+.is-low-end .card-stack-back {
+  opacity: 0.5 !important;
+  filter: none !important;
+}
+
+/* Limit parallax or layout shift on load elements */
+.is-low-end .animate-fade-in-up,
+.is-low-end .animate-dropdown {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+

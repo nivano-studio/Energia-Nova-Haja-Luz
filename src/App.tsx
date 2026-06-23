@@ -19,9 +19,11 @@ import SideProgress from './components/layout/SideProgress';
 import SplashScreen from './components/ui/SplashScreen';
 import ChatAssistant from './components/ChatAssistant/ChatAssistant';
 import AdminControls from './components/admin/AdminControls';
+import { useDeviceCapabilities } from './hooks/useDeviceCapabilities';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const { isLowEnd } = useDeviceCapabilities();
 
   return (
     <CartProvider>
@@ -48,7 +50,7 @@ function App() {
           <BottomNavigation />
         </div>
         <CartDrawer />
-        <FlyingAnimations />
+        {!isLowEnd && <FlyingAnimations />}
         <WhatsAppFloatingButton />
         <ChatAssistant />
         <SideProgress />
